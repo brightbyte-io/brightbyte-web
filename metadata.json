@@ -1,0 +1,8 @@
+{
+  "name": "BrightByte Consulting",
+  "description": "We build software that moves businesses forward. Full-cycle mobile apps, web & enterprise platforms, AI development, DevOps, ERP systems, and global OEM sourcing.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
