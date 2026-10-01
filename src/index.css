@@ -21,6 +21,21 @@
   }
 }
 
+/* Global text selection: text color is black instead of white when highlighted */
+*::selection,
+::selection {
+  background-color: #BFDBFE;
+  color: #000000 !important;
+  -webkit-text-fill-color: #000000 !important;
+}
+
+*::-moz-selection,
+::-moz-selection {
+  background-color: #BFDBFE;
+  color: #000000 !important;
+  -webkit-text-fill-color: #000000 !important;
+}
+
 /* Atmospheric subtle shapes and grids matching the BrightByte screenshots */
 .hero-radial-bg {
   background: radial-gradient(circle at 85% 15%, rgba(203, 228, 255, 0.65) 0%, rgba(225, 239, 255, 0.3) 40%, rgba(248, 250, 252, 0) 75%);

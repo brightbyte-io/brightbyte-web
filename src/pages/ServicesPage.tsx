@@ -2,7 +2,7 @@ import React from 'react';
 import { CtaCard } from '../components/layout/CtaCard';
 import { ServicesHero } from '../components/services/ServicesHero';
 import { ServicesOverviewSection } from '../components/services/ServicesOverviewSection';
-import { ServicesFaqSection } from '../components/services/ServicesFaqSection';
+import { FaqSection } from '../components/layout/FaqSection';
 import { PageId } from '../types';
 
 export interface ServicesPageProps {
@@ -25,16 +25,14 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({
         onOpenConsultation={onOpenConsultation}
       />
 
-      {/* 3. Third Section: ServicesFaqSection matching FAQ.png */}
-      <ServicesFaqSection />
+      {/* 3. Third Section: Frequently Asked Questions */}
+      <FaqSection page="services" />
 
       {/* Pre-footer CTA */}
-      <div className="py-8 sm:py-12">
-        <CtaCard
-          onOpenConsultation={onOpenConsultation}
-          onOpenCalendly={onOpenConsultation}
-        />
-      </div>
+      <CtaCard
+        onOpenConsultation={onOpenConsultation}
+        onOpenCalendly={onOpenConsultation}
+      />
     </div>
   );
 };

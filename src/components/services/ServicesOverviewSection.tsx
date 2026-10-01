@@ -341,7 +341,7 @@ export const ServicesOverviewSection: React.FC<ServicesOverviewSectionProps> = (
   const currentMobileService = SERVICES_LIST[mobileIndex];
 
   return (
-    <section className="py-16 sm:py-20 lg:py-24 bg-white border-b border-slate-100 select-none">
+    <section className="py-16 sm:py-20 lg:py-24 bg-white border-b border-slate-100">
       <Container>
         {/* ============================================================== */}
         {/* SECTION HEADER                                                 */}
@@ -464,7 +464,7 @@ export const ServicesOverviewSection: React.FC<ServicesOverviewSectionProps> = (
         {/* MOBILE VIEW (< 768px): SHOW ONE BY ONE                          */}
         {/* Requirement: "only in bleow 768 show one by one"                 */}
         {/* ============================================================== */}
-        <div className="md:hidden space-y-4 max-w-sm mx-auto select-none pt-2">
+        <div className="md:hidden space-y-4 max-w-sm mx-auto pt-2">
           {/* Mobile Stepper Header with Cursor Click Controls */}
           <div className="flex items-center justify-between px-2">
             <span className="text-xs font-bold text-slate-500 uppercase tracking-wider">

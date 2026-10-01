@@ -234,7 +234,7 @@ export const ContactGlobalLocationsSection: React.FC = () => {
   const islamabadHub = GLOBAL_HUBS[0];
 
   return (
-    <section className="relative py-16 sm:py-24 bg-white overflow-hidden select-none border-t border-slate-100">
+    <section className="relative py-16 sm:py-24 bg-white overflow-hidden border-t border-slate-100">
       <Container>
         {/* ============================================================== */}
         {/* DESKTOP & TABLET VIEW (>= 768px): EXACT MATCH TO Frame 2121455062.png */}

@@ -41,7 +41,7 @@ export const MobileAppTechnologiesSection: React.FC = () => {
   const currentItem = TECHNOLOGIES_DATA[activeStep];
 
   return (
-    <section className="relative py-20 sm:py-24 lg:py-28 bg-[#18529B] text-white overflow-hidden select-none">
+    <section className="relative py-20 sm:py-24 lg:py-28 bg-[#18529B] text-white overflow-hidden">
       {/* ============================================================== */}
       {/* DECORATIVE AMBIENT WATERMARK RINGS MATCHING Frame 2121455063   */}
       {/* ============================================================== */}
@@ -97,7 +97,7 @@ export const MobileAppTechnologiesSection: React.FC = () => {
         {/* MOBILE VIEW (< 768px): SHOW ONE BY ONE                          */}
         {/* Requirement: "only in bleow 768 show one by one"                 */}
         {/* ============================================================== */}
-        <div className="md:hidden space-y-5 max-w-sm mx-auto select-none pt-2">
+        <div className="md:hidden space-y-5 max-w-sm mx-auto pt-2">
           {/* Stepper Header with Cursor Click Controls */}
           <div className="flex items-center justify-between px-2 text-white">
             <span className="text-xs font-bold text-blue-200 uppercase tracking-wider">

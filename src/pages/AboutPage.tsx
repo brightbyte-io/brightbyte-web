@@ -33,12 +33,10 @@ export const AboutPage: React.FC<AboutPageProps> = ({
       <AboutClients />
 
       {/* Pre-footer CTA: Ready to build something great? */}
-      <div className="py-8 sm:py-12">
-        <CtaCard
-          onOpenConsultation={onOpenConsultation}
-          onOpenCalendly={onOpenConsultation}
-        />
-      </div>
+      <CtaCard
+        onOpenConsultation={onOpenConsultation}
+        onOpenCalendly={onOpenConsultation}
+      />
     </div>
   );
 };

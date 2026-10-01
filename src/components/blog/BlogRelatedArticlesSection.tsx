@@ -82,7 +82,7 @@ export const BlogRelatedArticlesSection: React.FC<BlogRelatedArticlesSectionProp
   const currentMobileArticle = RELATED_ARTICLES_DATA[mobileIdx];
 
   return (
-    <div className="w-full my-16 sm:my-24 select-none">
+    <div className="w-full my-16 sm:my-24">
       {/* Section Title matching Frame 2085662449.png */}
       <div className="text-center mb-10 sm:mb-14">
         <h2 className="text-2xl sm:text-3xl lg:text-[34px] font-bold text-[#0B1528] tracking-tight">

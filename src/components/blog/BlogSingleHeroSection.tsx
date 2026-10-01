@@ -29,7 +29,7 @@ export const BlogSingleHeroSection: React.FC<BlogSingleHeroSectionProps> = ({ po
   const prevMobile = () => setMobileStep((prev) => (prev - 1 + 3) % 3);
 
   return (
-    <div className="relative w-full -mt-20 sm:-mt-24 mb-10 select-none overflow-hidden">
+    <div className="relative w-full mb-10 overflow-hidden">
       {/* ============================================================== */}
       {/* DESKTOP & TABLET VIEW (>= 768px): EXACT MATCH TO Frame 2121455182 (5).png */}
       {/* Panoramic hero image stretching behind the floating navbar     */}

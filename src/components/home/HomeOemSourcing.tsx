@@ -1,5 +1,4 @@
-import React, { useState } from 'react';
-import { ChevronLeft, ChevronRight } from 'lucide-react';
+import React from 'react';
 import { Container } from '../layout/Container';
 import { PageId } from '../../types';
 
@@ -10,9 +9,6 @@ export interface HomeOemSourcingProps {
 export const HomeOemSourcing: React.FC<HomeOemSourcingProps> = ({
   onNavigate,
 }) => {
-  // Mobile index for screens below 768px ("show one by one")
-  const [mobileIndex, setMobileIndex] = useState(0);
-
   const cards = [
     {
       step: '01',
@@ -40,16 +36,8 @@ export const HomeOemSourcing: React.FC<HomeOemSourcingProps> = ({
     },
   ];
 
-  const nextCard = () => {
-    setMobileIndex((prev) => (prev + 1) % cards.length);
-  };
-
-  const prevCard = () => {
-    setMobileIndex((prev) => (prev - 1 + cards.length) % cards.length);
-  };
-
   return (
-    <section className="relative overflow-hidden py-16 sm:py-20 lg:py-24 bg-gradient-to-b from-[#EFF6FD] via-[#E8F2FC] to-[#EFF6FD] border-b border-blue-100/70">
+    <section className="relative overflow-hidden py-10 sm:py-12 lg:py-14 bg-gradient-to-b from-[#EFF6FD] via-[#E8F2FC] to-[#EFF6FD] border-b border-blue-100/70">
       {/* ============================================================== */}
       {/* AMBIENT CURVED LIGHT RINGS MATCHING Frame 2121455053.png       */}
       {/* ============================================================== */}
@@ -65,7 +53,7 @@ export const HomeOemSourcing: React.FC<HomeOemSourcingProps> = ({
         {/* ============================================================== */}
         {/* SECTION HEADER MATCHING Frame 2121455053.png                   */}
         {/* ============================================================== */}
-        <div className="max-w-3xl mx-auto text-center mb-12 sm:mb-14 lg:mb-16 space-y-3">
+        <div className="max-w-3xl mx-auto text-center mb-8 sm:mb-10 lg:mb-12 space-y-2.5">
           <h2 className="text-3xl sm:text-4xl lg:text-[44px] font-extrabold text-slate-950 tracking-tight leading-tight">
             OEM Global Sourcing
           </h2>
@@ -75,19 +63,19 @@ export const HomeOemSourcing: React.FC<HomeOemSourcingProps> = ({
         </div>
 
         {/* ============================================================== */}
-        {/* DESKTOP & TABLET VIEW (>= 768px): ALL 4 IN THE SAME ROW         */}
-        {/* Exactly matching Frame 2121455053.png                          */}
+        {/* ALL SCREENS: ALL 4 CARDS SHOWN FULLY (NO SLIDER)               */}
+        {/* Grid responsive across mobile (1 col), sm (2 cols), md (4 cols)*/}
         {/* ============================================================== */}
-        <div className="hidden md:grid md:grid-cols-4 gap-5 lg:gap-6 mb-12 select-none">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 sm:gap-5 lg:gap-6 mb-8 sm:mb-10">
           {cards.map((card) => (
             <div
               key={card.title}
-              className="bg-white rounded-3xl p-7 lg:p-8 flex flex-col justify-start shadow-xs hover:shadow-md transition-all duration-300 border border-slate-100/80 group"
+              className="bg-white rounded-3xl p-6 sm:p-7 lg:p-8 flex flex-col justify-start shadow-xs hover:shadow-md transition-all duration-300 border border-slate-100/80 group"
             >
-              <h3 className="text-xl lg:text-[22px] font-bold text-slate-950 leading-snug mb-3 group-hover:text-[#18529B] transition-colors">
+              <h3 className="text-lg sm:text-xl lg:text-[22px] font-bold text-slate-950 leading-snug mb-2.5 group-hover:text-[#18529B] transition-colors">
                 {card.title}
               </h3>
-              <p className="text-sm lg:text-[14px] text-slate-500 leading-relaxed font-normal">
+              <p className="text-xs sm:text-sm lg:text-[14px] text-slate-500 leading-relaxed font-normal">
                 {card.description}
               </p>
             </div>
@@ -95,70 +83,12 @@ export const HomeOemSourcing: React.FC<HomeOemSourcingProps> = ({
         </div>
 
         {/* ============================================================== */}
-        {/* MOBILE VIEW (< 768px): SHOW ONE BY ONE                          */}
-        {/* Matches requirement: "only in bleow 768 show one by one"        */}
-        {/* ============================================================== */}
-        <div className="md:hidden space-y-6 mb-10 select-none">
-          {/* Card counter header with Prev/Next buttons */}
-          <div className="flex items-center justify-between px-2">
-            <span className="text-xs font-bold text-slate-500 uppercase tracking-wider">
-              Step {mobileIndex + 1} of {cards.length}
-            </span>
-            <div className="flex items-center gap-2">
-              <button
-                onClick={prevCard}
-                aria-label="Previous step"
-                className="w-8 h-8 rounded-full bg-white text-slate-700 shadow-xs hover:bg-slate-50 flex items-center justify-center transition-colors cursor-pointer border border-slate-200"
-              >
-                <ChevronLeft className="w-4 h-4" />
-              </button>
-              <button
-                onClick={nextCard}
-                aria-label="Next step"
-                className="w-8 h-8 rounded-full bg-[#18529B] text-white shadow-xs hover:bg-[#133F77] flex items-center justify-center transition-colors cursor-pointer"
-              >
-                <ChevronRight className="w-4 h-4" />
-              </button>
-            </div>
-          </div>
-
-          {/* ACTIVE CARD SHOWN ONE BY ONE */}
-          <div className="bg-white rounded-3xl p-8 shadow-md border border-slate-100 min-h-[200px] flex flex-col justify-center space-y-3 transition-all duration-300">
-            <div className="w-8 h-8 rounded-full bg-blue-50 text-[#18529B] font-extrabold text-xs flex items-center justify-center">
-              {cards[mobileIndex].step}
-            </div>
-            <h3 className="text-2xl font-bold text-slate-950 leading-snug">
-              {cards[mobileIndex].title}
-            </h3>
-            <p className="text-sm text-slate-600 leading-relaxed">
-              {cards[mobileIndex].description}
-            </p>
-          </div>
-
-          {/* Indicator dots for mobile navigation */}
-          <div className="flex items-center justify-center gap-1.5 pt-1">
-            {cards.map((card, idx) => (
-              <button
-                key={card.title}
-                onClick={() => setMobileIndex(idx)}
-                aria-label={`Go to step ${idx + 1}`}
-                className={`transition-all rounded-full h-1.5 cursor-pointer ${
-                  mobileIndex === idx
-                    ? 'w-6 bg-[#18529B]'
-                    : 'w-1.5 bg-slate-300 hover:bg-slate-400'
-                }`}
-              />
-            ))}
-          </div>
-        </div>
-
-        {/* ============================================================== */}
         {/* CENTERED PILL BUTTON MATCHING Frame 2121455053.png             */}
         {/* ============================================================== */}
-        <div className="text-center pt-2">
+        <div className="text-center pt-1">
           <button
             onClick={() => onNavigate('service-detail', 'oem-sourcing')}
-            className="inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-full bg-[#18529B] hover:bg-[#133F77] text-white font-semibold text-sm transition-all shadow-md shadow-blue-900/15 cursor-pointer select-none"
+            className="inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-full bg-[#18529B] hover:bg-[#133F77] text-white font-semibold text-sm transition-all shadow-md shadow-blue-900/15 cursor-pointer"
           >
             <span>Learn more</span>
             <span className="text-base font-normal leading-none">→</span>

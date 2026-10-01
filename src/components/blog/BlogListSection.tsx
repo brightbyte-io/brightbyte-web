@@ -132,7 +132,7 @@ export const BlogListSection: React.FC<BlogListSectionProps> = ({
   const currentMobileItem = items[mobileIndex] || items[0];
 
   return (
-    <section className="py-12 sm:py-16 bg-white overflow-hidden select-none">
+    <section className="py-12 sm:py-16 bg-white overflow-hidden">
       <Container>
         {/* ============================================================== */}
         {/* DESKTOP & TABLET VIEW (>= 768px): EXACT MATCH TO Frame 1171276730.png */}

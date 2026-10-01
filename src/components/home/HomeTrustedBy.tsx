@@ -72,7 +72,7 @@ export const HomeTrustedBy: React.FC = () => {
   }, [moveForward]);
 
   return (
-    <section className="bg-white border-y border-slate-100/90 py-6 md:py-8 lg:py-9 select-none">
+    <section className="bg-white border-y border-slate-100/90 py-6 md:py-8 lg:py-9">
       <Container>
         {/* ============================================================== */}
         {/* DESKTOP & TABLET VIEW (>= 768px): ALL IN THE SAME ROW           */}
@@ -103,7 +103,7 @@ export const HomeTrustedBy: React.FC = () => {
                 <img
                   src={brand.image}
                   alt={brand.name}
-                  className="h-7 lg:h-8 w-auto object-contain select-none pointer-events-none"
+                  className="h-7 lg:h-8 w-auto object-contain pointer-events-none"
                   draggable={false}
                 />
               </div>
@@ -114,7 +114,7 @@ export const HomeTrustedBy: React.FC = () => {
         {/* ============================================================== */}
         {/* MOBILE VIEW (< 768px): SHOW ONE BY ONE                          */}
         {/* ============================================================== */}
-        <div className="md:hidden flex flex-col items-center justify-center text-center space-y-3 py-1 select-none">
+        <div className="md:hidden flex flex-col items-center justify-center text-center space-y-3 py-1">
           {/* Active Brand Item image shown ONE BY ONE without arrows */}
           <div
             onClick={moveForward}
@@ -123,7 +123,7 @@ export const HomeTrustedBy: React.FC = () => {
             <img
               src={BRANDS[activeIndex].image}
               alt={BRANDS[activeIndex].name}
-              className="h-7 w-auto object-contain select-none pointer-events-none"
+              className="h-7 w-auto object-contain pointer-events-none"
               draggable={false}
             />
           </div>

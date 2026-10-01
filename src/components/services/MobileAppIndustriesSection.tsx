@@ -29,7 +29,7 @@ export const MobileAppIndustriesSection: React.FC = () => {
   const currentItem = INDUSTRIES_SERVED[activeIdx];
 
   return (
-    <section className="py-20 sm:py-24 lg:py-28 bg-white border-b border-slate-100 select-none">
+    <section className="py-20 sm:py-24 lg:py-28 bg-white border-b border-slate-100">
       <Container>
         {/* ============================================================== */}
         {/* SECTION HEADER                                                 */}
@@ -64,7 +64,7 @@ export const MobileAppIndustriesSection: React.FC = () => {
         {/* MOBILE VIEW (< 768px): SHOW ONE BY ONE                          */}
         {/* Requirement: "only in bleow 768 show one by one"                 */}
         {/* ============================================================== */}
-        <div className="md:hidden space-y-5 max-w-xs mx-auto select-none pt-2">
+        <div className="md:hidden space-y-5 max-w-xs mx-auto pt-2">
           {/* Controls & Stepper count */}
           <div className="flex items-center justify-between px-1 text-slate-500">
             <span className="text-xs font-bold text-slate-500 uppercase tracking-wider">

@@ -45,7 +45,7 @@ export const MobileAppHero: React.FC<MobileAppHeroProps> = ({
   const prevStep = () => setMobileStep((prev) => (prev - 1 + 3) % 3);
 
   return (
-    <section className="relative overflow-hidden pt-8 pb-16 sm:pt-12 sm:pb-20 lg:pt-14 lg:pb-24 bg-gradient-to-b from-[#F5F9FE] via-[#F8FBFE] to-white border-b border-slate-100 select-none">
+    <section className="relative overflow-hidden pt-24 pb-16 sm:pt-28 sm:pb-20 lg:pt-32 lg:pb-24 bg-gradient-to-b from-[#F5F9FE] via-[#F8FBFE] to-white border-b border-slate-100">
       {/* Background ambient soft glows */}
       <div className="absolute top-1/4 left-1/4 w-[550px] h-[550px] bg-sky-100/40 rounded-full blur-3xl pointer-events-none -z-0" />
       <div className="absolute -top-12 right-0 w-[550px] h-[550px] bg-blue-50/50 rounded-full blur-3xl pointer-events-none -z-0" />
@@ -193,28 +193,28 @@ export const MobileAppHero: React.FC<MobileAppHeroProps> = ({
 
               {/* 3. FLOATING BADGES AROUND PHONES (Matching Screenshot) */}
               {/* Badge 1: Top-Left Code Symbol </> */}
-              <div className="absolute -left-3 sm:left-2 top-28 z-20 w-12 h-12 rounded-full bg-white shadow-lg border border-slate-100 flex items-center justify-center text-[#18529B] font-extrabold text-base select-none">
+              <div className="absolute -left-3 sm:left-2 top-28 z-20 w-12 h-12 rounded-full bg-white shadow-lg border border-slate-100 flex items-center justify-center text-[#18529B] font-extrabold text-base">
                 &lt;/&gt;
               </div>
 
               {/* Badge 2: Middle-Left Gear Settings */}
-              <div className="absolute -left-1 sm:left-4 top-52 z-20 w-11 h-11 rounded-full bg-white shadow-lg border border-slate-100 flex items-center justify-center text-[#18529B] select-none">
+              <div className="absolute -left-1 sm:left-4 top-52 z-20 w-11 h-11 rounded-full bg-white shadow-lg border border-slate-100 flex items-center justify-center text-[#18529B]">
                 <Settings className="w-5 h-5 stroke-[2.2]" />
               </div>
 
               {/* Badge 3: Top-Right Android Mascot with text */}
-              <div className="absolute right-12 sm:right-16 top-16 z-20 w-14 h-14 rounded-full bg-white shadow-lg border border-slate-100 flex flex-col items-center justify-center text-[#3DDC84] select-none p-1">
+              <div className="absolute right-12 sm:right-16 top-16 z-20 w-14 h-14 rounded-full bg-white shadow-lg border border-slate-100 flex flex-col items-center justify-center text-[#3DDC84] p-1">
                 <AndroidMascotIcon className="w-6 h-6 text-[#3DDC84]" />
                 <span className="text-[8px] font-bold text-slate-800 -mt-0.5 tracking-tighter">android</span>
               </div>
 
               {/* Badge 4: Bottom-Right Apple Logo */}
-              <div className="absolute right-0 sm:right-2 bottom-20 z-20 w-14 h-14 rounded-full bg-white shadow-lg border border-slate-100 flex items-center justify-center text-slate-900 select-none">
+              <div className="absolute right-0 sm:right-2 bottom-20 z-20 w-14 h-14 rounded-full bg-white shadow-lg border border-slate-100 flex items-center justify-center text-slate-900">
                 <AppleLogoIcon className="w-6 h-6" />
               </div>
 
               {/* 4. FLOATING "READY TO GO LIVE!" TOAST NOTIFICATION */}
-              <div className="absolute -bottom-2 -left-6 sm:left-0 z-30 bg-white rounded-2xl p-3 shadow-xl border border-slate-100 flex items-center gap-3 min-w-[210px] select-none">
+              <div className="absolute -bottom-2 -left-6 sm:left-0 z-30 bg-white rounded-2xl p-3 shadow-xl border border-slate-100 flex items-center gap-3 min-w-[210px]">
                 <div className="w-8 h-8 rounded-full bg-[#10B981] flex items-center justify-center shrink-0 shadow-xs text-white">
                   <Check className="w-4 h-4 stroke-[3]" />
                 </div>
@@ -238,7 +238,7 @@ export const MobileAppHero: React.FC<MobileAppHeroProps> = ({
         {/* MOBILE VIEW (< 768px): SHOW ONE BY ONE                          */}
         {/* Requirement: "only in bleow 768 show one by one"                 */}
         {/* ============================================================== */}
-        <div className="md:hidden space-y-5 pt-8 select-none max-w-sm mx-auto">
+        <div className="md:hidden space-y-5 pt-8 max-w-sm mx-auto">
           {/* Mobile Stepper Header with Cursor Click Controls */}
           <div className="flex items-center justify-between px-2">
             <span className="text-xs font-bold text-slate-500 uppercase tracking-wider">

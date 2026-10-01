@@ -242,7 +242,7 @@ export const MobileAppDeliveryProcessSection: React.FC = () => {
   const currentStep = DELIVERY_PROCESS_STEPS[mobileStep];
 
   return (
-    <section className="relative py-20 sm:py-24 lg:py-28 bg-[#FAFCFF] border-b border-slate-100 overflow-hidden select-none">
+    <section className="relative py-20 sm:py-24 lg:py-28 bg-[#FAFCFF] border-b border-slate-100 overflow-hidden">
       {/* ============================================================== */}
       {/* BLUEPRINT GRID BACKGROUND                                      */}
       {/* ============================================================== */}
@@ -429,7 +429,7 @@ export const MobileAppDeliveryProcessSection: React.FC = () => {
         {/* MOBILE VIEW (< 768px): SHOW ONE BY ONE                          */}
         {/* Requirement: "only in bleow 768 show one by one"                 */}
         {/* ============================================================== */}
-        <div className="md:hidden space-y-5 max-w-[230px] mx-auto select-none pt-4">
+        <div className="md:hidden space-y-5 max-w-[230px] mx-auto pt-4">
           {/* Stepper Header with Cursor Click Controls */}
           <div className="flex items-center justify-between px-1">
             <span className="text-xs font-bold text-slate-500 uppercase tracking-wider">

@@ -16,17 +16,17 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
   onNavigate,
 }) => {
   return (
-    <section className="relative overflow-hidden pt-12 pb-20 lg:pt-18 lg:pb-24 bg-gradient-to-b from-slate-50 via-white to-blue-50/30">
+    <section className="relative overflow-hidden pt-28 pb-6 sm:pt-26 sm:pb-8 lg:pt-28 lg:pb-10 bg-gradient-to-b from-slate-50 via-white to-blue-50/30">
       {/* Decorative background grid and gradient accents */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#18529B0a_1px,transparent_1px),linear-gradient(to_bottom,#18529B0a_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] pointer-events-none" />
-      
+
       {/* Subtle glowing ambient circles */}
       <div className="absolute -top-32 left-1/2 -translate-x-1/2 w-[720px] h-[360px] bg-gradient-to-tr from-blue-200/40 via-sky-100/30 to-transparent blur-3xl pointer-events-none rounded-full" />
 
       <Container className="relative z-10">
-        <div className="max-w-4xl mx-auto text-center space-y-6">
+        <div className="max-w-4xl mx-auto text-center space-y-4 sm:space-y-5">
           {/* Pill Badge */}
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-50 border border-blue-200/80 text-[#18529B] text-xs font-semibold tracking-wide shadow-xs">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-50 border border-blue-200/80 text-[#18529B] text-xs font-semibold tracking-wide shadow-xs">
             <span className="w-2 h-2 rounded-full bg-[#18529B] animate-pulse" />
             <span>Digital Engineering & Strategic IT Consulting</span>
             <span className="text-slate-300">•</span>
@@ -34,15 +34,12 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
           </div>
 
           {/* Headline from Home V1-2 */}
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 tracking-tight leading-[1.12] [text-wrap:balance]">
-            We Build Software That{' '}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#18529B] via-[#2563eb] to-[#0284c7]">
-              Moves Businesses Forward.
-            </span>
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 tracking-tight leading-[1.14] [text-wrap:balance]">
+            We Build Software That Moves Businesses Forward.
           </h1>
 
           {/* Subtitle */}
-          <p className="text-base sm:text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed [text-wrap:balance]">
+          <p className="text-sm sm:text-base text-slate-600 max-w-xl mx-auto leading-relaxed [text-wrap:balance]">
             From concept to enterprise deployment, we design, develop, and scale high-impact mobile apps, web systems, AI workflows, and global engineering pods that accelerate growth.
           </p>
 
@@ -119,11 +116,14 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
           <div className="p-6 sm:p-8 bg-gradient-to-br from-white to-blue-50/40">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {/* Feature card 1 */}
-              <div className="p-5 rounded-xl border border-slate-200/80 bg-white/90 shadow-xs space-y-3 hover:border-blue-300 transition-all">
-                <div className="w-10 h-10 rounded-lg bg-blue-50 text-[#18529B] flex items-center justify-center font-bold">
+              <div
+                onClick={() => onNavigate('service-detail', 'mobile-app')}
+                className="p-5 rounded-xl border border-slate-200/80 bg-white/90 shadow-xs space-y-3 hover:border-blue-400 hover:shadow-md transition-all cursor-pointer group"
+              >
+                <div className="w-10 h-10 rounded-lg bg-blue-50 text-[#18529B] group-hover:bg-[#18529B] group-hover:text-white transition-colors flex items-center justify-center font-bold">
                   01
                 </div>
-                <h3 className="font-bold text-slate-900 text-sm">Full-Cycle App Engineering</h3>
+                <h3 className="font-bold text-slate-900 group-hover:text-[#18529B] transition-colors text-sm">Full-Cycle App Engineering</h3>
                 <p className="text-xs text-slate-600 leading-relaxed">
                   Architecting native iOS, Android, and responsive web platforms with scalable microservices and zero-downtime CI/CD.
                 </p>
@@ -135,11 +135,14 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
               </div>
 
               {/* Feature card 2 */}
-              <div className="p-5 rounded-xl border border-blue-200 bg-gradient-to-b from-blue-50/50 to-white shadow-xs space-y-3 relative overflow-hidden">
+              <div
+                onClick={() => onNavigate('service-detail', 'ai-app')}
+                className="p-5 rounded-xl border border-blue-200 bg-gradient-to-b from-blue-50/50 to-white shadow-xs space-y-3 relative overflow-hidden hover:border-blue-400 hover:shadow-md transition-all cursor-pointer group"
+              >
                 <div className="w-10 h-10 rounded-lg bg-[#18529B] text-white flex items-center justify-center font-bold">
                   02
                 </div>
-                <h3 className="font-bold text-slate-900 text-sm">Enterprise AI & Cloud</h3>
+                <h3 className="font-bold text-slate-900 group-hover:text-[#18529B] transition-colors text-sm">Enterprise AI & Cloud</h3>
                 <p className="text-xs text-slate-600 leading-relaxed">
                   Integrating intelligent LLM workflows, automated predictive pipelines, AWS/Azure Kubernetes, and robust data security.
                 </p>
@@ -151,11 +154,14 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
               </div>
 
               {/* Feature card 3 */}
-              <div className="p-5 rounded-xl border border-slate-200/80 bg-white/90 shadow-xs space-y-3 hover:border-blue-300 transition-all">
-                <div className="w-10 h-10 rounded-lg bg-blue-50 text-[#18529B] flex items-center justify-center font-bold">
+              <div
+                onClick={() => onNavigate('service-detail', 'oem-sourcing')}
+                className="p-5 rounded-xl border border-slate-200/80 bg-white/90 shadow-xs space-y-3 hover:border-blue-400 hover:shadow-md transition-all cursor-pointer group"
+              >
+                <div className="w-10 h-10 rounded-lg bg-blue-50 text-[#18529B] group-hover:bg-[#18529B] group-hover:text-white transition-colors flex items-center justify-center font-bold">
                   03
                 </div>
-                <h3 className="font-bold text-slate-900 text-sm">OEM & Global Sourcing</h3>
+                <h3 className="font-bold text-slate-900 group-hover:text-[#18529B] transition-colors text-sm">OEM & Global Sourcing</h3>
                 <p className="text-xs text-slate-600 leading-relaxed">
                   Scaling development pods with pre-vetted international engineering squads, slashing overhead while maintaining elite quality.
                 </p>

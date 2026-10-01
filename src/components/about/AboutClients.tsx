@@ -118,7 +118,7 @@ export const AboutClients: React.FC = () => {
   const normalizedIndex = ((currentIndex % BASE_BRANDS.length) + BASE_BRANDS.length) % BASE_BRANDS.length;
 
   return (
-    <section className="relative overflow-hidden py-16 sm:py-20 lg:py-28 bg-white border-b border-slate-100 select-none">
+    <section className="relative overflow-hidden pt-16 pb-10 sm:pt-20 sm:pb-12 lg:pt-28 lg:pb-14 bg-white">
       <Container>
         {/* ============================================================== */}
         {/* SECTION HEADER                                                 */}
@@ -168,7 +168,7 @@ export const AboutClients: React.FC = () => {
                   <img
                     src={brand.image}
                     alt={brand.name}
-                    className="h-8 w-auto max-w-[170px] object-contain select-none pointer-events-none"
+                    className="h-8 w-auto max-w-[170px] object-contain pointer-events-none"
                     draggable={false}
                   />
                 </div>
@@ -182,7 +182,7 @@ export const AboutClients: React.FC = () => {
         {/* Requirement: "only in bleow 768 show one by one"                 */}
         {/* NO arrows - click or swipe to move forward / backward           */}
         {/* ============================================================== */}
-        <div className="md:hidden space-y-4 max-w-xs mx-auto select-none pt-2">
+        <div className="md:hidden space-y-4 max-w-xs mx-auto pt-2">
           {/* ACTIVE BRAND SHOWN ONE BY ONE AS CLEAN IMAGE */}
           <div
             onClick={moveForward}
@@ -193,7 +193,7 @@ export const AboutClients: React.FC = () => {
             <img
               src={BASE_BRANDS[mobileIndex].image}
               alt={BASE_BRANDS[mobileIndex].name}
-              className="h-8 w-auto max-w-[190px] object-contain select-none pointer-events-none"
+              className="h-8 w-auto max-w-[190px] object-contain pointer-events-none"
               draggable={false}
             />
           </div>

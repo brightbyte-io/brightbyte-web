@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { ToastProvider } from './components/ui/Toast';
 import { Navbar } from './components/layout/Navbar';
 import { Footer } from './components/layout/Footer';
@@ -12,11 +12,17 @@ import { BlogPage } from './pages/BlogPage';
 import { BlogPostPage } from './pages/BlogPostPage';
 import { ProjectInquiryModal } from './components/modals/ProjectInquiryModal';
 import { PageId } from './types';
+import { parseRoute, navigateTo, getRouteUrl } from './utils/router';
 
 export default function App() {
-  const [currentPage, setCurrentPage] = useState<PageId>('home');
-  const [selectedServiceId, setSelectedServiceId] = useState<string>('mobile-app-development');
-  const [selectedPostId, setSelectedPostId] = useState<string>('1');
+  const initialRoute = parseRoute();
+  const [currentPage, setCurrentPage] = useState<PageId>(initialRoute.page);
+  const [selectedServiceId, setSelectedServiceId] = useState<string>(
+    initialRoute.detailId || 'mobile-app'
+  );
+  const [selectedPostId, setSelectedPostId] = useState<string>(
+    initialRoute.detailId || '1'
+  );
   const [isConsultationOpen, setIsConsultationOpen] = useState(false);
   const [initialScope, setInitialScope] = useState<{
     serviceType?: string;
@@ -24,14 +30,38 @@ export default function App() {
     description?: string;
   } | undefined>(undefined);
 
-  const handleNavigate = (page: PageId, detailId?: string) => {
-    setCurrentPage(page);
-    if (page === 'service-detail' && detailId) {
-      setSelectedServiceId(detailId);
-    } else if (page === 'blog-post' && detailId) {
-      setSelectedPostId(detailId);
+  // Sync state whenever the URL link changes in the browser
+  useEffect(() => {
+    // If the browser address bar still has a /#/ or # from before, clean it to clean path immediately
+    if (window.location.hash) {
+      const { page, detailId } = parseRoute();
+      const cleanUrl = getRouteUrl(page, detailId);
+      window.history.replaceState(null, '', cleanUrl);
     }
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+
+    const handleUrlChange = () => {
+      const { page, detailId } = parseRoute();
+      setCurrentPage(page);
+      if (page === 'service-detail' && detailId) {
+        setSelectedServiceId(detailId);
+      } else if (page === 'blog-post' && detailId) {
+        setSelectedPostId(detailId);
+      }
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    };
+
+    window.addEventListener('popstate', handleUrlChange);
+    // Also listen to hashchange just in case an external anchor or old link is hit
+    window.addEventListener('hashchange', handleUrlChange);
+
+    return () => {
+      window.removeEventListener('popstate', handleUrlChange);
+      window.removeEventListener('hashchange', handleUrlChange);
+    };
+  }, []);
+
+  const handleNavigate = (page: PageId, detailId?: string) => {
+    navigateTo(page, detailId);
   };
 
   const handleOpenConsultation = () => {

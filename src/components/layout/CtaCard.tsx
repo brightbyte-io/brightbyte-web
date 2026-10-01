@@ -5,16 +5,18 @@ import { Button } from '../ui/Button';
 export interface CtaCardProps {
   onOpenConsultation?: () => void;
   onOpenCalendly?: () => void;
+  className?: string;
 }
 
 export const CtaCard: React.FC<CtaCardProps> = ({
   onOpenConsultation,
   onOpenCalendly,
+  className = '',
 }) => {
   return (
-    <div className="w-full max-w-6xl mx-auto px-4 sm:px-6 my-16 sm:my-20">
-      <div className="relative overflow-hidden rounded-3xl bg-gradient-to-r from-[#175094] via-[#1A5AA1] to-[#2069BD] px-6 py-14 sm:px-12 sm:py-16 text-center text-white shadow-xl">
-        {/* Subtle decorative background circles */}
+    <section className={`w-full max-w-6xl mx-auto px-4 sm:px-6 my-12 sm:my-16 ${className}`}>
+      <div className="relative overflow-hidden rounded-[32px] bg-gradient-to-r from-[#175094] via-[#1A5AA1] to-[#2069BD] px-6 py-12 sm:px-12 sm:py-16 text-center text-white shadow-xl shadow-blue-900/10">
+        {/* Subtle decorative background glow circles */}
         <div className="absolute -right-20 -top-20 w-80 h-80 rounded-full bg-white/5 pointer-events-none blur-xl" />
         <div className="absolute -left-20 -bottom-20 w-80 h-80 rounded-full bg-white/5 pointer-events-none blur-xl" />
 
@@ -32,8 +34,8 @@ export const CtaCard: React.FC<CtaCardProps> = ({
               size="lg"
               rounded="full"
               onClick={onOpenConsultation}
-              iconRight={<ArrowRight className="w-4 h-4" />}
-              className="w-full sm:w-auto shadow-md"
+              iconRight={<ArrowRight className="w-4 h-4 ml-1 text-[#18529B]" />}
+              className="w-full sm:w-auto shadow-md font-semibold text-sm px-8 py-3.5 bg-white text-[#18529B] hover:bg-blue-50"
             >
               Book a Free Call
             </Button>
@@ -41,15 +43,16 @@ export const CtaCard: React.FC<CtaCardProps> = ({
               variant="whiteOutline"
               size="lg"
               rounded="full"
-              onClick={onOpenCalendly}
-              iconLeft={<Calendar className="w-4 h-4 text-white/80" />}
-              className="w-full sm:w-auto"
+              onClick={onOpenCalendly || onOpenConsultation}
+              iconLeft={<Calendar className="w-4 h-4 text-white/90 mr-1" />}
+              className="w-full sm:w-auto border-white/60 hover:bg-white/10 text-white font-medium text-sm px-8 py-3.5"
             >
               Schedule on Calendly
             </Button>
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
+

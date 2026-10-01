@@ -2,14 +2,14 @@ import React, { useState, useEffect, useRef } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { Container } from '../layout/Container';
 
-// Exact double quotation mark SVG matching Group 1171278493.png
+// Exact double quotation mark SVG matching Figma
 const QuoteMarkIcon: React.FC<{ className?: string; isMuted?: boolean }> = ({
-  className = 'w-12 h-9',
+  className = 'w-9 h-6.5',
   isMuted = false,
 }) => (
   <svg
     viewBox="0 0 46 36"
-    className={`${className} ${isMuted ? 'text-[#82A2C6]' : 'text-[#18529B]'} fill-current transition-colors duration-450`}
+    className={`${className} ${isMuted ? 'text-[#9BB7D6]' : 'text-[#205CA4]'} fill-current transition-colors duration-300`}
     aria-hidden="true"
   >
     <path d="M13.2 0C5.9 0 0 5.9 0 13.2c0 7.3 4.4 13.3 10.9 14.8l-2 8h7.2l3.3-10.1c.8-2.3 1.3-4.8 1.3-7.5C20.7 5.9 17.3 0 13.2 0zm25.3 0C31.2 0 25.3 5.9 25.3 13.2c0 7.3 4.4 13.3 10.9 14.8l-2 8h7.2l3.3-10.1c.8-2.3 1.3-4.8 1.3-7.5C46 5.9 42.6 0 38.5 0z" />
@@ -54,14 +54,14 @@ export const HomeReviews: React.FC = () => {
   const [mobileAnimClass, setMobileAnimClass] = useState('opacity-100 scale-100 translate-x-0');
 
   const centerCardRef = useRef<HTMLDivElement>(null);
-  const [stepPx, setStepPx] = useState(628);
+  const [stepPx, setStepPx] = useState(500);
 
-  // Measure card step (card width + gap) for exact sliding physics
+  // Measure card step (card width + 20px gap) for exact sliding physics matching Figma
   useEffect(() => {
     const updateDimensions = () => {
       if (centerCardRef.current) {
         const width = centerCardRef.current.offsetWidth;
-        const gap = window.innerWidth >= 1024 ? 32 : 24;
+        const gap = 20;
         setStepPx(width + gap);
       }
     };
@@ -78,7 +78,7 @@ export const HomeReviews: React.FC = () => {
     setIsAnimating(true);
     setAnimDirection('next');
 
-    // Mobile animation: old goes back (shrinks & slides left)
+    // Mobile animation: old goes back
     setMobileAnimClass('opacity-0 scale-95 -translate-x-8');
 
     setTimeout(() => {
@@ -101,7 +101,7 @@ export const HomeReviews: React.FC = () => {
     setIsAnimating(true);
     setAnimDirection('prev');
 
-    // Mobile animation: old goes back (shrinks & slides right)
+    // Mobile animation: old goes back
     setMobileAnimClass('opacity-0 scale-95 translate-x-8');
 
     setTimeout(() => {
@@ -139,49 +139,54 @@ export const HomeReviews: React.FC = () => {
   };
 
   return (
-    <section className="py-16 sm:py-20 lg:py-24 bg-white border-b border-slate-100 overflow-hidden relative select-none">
+    <section className="pt-6 pb-8 sm:pt-8 sm:pb-10 lg:pt-10 lg:pb-12 bg-white overflow-hidden relative">
       <Container>
         {/* ============================================================== */}
         {/* SECTION HEADER                                                 */}
+        {/* Single line title, exact typography matching Figma              */}
         {/* ============================================================== */}
-        <div className="max-w-3xl mx-auto text-center mb-12 sm:mb-16 space-y-2.5">
-          <span className="text-xs font-extrabold uppercase tracking-widest text-[#18529B]">
+        <div className="max-w-4xl mx-auto text-center mb-8 sm:mb-10 space-y-2">
+          <span className="text-xs font-bold uppercase tracking-wider text-[#18529B]">
             CLIENT REVIEWS
           </span>
-          <h2 className="text-3xl sm:text-4xl lg:text-[44px] font-extrabold text-slate-950 tracking-tight leading-tight">
+          <h2 className="text-2xl sm:text-3xl lg:text-[34px] font-bold text-slate-950 tracking-tight leading-snug whitespace-normal sm:whitespace-nowrap">
             Our work has got people vouching for us!
           </h2>
         </div>
       </Container>
 
       {/* ================================================================ */}
-      {/* DESKTOP & TABLET VIEW (>= 768px): MATCHING Group 1171278493.png   */}
-      {/* Equal-height solid cards with active center & muted side cards   */}
+      {/* DESKTOP & TABLET VIEW (>= 768px): MATCHING FIGMA SCREENSHOT      */}
+      {/* Active card translated down by 18px, generous height for 4 lines */}
       {/* ================================================================ */}
       <div className="hidden md:block relative w-full overflow-hidden py-3">
+        {/* Left and right smooth white fade overlays matching Figma */}
+        <div className="pointer-events-none absolute left-0 top-0 bottom-0 w-20 lg:w-32 bg-gradient-to-r from-white via-white/80 to-transparent z-10" />
+        <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-20 lg:w-32 bg-gradient-to-l from-white via-white/80 to-transparent z-10" />
+
+        {/* Outer navigation buttons placed on the left & right sides matching Figma */}
+        <button
+          onClick={handlePrev}
+          disabled={isAnimating}
+          aria-label="Previous client review"
+          className="absolute left-3 sm:left-6 lg:left-8 top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-full bg-white shadow-md border border-slate-100 flex items-center justify-center text-slate-700 hover:text-[#18529B] hover:scale-105 active:scale-95 transition-all cursor-pointer disabled:opacity-50"
+        >
+          <ChevronLeft className="w-5 h-5 stroke-[2]" />
+        </button>
+
+        <button
+          onClick={handleNext}
+          disabled={isAnimating}
+          aria-label="Next client review"
+          className="absolute right-3 sm:right-6 lg:right-8 top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-full bg-white shadow-md border border-slate-100 flex items-center justify-center text-slate-700 hover:text-[#18529B] hover:scale-105 active:scale-95 transition-all cursor-pointer disabled:opacity-50"
+        >
+          <ChevronRight className="w-5 h-5 stroke-[2]" />
+        </button>
+
+        {/* Sliding carousel track */}
         <div className="relative max-w-[1440px] mx-auto flex items-center justify-center">
-          {/* FLOATING NAVIGATION BUTTONS ON JUNCTIONS */}
-          <button
-            onClick={handlePrev}
-            disabled={isAnimating}
-            aria-label="Previous client review"
-            className="absolute left-[calc(50%-280px)] lg:left-[calc(50%-325px)] top-1/2 -translate-y-1/2 z-30 w-11 h-11 rounded-full bg-white shadow-lg border border-slate-100 flex items-center justify-center text-slate-700 hover:text-[#18529B] hover:scale-105 active:scale-95 transition-all cursor-pointer disabled:opacity-50"
-          >
-            <ChevronLeft className="w-5 h-5" />
-          </button>
-
-          <button
-            onClick={handleNext}
-            disabled={isAnimating}
-            aria-label="Next client review"
-            className="absolute right-[calc(50%-280px)] lg:right-[calc(50%-325px)] top-1/2 -translate-y-1/2 z-30 w-11 h-11 rounded-full bg-white shadow-lg border border-slate-100 flex items-center justify-center text-slate-700 hover:text-[#18529B] hover:scale-105 active:scale-95 transition-all cursor-pointer disabled:opacity-50"
-          >
-            <ChevronRight className="w-5 h-5" />
-          </button>
-
-          {/* SLIDING CAROUSEL TRACK */}
           <div
-            className="flex items-center justify-center gap-6 lg:gap-8 will-change-transform"
+            className="flex items-start justify-center gap-5 will-change-transform py-6"
             style={{
               transform: getTrackTransform(),
               transition: animDirection
@@ -205,25 +210,25 @@ export const HomeReviews: React.FC = () => {
                     if (slotPos < 2) handlePrev();
                     if (slotPos > 2) handleNext();
                   }}
-                  className={`w-[540px] lg:w-[600px] h-[340px] shrink-0 bg-[#EEF2F6] rounded-[32px] p-9 sm:p-10 lg:p-12 flex flex-col justify-between border border-slate-200/50 transition-all duration-450 ease-[cubic-bezier(0.22,1,0.36,1)] ${
+                  className={`w-[440px] md:w-[470px] lg:w-[480px] h-[250px] sm:h-[255px] shrink-0 bg-[#EEF2F5] rounded-[24px] p-6 sm:px-7 sm:py-6 flex flex-col justify-between border border-slate-200/40 transition-all duration-450 ease-[cubic-bezier(0.22,1,0.36,1)] ${
                     isSlotActive
-                      ? 'cursor-default shadow-xs'
-                      : 'cursor-pointer hover:bg-[#E9EFF5]'
+                      ? 'cursor-default translate-y-[18px]'
+                      : 'cursor-pointer hover:bg-[#E9EFF4] translate-y-0'
                   }`}
                 >
-                  <div className="space-y-5">
-                    {/* Double quotation mark icon matching Group 1171278493.png */}
+                  <div className="space-y-3">
+                    {/* Double quotation mark icon */}
                     <QuoteMarkIcon
                       isMuted={!isSlotActive}
-                      className="w-12 h-9"
+                      className="w-9 h-6.5"
                     />
 
-                    {/* Review quote text: exactly 3 lines in center card */}
+                    {/* Review quote text: formatted with generous line-height so 4-line quotes never crowd the author */}
                     <p
-                      className={`text-lg sm:text-[19px] lg:text-[20px] leading-[1.65] tracking-[-0.01em] transition-colors duration-450 ${
+                      className={`text-sm sm:text-[14.5px] leading-[1.55] tracking-normal transition-colors duration-450 ${
                         isSlotActive
-                          ? 'text-slate-900 font-normal'
-                          : 'text-[#7A8A9C] font-normal line-clamp-3'
+                          ? 'text-slate-800 font-normal'
+                          : 'text-[#8C9BA8] font-normal line-clamp-3'
                       }`}
                     >
                       {review.quote}
@@ -231,17 +236,17 @@ export const HomeReviews: React.FC = () => {
                   </div>
 
                   {/* Author Name and Location */}
-                  <div className="pt-4">
+                  <div className="pt-2">
                     <h4
-                      className={`text-base sm:text-[17px] font-bold transition-colors duration-450 ${
-                        isSlotActive ? 'text-slate-950' : 'text-[#617284]'
+                      className={`text-sm sm:text-[15px] font-bold transition-colors duration-450 ${
+                        isSlotActive ? 'text-slate-950' : 'text-[#8C9BA8]'
                       }`}
                     >
                       {review.author}
                     </h4>
                     <p
-                      className={`text-xs sm:text-sm font-normal mt-0.5 transition-colors duration-450 ${
-                        isSlotActive ? 'text-slate-500' : 'text-[#93A2B3]'
+                      className={`text-xs font-normal mt-0.5 transition-colors duration-450 ${
+                        isSlotActive ? 'text-slate-500' : 'text-[#A3B3C2]'
                       }`}
                     >
                       {review.location}
@@ -252,33 +257,12 @@ export const HomeReviews: React.FC = () => {
             })}
           </div>
         </div>
-
-        {/* Carousel indicator dots */}
-        <div className="flex items-center justify-center gap-2 pt-8">
-          {reviews.map((rev, idx) => (
-            <button
-              key={rev.id}
-              onClick={() => {
-                if (isAnimating || currentIndex === idx) return;
-                if (idx > currentIndex) handleNext();
-                else handlePrev();
-              }}
-              aria-label={`Go to review ${idx + 1}`}
-              className={`transition-all rounded-full h-1.5 cursor-pointer ${
-                currentIndex === idx
-                  ? 'w-7 bg-[#18529B]'
-                  : 'w-2 bg-slate-300 hover:bg-slate-400'
-              }`}
-            />
-          ))}
-        </div>
       </div>
 
       {/* ================================================================ */}
-      {/* MOBILE VIEW (< 768px): SHOW ONE BY ONE                          */}
-      {/* Requirement: "only in bleow 768 show one by one"                 */}
+      {/* MOBILE VIEW (< 768px): SINGLE CARD WITH CONTROLS                 */}
       {/* ================================================================ */}
-      <div className="md:hidden px-4 max-w-md mx-auto space-y-5">
+      <div className="md:hidden px-4 max-w-sm mx-auto space-y-4">
         {/* Header with counter and Prev/Next buttons */}
         <div className="flex items-center justify-between px-1">
           <span className="text-xs font-bold text-slate-500 uppercase tracking-wider">
@@ -289,34 +273,34 @@ export const HomeReviews: React.FC = () => {
               onClick={handlePrev}
               disabled={isAnimating}
               aria-label="Previous review"
-              className="w-8 h-8 rounded-full bg-white text-slate-700 shadow-xs hover:bg-slate-50 flex items-center justify-center transition-colors cursor-pointer border border-slate-200 disabled:opacity-50"
+              className="w-9 h-9 rounded-full bg-white text-slate-700 shadow-xs hover:bg-slate-50 flex items-center justify-center transition-colors cursor-pointer border border-slate-200 disabled:opacity-50"
             >
-              <ChevronLeft className="w-4 h-4" />
+              <ChevronLeft className="w-4 h-4 stroke-[2]" />
             </button>
             <button
               onClick={handleNext}
               disabled={isAnimating}
               aria-label="Next review"
-              className="w-8 h-8 rounded-full bg-[#18529B] text-white shadow-xs hover:bg-[#133F77] flex items-center justify-center transition-colors cursor-pointer disabled:opacity-50"
+              className="w-9 h-9 rounded-full bg-[#18529B] text-white shadow-xs hover:bg-[#133F77] flex items-center justify-center transition-colors cursor-pointer disabled:opacity-50"
             >
-              <ChevronRight className="w-4 h-4" />
+              <ChevronRight className="w-4 h-4 stroke-[2]" />
             </button>
           </div>
         </div>
 
-        {/* ACTIVE CARD SHOWN ONE BY ONE MATCHING Group 1171278493.png */}
-        <div className="relative overflow-hidden min-h-[280px] flex items-center justify-center">
+        {/* ACTIVE CARD MATCHING FIGMA STYLING */}
+        <div className="relative overflow-hidden min-h-[235px] flex items-center justify-center">
           <div
-            className={`w-full bg-[#EEF2F6] rounded-[32px] p-8 shadow-sm border border-slate-200/50 flex flex-col justify-between min-h-[280px] space-y-6 transition-all duration-300 ease-out will-change-transform ${mobileAnimClass}`}
+            className={`w-full bg-[#EEF2F5] rounded-[24px] p-6 shadow-sm border border-slate-200/40 flex flex-col justify-between min-h-[235px] space-y-4 transition-all duration-300 ease-out will-change-transform ${mobileAnimClass}`}
           >
-            <div className="space-y-4">
-              <QuoteMarkIcon className="w-11 h-8" />
-              <p className="text-base text-slate-900 leading-relaxed font-normal">
+            <div className="space-y-3">
+              <QuoteMarkIcon className="w-9 h-6 text-[#18529B]" />
+              <p className="text-sm text-slate-800 leading-relaxed font-normal">
                 {reviews[currentIndex].quote}
               </p>
             </div>
             <div>
-              <h4 className="text-base font-bold text-slate-950">
+              <h4 className="text-sm font-bold text-slate-950">
                 {reviews[currentIndex].author}
               </h4>
               <p className="text-xs text-slate-500 font-normal mt-0.5">
@@ -324,26 +308,6 @@ export const HomeReviews: React.FC = () => {
               </p>
             </div>
           </div>
-        </div>
-
-        {/* Indicator dots for mobile navigation */}
-        <div className="flex items-center justify-center gap-1.5 pt-1">
-          {reviews.map((rev, idx) => (
-            <button
-              key={rev.id}
-              onClick={() => {
-                if (isAnimating || currentIndex === idx) return;
-                if (idx > currentIndex) handleNext();
-                else handlePrev();
-              }}
-              aria-label={`Go to review ${idx + 1}`}
-              className={`transition-all rounded-full h-1.5 cursor-pointer ${
-                currentIndex === idx
-                  ? 'w-6 bg-[#18529B]'
-                  : 'w-1.5 bg-slate-300 hover:bg-slate-400'
-              }`}
-            />
-          ))}
         </div>
       </div>
     </section>

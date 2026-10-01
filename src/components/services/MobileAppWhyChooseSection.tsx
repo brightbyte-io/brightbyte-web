@@ -50,7 +50,7 @@ export const MobileAppWhyChooseSection: React.FC = () => {
   const currentItem = WHY_CHOOSE_DATA[mobileIndex];
 
   return (
-    <section className="relative py-20 sm:py-24 lg:py-28 bg-[#EEF4F9] border-b border-slate-100 overflow-hidden select-none">
+    <section className="relative py-20 sm:py-24 lg:py-28 bg-[#EEF4F9] border-b border-slate-100 overflow-hidden">
       {/* Background soft ambient curved light rings matching Frame 2121455056.png */}
       <div className="absolute -left-36 top-6 w-[520px] h-[520px] rounded-full border-[70px] border-white/55 blur-2xl pointer-events-none -z-0" />
       <div className="absolute -right-36 -bottom-16 w-[580px] h-[580px] rounded-full border-[80px] border-white/60 blur-2xl pointer-events-none -z-0" />
@@ -104,7 +104,7 @@ export const MobileAppWhyChooseSection: React.FC = () => {
         {/* MOBILE VIEW (< 768px): SHOW ONE BY ONE                          */}
         {/* Requirement: "only in bleow 768 show one by one"                 */}
         {/* ============================================================== */}
-        <div className="md:hidden space-y-4 max-w-sm mx-auto select-none pt-2">
+        <div className="md:hidden space-y-4 max-w-sm mx-auto pt-2">
           {/* Mobile Stepper Header with Cursor Click Controls */}
           <div className="flex items-center justify-between px-2">
             <span className="text-xs font-bold text-slate-500 uppercase tracking-wider">

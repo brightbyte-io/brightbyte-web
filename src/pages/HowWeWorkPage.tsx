@@ -5,7 +5,7 @@ import { HowWeWorkHero } from '../components/howWeWork/HowWeWorkHero';
 import { HowWeWorkEngagementModelsSection } from '../components/howWeWork/HowWeWorkEngagementModelsSection';
 import { MobileAppDeliveryProcessSection } from '../components/services/MobileAppDeliveryProcessSection';
 import { MobileAppTechnologiesSection } from '../components/services/MobileAppTechnologiesSection';
-import { MobileAppFaqSection } from '../components/services/MobileAppFaqSection';
+import { FaqSection } from '../components/layout/FaqSection';
 import { PageId } from '../types';
 
 export interface HowWeWorkPageProps {
@@ -31,18 +31,14 @@ export const HowWeWorkPage: React.FC<HowWeWorkPageProps> = ({
       {/* 4. "What we build with" Section from Mobile App Development */}
       <MobileAppTechnologiesSection />
 
-      {/* 5. "Frequently Asked Questions" Section from Mobile App Development */}
-      <MobileAppFaqSection />
+      {/* 5. "Frequently Asked Questions" Section */}
+      <FaqSection page="how-we-work" />
 
       {/* Pre-footer Call to Action: "Ready to build something great?" */}
-      <div className="py-16 sm:py-20 lg:py-24 bg-white">
-        <Container>
-          <CtaCard
-            onOpenConsultation={onOpenConsultation}
-            onOpenCalendly={onOpenConsultation}
-          />
-        </Container>
-      </div>
+      <CtaCard
+        onOpenConsultation={onOpenConsultation}
+        onOpenCalendly={onOpenConsultation}
+      />
     </div>
   );
 };

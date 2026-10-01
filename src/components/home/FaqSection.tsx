@@ -13,7 +13,7 @@ export const FaqSection: React.FC = () => {
   };
 
   return (
-    <section className="py-20 lg:py-28 bg-white border-b border-slate-200/80">
+    <section className="py-20 lg:py-28 bg-white">
       <Container>
         {/* Section Header */}
         <div className="max-w-3xl mx-auto text-center mb-16 space-y-4">

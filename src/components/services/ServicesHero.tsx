@@ -31,7 +31,7 @@ export const ServicesHero: React.FC = () => {
   const prevStep = () => setMobileStep((prev) => (prev - 1 + mobileSlides.length) % mobileSlides.length);
 
   return (
-    <section className="relative overflow-hidden pt-8 pb-16 sm:pt-14 sm:pb-20 lg:pt-16 lg:pb-24 bg-gradient-to-b from-[#F5F9FE] via-[#F8FBFE] to-white border-b border-slate-100 select-none">
+    <section className="relative overflow-hidden pt-24 pb-12 sm:pt-28 sm:pb-16 lg:pt-32 lg:pb-20 bg-gradient-to-b from-[#F5F9FE] via-[#F8FBFE] to-white border-b border-slate-100">
       {/* Background ambient soft glows */}
       <div className="absolute top-1/4 left-1/4 w-[550px] h-[550px] bg-sky-100/40 rounded-full blur-3xl pointer-events-none -z-0" />
       <div className="absolute -top-12 right-0 w-[550px] h-[550px] bg-blue-50/50 rounded-full blur-3xl pointer-events-none -z-0" />
@@ -159,7 +159,7 @@ export const ServicesHero: React.FC = () => {
                 {/* Window body split into sidebar and editor */}
                 <div className="flex">
                   {/* Left Sidebar */}
-                  <div className="w-[95px] bg-[#172033]/70 p-2.5 text-[11px] font-mono text-slate-400 space-y-2 border-r border-slate-700/40 select-none">
+                  <div className="w-[95px] bg-[#172033]/70 p-2.5 text-[11px] font-mono text-slate-400 space-y-2 border-r border-slate-700/40">
                     <div className="flex items-center gap-1.5 text-slate-300">
                       <Folder className="w-3 h-3 text-[#38BDF8]" />
                       <span>components</span>
@@ -183,7 +183,7 @@ export const ServicesHero: React.FC = () => {
                   </div>
 
                   {/* Right Code Editor Pane */}
-                  <div className="flex-1 p-3 text-[11px] font-mono leading-relaxed text-slate-200 select-none">
+                  <div className="flex-1 p-3 text-[11px] font-mono leading-relaxed text-slate-200">
                     <div className="text-emerald-400 font-semibold mb-1">// Build feature</div>
                     <div className="text-slate-300">
                       <span className="text-[#38BDF8]">const</span> Feature = () =&gt; &#123;
@@ -225,7 +225,7 @@ export const ServicesHero: React.FC = () => {
         {/* MOBILE VIEW (< 768px): SHOW ONE BY ONE                          */}
         {/* Requirement: "only in bleow 768 show one by one"                 */}
         {/* ============================================================== */}
-        <div className="md:hidden space-y-6 pt-6 select-none max-w-sm mx-auto">
+        <div className="md:hidden space-y-6 pt-6 max-w-sm mx-auto">
           {/* Mobile Stepper Header with Cursor Click Controls */}
           <div className="flex items-center justify-between px-2">
             <span className="text-xs font-bold text-slate-500 uppercase tracking-wider">

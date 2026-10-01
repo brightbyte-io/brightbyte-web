@@ -15,7 +15,7 @@ export const HowWeWorkHero: React.FC = () => {
   };
 
   return (
-    <section className="relative pt-10 pb-16 sm:pt-14 sm:pb-20 lg:pt-16 lg:pb-24 bg-[#F3F6FA] border-b border-slate-200/60 overflow-hidden select-none">
+    <section className="relative pt-24 pb-12 sm:pt-28 sm:pb-16 lg:pt-32 lg:pb-20 bg-[#F3F6FA] border-b border-slate-200/60 overflow-hidden">
       <Container>
         {/* ============================================================== */}
         {/* DESKTOP & TABLET VIEW (>= 768px): EXACT MATCH TO How we workss.png */}
@@ -64,7 +64,7 @@ export const HowWeWorkHero: React.FC = () => {
         {/* MOBILE VIEW (< 768px): SHOW ONE BY ONE                          */}
         {/* Requirement: "only in bleow 768 show one by one"                 */}
         {/* ============================================================== */}
-        <div className="md:hidden space-y-6 select-none">
+        <div className="md:hidden space-y-6">
           {/* Stepper Header with Navigation */}
           <div className="flex items-center justify-between px-1 text-slate-500">
             <span className="text-xs font-bold text-slate-500 uppercase tracking-wider">

@@ -59,7 +59,7 @@ export const MobileAppProjectsSection: React.FC = () => {
   const currentProject = PORTFOLIO_PROJECTS[activeStep];
 
   return (
-    <section className="relative py-20 sm:py-24 lg:py-28 bg-[#FAFCFF] border-b border-slate-100 overflow-hidden select-none">
+    <section className="relative py-20 sm:py-24 lg:py-28 bg-[#FAFCFF] border-b border-slate-100 overflow-hidden">
       {/* ============================================================== */}
       {/* AMBIENT CURVED WATERMARK ACCENT IN BOTTOM RIGHT               */}
       {/* Exactly matching subtle curved arc in Frame 2121455066.png    */}
@@ -130,7 +130,7 @@ export const MobileAppProjectsSection: React.FC = () => {
         {/* MOBILE VIEW (< 768px): SHOW ONE BY ONE                          */}
         {/* Requirement: "only in bleow 768 show one by one"                 */}
         {/* ============================================================== */}
-        <div className="md:hidden space-y-5 max-w-sm mx-auto select-none pt-2">
+        <div className="md:hidden space-y-5 max-w-sm mx-auto pt-2">
           {/* Stepper Header with Navigation Buttons */}
           <div className="flex items-center justify-between px-2 text-slate-500">
             <span className="text-xs font-bold text-slate-500 uppercase tracking-wider">

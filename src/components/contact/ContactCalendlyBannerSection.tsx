@@ -25,7 +25,7 @@ export const ContactCalendlyBannerSection: React.FC<ContactCalendlyBannerSection
   };
 
   return (
-    <section className="relative py-12 sm:py-16 bg-white overflow-hidden select-none">
+    <section className="relative py-12 sm:py-16 bg-white overflow-hidden">
       <Container>
         {/* ============================================================== */}
         {/* BANNER CARD CONTAINER: EXACT MATCH TO Frame 2121455058.png     */}

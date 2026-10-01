@@ -12,46 +12,50 @@ export const HomeHero: React.FC<HomeHeroProps> = ({
   onNavigate,
 }) => {
   return (
-    <section className="relative overflow-hidden pt-6 pb-12 lg:pt-10 lg:pb-16 bg-gradient-to-r from-white via-white to-blue-50/50">
+    <section className="relative overflow-hidden pt-28 pb-4 sm:pt-26 sm:pb-6 lg:pt-28 lg:pb-8 bg-gradient-to-r from-white via-white to-blue-50/50">
       {/* Background ambient light wash on right side */}
       <div className="absolute top-1/2 right-0 -translate-y-1/2 w-[700px] h-[600px] bg-gradient-to-bl from-blue-100/40 via-sky-50/30 to-transparent blur-3xl pointer-events-none -z-0" />
 
       <Container className="relative z-10">
         {/* For all screens >= 768px (md), display in the same row; below 768px, display in the second line (stacked) */}
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-6 lg:gap-8 items-center min-h-0 md:min-h-[460px] lg:min-h-[500px]">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-6 lg:gap-8 items-center min-h-0">
           {/* Left Column: Heading and CTAs */}
-          <div className="md:col-span-6 lg:col-span-6 space-y-5 lg:space-y-6 md:pr-2">
-            <h1 className="text-3xl sm:text-4xl md:text-[34px] lg:text-[50px] xl:text-[56px] font-extrabold text-slate-950 tracking-tight leading-[1.14]">
-              We build software that<br className="hidden sm:inline" />
-              moves businesses<br className="hidden sm:inline" />
+          <div className="md:col-span-6 lg:col-span-6 space-y-4 lg:space-y-5 md:pr-2">
+            <h1 className="text-2xl sm:text-3xl md:text-[30px] lg:text-[42px] xl:text-[48px] font-extrabold text-slate-950 tracking-tight leading-[1.15]">
+              We build software that
+              moves businesses
               forward.
             </h1>
 
-            <p className="text-sm sm:text-base lg:text-lg text-slate-500 leading-relaxed max-w-lg font-normal">
+            <p className="text-sm sm:text-base lg:text-[17px] text-slate-500 leading-relaxed max-w-md font-normal">
               From mobile apps and AI tools to ERP systems, DevOps, and global OEM sourcing, one experienced team across two continents.
             </p>
 
             <div className="flex flex-col sm:flex-row md:flex-row flex-wrap items-start sm:items-center gap-3 sm:gap-4 pt-1 sm:pt-2">
               <button
                 onClick={onOpenConsultation}
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 sm:px-7 py-3 sm:py-3.5 rounded-full bg-[#18529B] hover:bg-[#133F77] text-white font-semibold text-xs sm:text-sm transition-all shadow-md shadow-blue-900/10 cursor-pointer"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 sm:px-6 py-2.5 sm:py-3 rounded-full bg-[#18529B] hover:bg-[#133F77] text-white font-semibold text-xs sm:text-sm transition-all shadow-md shadow-blue-900/10 cursor-pointer"
               >
                 <span>Get a free consultation</span>
                 <span className="text-base font-normal leading-none">→</span>
               </button>
 
-              <button
-                onClick={() => onNavigate('services')}
-                className="w-full sm:w-auto inline-flex items-center justify-center px-6 sm:px-7 py-3 sm:py-3.5 rounded-full bg-white/90 hover:bg-white text-[#18529B] font-semibold text-xs sm:text-sm transition-all border border-[#18529B]/30 hover:border-[#18529B]/60 cursor-pointer shadow-2xs"
+              <a
+                href="/services"
+                onClick={(e) => {
+                  e.preventDefault();
+                  onNavigate('services');
+                }}
+                className="w-full sm:w-auto inline-flex items-center justify-center px-5 sm:px-6 py-2.5 sm:py-3 rounded-full bg-white/90 hover:bg-white text-[#18529B] font-semibold text-xs sm:text-sm transition-all border border-[#18529B]/30 hover:border-[#18529B]/60 cursor-pointer shadow-2xs"
               >
                 View Services
-              </button>
+              </a>
             </div>
           </div>
 
           {/* Right Column: 3D Isometric Network Architecture (same row on >=768px, second line on <768px) */}
           <div className="md:col-span-6 lg:col-span-6 flex justify-center md:justify-end">
-            <div className="relative w-full max-w-[500px] md:max-w-[420px] lg:max-w-[620px] aspect-[16/11]">
+            <div className="relative w-full max-w-[440px] md:max-w-[380px] lg:max-w-[540px] aspect-[16/11]">
               <svg
                 viewBox="0 0 760 540"
                 className="w-full h-full drop-shadow-md select-none"

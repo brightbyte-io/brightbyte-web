@@ -8,7 +8,7 @@ const QuoteMarkIcon: React.FC<{ className?: string }> = ({
 }) => (
   <svg
     viewBox="0 0 46 36"
-    className={`${className} text-[#18529B] fill-current select-none`}
+    className={`${className} text-[#18529B] fill-current`}
     aria-hidden="true"
   >
     <path d="M13.2 0C5.9 0 0 5.9 0 13.2c0 7.3 4.4 13.3 10.9 14.8l-2 8h7.2l3.3-10.1c.8-2.3 1.3-4.8 1.3-7.5C20.7 5.9 17.3 0 13.2 0zm25.3 0C31.2 0 25.3 5.9 25.3 13.2c0 7.3 4.4 13.3 10.9 14.8l-2 8h7.2l3.3-10.1c.8-2.3 1.3-4.8 1.3-7.5C46 5.9 42.6 0 38.5 0z" />
@@ -51,7 +51,7 @@ export const AboutMission: React.FC = () => {
   };
 
   return (
-    <section className="relative overflow-hidden py-16 sm:py-20 lg:py-24 bg-gradient-to-b from-[#F9FBFE] via-[#F4F8FD] to-white border-b border-slate-100 select-none">
+    <section className="relative overflow-hidden py-16 sm:py-20 lg:py-24 bg-gradient-to-b from-[#F9FBFE] via-[#F4F8FD] to-white border-b border-slate-100">
       {/* Ambient background soft light and rings */}
       <div className="absolute -left-24 bottom-12 w-[500px] h-[500px] bg-sky-100/40 rounded-full blur-3xl pointer-events-none -z-0" />
       <div className="absolute -right-32 -bottom-24 w-[580px] h-[580px] rounded-full border-[70px] border-blue-100/40 blur-2xl pointer-events-none -z-0" />
@@ -121,7 +121,7 @@ export const AboutMission: React.FC = () => {
         {/* MOBILE VIEW (< 768px): SHOW ONE BY ONE                          */}
         {/* Requirement: "only in bleow 768 show one by one"                 */}
         {/* ============================================================== */}
-        <div className="md:hidden space-y-8 max-w-sm mx-auto select-none">
+        <div className="md:hidden space-y-8 max-w-sm mx-auto">
           {/* 1. Feature Cards Shown One by One */}
           <div className="space-y-4">
             <div className="flex items-center justify-between px-1">

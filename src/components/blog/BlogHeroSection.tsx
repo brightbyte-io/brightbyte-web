@@ -329,7 +329,7 @@ export const BlogHeroSection: React.FC<BlogHeroSectionProps> = ({
   };
 
   return (
-    <section className="relative pt-6 sm:pt-10 pb-12 sm:pb-16 bg-white overflow-hidden select-none">
+    <section className="relative pt-24 sm:pt-28 lg:pt-32 pb-12 sm:pb-16 bg-white overflow-hidden">
       {/* ============================================================== */}
       {/* AMBIENT CURVED BLUE BACKGROUND RIBBONS MATCHING Blog Mainss.png */}
       {/* ============================================================== */}

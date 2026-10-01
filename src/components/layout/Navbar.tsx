@@ -47,38 +47,51 @@ export const Navbar: React.FC<NavbarProps> = ({
   };
 
   return (
-    <header className="sticky top-4 z-40 w-full px-4 sm:px-6">
-      <div className="max-w-6xl mx-auto">
+    <header className="fixed top-3 sm:top-4 left-0 right-0 z-40 w-full px-4 sm:px-6 pointer-events-none">
+      <div className="max-w-6xl mx-auto pointer-events-auto">
         <nav className="relative flex items-center justify-between px-6 py-2.5 bg-white/95 backdrop-blur-md rounded-2xl border border-slate-200/90 shadow-[0_4px_20px_-4px_rgba(15,23,42,0.06)]">
           {/* Left Group: Logo + Navigation Links */}
           <div className="flex items-center gap-7 lg:gap-9">
             {/* Brand Logo */}
-            <div
-              onClick={() => handleNavClick('home')}
+            <a
+              href="/"
+              onClick={(e) => {
+                e.preventDefault();
+                handleNavClick('home');
+              }}
               className="cursor-pointer transition-opacity hover:opacity-90 flex items-center shrink-0"
+              aria-label="BrightByte Home"
             >
               <Logo size="md" />
-            </div>
+            </a>
 
             {/* Desktop Navigation Links - Positioned on the Left */}
             <div className="hidden md:flex items-center space-x-6 lg:space-x-8">
-              <button
-                onClick={() => handleNavClick('home')}
+              <a
+                href="/"
+                onClick={(e) => {
+                  e.preventDefault();
+                  handleNavClick('home');
+                }}
                 className={`text-sm font-medium transition-colors hover:text-[#18529B] cursor-pointer ${
                   currentPage === 'home' ? 'text-[#18529B] font-semibold' : 'text-slate-700'
                 }`}
               >
                 Home
-              </button>
+              </a>
 
-              <button
-                onClick={() => handleNavClick('about')}
+              <a
+                href="/about"
+                onClick={(e) => {
+                  e.preventDefault();
+                  handleNavClick('about');
+                }}
                 className={`text-sm font-medium transition-colors hover:text-[#18529B] cursor-pointer ${
                   currentPage === 'about' ? 'text-[#18529B] font-semibold' : 'text-slate-700'
                 }`}
               >
                 About
-              </button>
+              </a>
 
               {/* Services Dropdown */}
               <div className="relative" ref={dropdownRef}>
@@ -105,54 +118,74 @@ export const Navbar: React.FC<NavbarProps> = ({
                     </div>
                     <div className="space-y-1">
                       {servicesData.map((service) => (
-                        <button
+                        <a
                           key={service.id}
-                          onClick={() => handleServiceSelect(service.id)}
+                          href={`/services/${service.id}`}
+                          onClick={(e) => {
+                            e.preventDefault();
+                            handleServiceSelect(service.id);
+                          }}
                           className="w-full text-left px-3 py-2 text-xs font-medium text-slate-700 hover:text-[#18529B] hover:bg-slate-50 rounded-lg transition-colors flex items-center justify-between group cursor-pointer"
                         >
                           <span>{service.title}</span>
                           <ArrowRight className="w-3.5 h-3.5 text-slate-300 group-hover:text-[#18529B] transition-colors" />
-                        </button>
+                        </a>
                       ))}
                     </div>
                     <div className="mt-2 pt-2 border-t border-slate-100 px-2">
-                      <button
-                        onClick={() => handleNavClick('services')}
-                        className="w-full py-1.5 text-center text-xs font-semibold text-[#18529B] hover:underline cursor-pointer"
+                      <a
+                        href="/services"
+                        onClick={(e) => {
+                          e.preventDefault();
+                          handleNavClick('services');
+                        }}
+                        className="block w-full py-1.5 text-center text-xs font-semibold text-[#18529B] hover:underline cursor-pointer"
                       >
                         View All Services Overview →
-                      </button>
+                      </a>
                     </div>
                   </div>
                 )}
               </div>
 
-              <button
-                onClick={() => handleNavClick('how-we-work')}
+              <a
+                href="/how-we-work"
+                onClick={(e) => {
+                  e.preventDefault();
+                  handleNavClick('how-we-work');
+                }}
                 className={`text-sm font-medium transition-colors hover:text-[#18529B] cursor-pointer ${
                   currentPage === 'how-we-work' ? 'text-[#18529B] font-semibold' : 'text-slate-700'
                 }`}
               >
                 How We Work
-              </button>
+              </a>
 
-              <button
-                onClick={() => handleNavClick('blog')}
+              <a
+                href="/blog"
+                onClick={(e) => {
+                  e.preventDefault();
+                  handleNavClick('blog');
+                }}
                 className={`text-sm font-medium transition-colors hover:text-[#18529B] cursor-pointer ${
                   currentPage === 'blog' || currentPage === 'blog-post' ? 'text-[#18529B] font-semibold' : 'text-slate-700'
                 }`}
               >
                 Blog
-              </button>
+              </a>
 
-              <button
-                onClick={() => handleNavClick('contact')}
+              <a
+                href="/contact"
+                onClick={(e) => {
+                  e.preventDefault();
+                  handleNavClick('contact');
+                }}
                 className={`text-sm font-medium transition-colors hover:text-[#18529B] cursor-pointer ${
                   currentPage === 'contact' ? 'text-[#18529B] font-semibold' : 'text-slate-700'
                 }`}
               >
                 Contact
-              </button>
+              </a>
             </div>
           </div>
 
@@ -185,53 +218,81 @@ export const Navbar: React.FC<NavbarProps> = ({
         {mobileMenuOpen && (
           <div className="md:hidden mt-2 p-4 bg-white/98 backdrop-blur-md rounded-2xl border border-slate-200 shadow-xl space-y-3 z-50">
             <div className="space-y-1">
-              <button
-                onClick={() => handleNavClick('home')}
-                className="w-full text-left px-3 py-2 text-sm font-medium text-slate-800 hover:bg-slate-50 rounded-lg"
+              <a
+                href="/"
+                onClick={(e) => {
+                  e.preventDefault();
+                  handleNavClick('home');
+                }}
+                className="block w-full text-left px-3 py-2 text-sm font-medium text-slate-800 hover:bg-slate-50 rounded-lg"
               >
                 Home
-              </button>
-              <button
-                onClick={() => handleNavClick('about')}
-                className="w-full text-left px-3 py-2 text-sm font-medium text-slate-800 hover:bg-slate-50 rounded-lg"
+              </a>
+              <a
+                href="/about"
+                onClick={(e) => {
+                  e.preventDefault();
+                  handleNavClick('about');
+                }}
+                className="block w-full text-left px-3 py-2 text-sm font-medium text-slate-800 hover:bg-slate-50 rounded-lg"
               >
                 About
-              </button>
-              <button
-                onClick={() => handleNavClick('services')}
-                className="w-full text-left px-3 py-2 text-sm font-medium text-slate-800 hover:bg-slate-50 rounded-lg"
+              </a>
+              <a
+                href="/services"
+                onClick={(e) => {
+                  e.preventDefault();
+                  handleNavClick('services');
+                }}
+                className="block w-full text-left px-3 py-2 text-sm font-medium text-slate-800 hover:bg-slate-50 rounded-lg"
               >
                 Services
-              </button>
+              </a>
               <div className="pl-4 space-y-1 border-l-2 border-slate-100 my-1">
                 {servicesData.slice(0, 5).map((s) => (
-                  <button
+                  <a
                     key={s.id}
-                    onClick={() => handleServiceSelect(s.id)}
-                    className="w-full text-left px-2 py-1 text-xs text-slate-600 hover:text-[#18529B]"
+                    href={`/services/${s.id}`}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      handleServiceSelect(s.id);
+                    }}
+                    className="block w-full text-left px-2 py-1 text-xs text-slate-600 hover:text-[#18529B]"
                   >
                     • {s.title}
-                  </button>
+                  </a>
                 ))}
               </div>
-              <button
-                onClick={() => handleNavClick('how-we-work')}
-                className="w-full text-left px-3 py-2 text-sm font-medium text-slate-800 hover:bg-slate-50 rounded-lg"
+              <a
+                href="/how-we-work"
+                onClick={(e) => {
+                  e.preventDefault();
+                  handleNavClick('how-we-work');
+                }}
+                className="block w-full text-left px-3 py-2 text-sm font-medium text-slate-800 hover:bg-slate-50 rounded-lg"
               >
                 How We Work
-              </button>
-              <button
-                onClick={() => handleNavClick('blog')}
-                className="w-full text-left px-3 py-2 text-sm font-medium text-slate-800 hover:bg-slate-50 rounded-lg"
+              </a>
+              <a
+                href="/blog"
+                onClick={(e) => {
+                  e.preventDefault();
+                  handleNavClick('blog');
+                }}
+                className="block w-full text-left px-3 py-2 text-sm font-medium text-slate-800 hover:bg-slate-50 rounded-lg"
               >
                 Blog
-              </button>
-              <button
-                onClick={() => handleNavClick('contact')}
-                className="w-full text-left px-3 py-2 text-sm font-medium text-slate-800 hover:bg-slate-50 rounded-lg"
+              </a>
+              <a
+                href="/contact"
+                onClick={(e) => {
+                  e.preventDefault();
+                  handleNavClick('contact');
+                }}
+                className="block w-full text-left px-3 py-2 text-sm font-medium text-slate-800 hover:bg-slate-50 rounded-lg"
               >
                 Contact
-              </button>
+              </a>
             </div>
             <div className="pt-2 border-t border-slate-100">
               <Button

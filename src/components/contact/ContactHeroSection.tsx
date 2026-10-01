@@ -168,12 +168,12 @@ export const ContactHeroSection: React.FC<ContactHeroSectionProps> = ({ onSucces
   };
 
   return (
-    <section className="relative pt-12 sm:pt-16 pb-20 sm:pb-28 bg-white overflow-hidden">
+    <section className="relative pt-24 sm:pt-28 lg:pt-32 pb-16 sm:pb-24 bg-white overflow-hidden">
       <Container>
         {/* ============================================================== */}
         {/* HERO HEADER: EXACT MATCH TO Frame 2121455032.png               */}
         {/* ============================================================== */}
-        <div className="pt-4 sm:pt-8 pb-16 sm:pb-24">
+        <div className="pt-2 sm:pt-4 pb-12 sm:pb-16">
           <div className="grid grid-cols-1 md:grid-cols-12 gap-10 lg:gap-16 items-center">
             {/* Left Column: Eyebrow + 2-line Heading + Subtitle */}
             <div className="md:col-span-6 lg:col-span-7 space-y-4">

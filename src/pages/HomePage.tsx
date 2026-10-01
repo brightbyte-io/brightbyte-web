@@ -7,8 +7,8 @@ import { HomeWaysToWork } from '../components/home/HomeWaysToWork';
 import { HomeNumbers } from '../components/home/HomeNumbers';
 import { HomeHowWeDeliver } from '../components/home/HomeHowWeDeliver';
 import { HomeReviews } from '../components/home/HomeReviews';
-import { HomeFaq } from '../components/home/HomeFaq';
-import { HomeCtaCard } from '../components/home/HomeCtaCard';
+import { FaqSection } from '../components/layout/FaqSection';
+import { CtaCard } from '../components/layout/CtaCard';
 import { PageId } from '../types';
 
 export interface HomePageProps {
@@ -62,10 +62,10 @@ export const HomePage: React.FC<HomePageProps> = ({
       <HomeReviews />
 
       {/* 8. Frequently Asked Questions */}
-      <HomeFaq />
+      <FaqSection page="home" className="!pt-6 sm:!pt-8 lg:!pt-10" />
 
       {/* 9. Ready to build something great? (Pre-footer callout) */}
-      <HomeCtaCard
+      <CtaCard
         onOpenConsultation={onOpenConsultation}
         onOpenCalendly={onOpenConsultation}
       />

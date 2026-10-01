@@ -62,7 +62,7 @@ export const HomeBentoServices: React.FC<HomeBentoServicesProps> = ({
             </div>
 
             {/* Angled Smartphone with BrightByte icon and app icons */}
-            <div className="mt-4 flex justify-end relative select-none">
+            <div className="mt-4 flex justify-end relative">
               <div className="w-56 h-48 relative -right-4 -bottom-6 transform rotate-6 group-hover:scale-105 transition-transform duration-300">
                 {/* Phone chassis */}
                 <div className="w-52 h-64 rounded-3xl bg-slate-950 p-2.5 shadow-2xl border-4 border-slate-700/80">
@@ -154,7 +154,7 @@ export const HomeBentoServices: React.FC<HomeBentoServicesProps> = ({
             </div>
 
             {/* 3D Code Brackets </ > with orbital guide line */}
-            <div className="mt-6 py-6 flex items-center justify-center relative select-none">
+            <div className="mt-6 py-6 flex items-center justify-center relative">
               {/* Elliptical background data trajectory */}
               <div className="absolute w-56 h-28 border border-blue-100 rounded-full -rotate-12 pointer-events-none" />
               <div className="absolute right-8 top-6 w-2.5 h-2.5 rounded-full bg-[#18529B]" />
@@ -191,7 +191,7 @@ export const HomeBentoServices: React.FC<HomeBentoServicesProps> = ({
             </div>
 
             {/* 3D High-Fidelity White Android Robot with Laptop & AI Badge */}
-            <div className="my-6 flex flex-col items-center justify-center relative select-none">
+            <div className="my-6 flex flex-col items-center justify-center relative">
               <div className="relative w-56 h-64 flex items-center justify-center group-hover:scale-105 transition-transform duration-300">
                 {/* Robot Illustration SVG */}
                 <svg viewBox="0 0 220 260" className="w-full h-full drop-shadow-xl" fill="none">
@@ -267,7 +267,7 @@ export const HomeBentoServices: React.FC<HomeBentoServicesProps> = ({
                 </p>
 
                 {/* 4 Authentic Tool Badges: GitHub, Docker, Kubernetes, Terraform */}
-                <div className="pt-4 flex items-center gap-3 select-none">
+                <div className="pt-4 flex items-center gap-3">
                   {/* GitHub */}
                   <div className="w-10 h-10 rounded-xl bg-slate-950 flex items-center justify-center shadow-xs">
                     <svg viewBox="0 0 24 24" className="w-5 h-5 fill-white">
@@ -299,7 +299,7 @@ export const HomeBentoServices: React.FC<HomeBentoServicesProps> = ({
               </div>
 
               {/* Right Side: 3D Infinity Loop Ribbon on Cylinder Pedestal */}
-              <div className="sm:col-span-5 flex justify-center sm:justify-end select-none">
+              <div className="sm:col-span-5 flex justify-center sm:justify-end">
                 <div className="w-48 h-36 relative flex items-center justify-center group-hover:scale-105 transition-transform duration-300">
                   <svg viewBox="0 0 180 140" className="w-full h-full drop-shadow-md">
                     {/* Cylindrical white pedestal base */}
@@ -357,7 +357,7 @@ export const HomeBentoServices: React.FC<HomeBentoServicesProps> = ({
             </div>
 
             {/* 3D Isometric Server & Database Architecture Graphics */}
-            <div className="mt-8 flex flex-col items-center justify-end relative select-none">
+            <div className="mt-8 flex flex-col items-center justify-end relative">
               <div className="w-full max-w-[280px] h-64 relative flex items-center justify-center group-hover:scale-105 transition-transform duration-300">
                 <svg viewBox="0 0 240 220" className="w-full h-full drop-shadow-xl" fill="none">
                   {/* Connected glowing cyan conduit pipelines */}
@@ -433,7 +433,7 @@ export const HomeBentoServices: React.FC<HomeBentoServicesProps> = ({
             </div>
 
             {/* 3 Interconnected Workflow Badges: Research -> Product Design -> Sourcing */}
-            <div className="mt-8 py-4 flex items-center justify-between relative select-none">
+            <div className="mt-8 py-4 flex items-center justify-between relative">
               {/* Connecting dashed arrows */}
               <div className="absolute inset-x-8 top-1/2 -translate-y-1/2 border-t-2 border-dashed border-slate-300 pointer-events-none -z-0" />
 
@@ -493,7 +493,7 @@ export const HomeBentoServices: React.FC<HomeBentoServicesProps> = ({
             </div>
 
             {/* 3D Isometric Timeline Sprint Gantt Schedule Bars */}
-            <div className="mt-8 flex justify-center items-end select-none">
+            <div className="mt-8 flex justify-center items-end">
               <div className="w-full h-32 relative flex items-center justify-center group-hover:scale-105 transition-transform duration-300">
                 <svg viewBox="0 0 200 120" className="w-full h-full drop-shadow-lg">
                   {/* Isometric base grid plane */}
@@ -537,7 +537,7 @@ export const HomeBentoServices: React.FC<HomeBentoServicesProps> = ({
                 </p>
 
                 {/* Floating Social Media Badges */}
-                <div className="pt-4 flex items-center gap-2.5 select-none">
+                <div className="pt-4 flex items-center gap-2.5">
                   {/* Facebook */}
                   <div className="w-8 h-8 rounded-lg bg-[#1877F2] text-white flex items-center justify-center font-bold text-xs shadow-xs">
                     f
@@ -566,7 +566,7 @@ export const HomeBentoServices: React.FC<HomeBentoServicesProps> = ({
               </div>
 
               {/* Right Side: Analytics Wave + 3D Rocket + 3D "SEO" Keycap */}
-              <div className="sm:col-span-6 flex items-center justify-center sm:justify-end gap-3 select-none">
+              <div className="sm:col-span-6 flex items-center justify-center sm:justify-end gap-3">
                 {/* 3D Space Rocket */}
                 <div className="w-24 h-28 relative flex items-center justify-center group-hover:scale-105 transition-transform duration-300">
                   <svg viewBox="0 0 120 140" className="w-full h-full drop-shadow-md">

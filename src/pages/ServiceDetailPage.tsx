@@ -12,7 +12,7 @@ import { MobileAppDeliveryProcessSection } from '../components/services/MobileAp
 import { MobileAppTechnologiesSection } from '../components/services/MobileAppTechnologiesSection';
 import { MobileAppIndustriesSection } from '../components/services/MobileAppIndustriesSection';
 import { MobileAppProjectsSection } from '../components/services/MobileAppProjectsSection';
-import { MobileAppFaqSection } from '../components/services/MobileAppFaqSection';
+import { FaqSection } from '../components/layout/FaqSection';
 import { servicesData } from '../data/mockData';
 import { PageId, ServiceItem } from '../types';
 
@@ -113,10 +113,10 @@ export const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({
           <MobileAppTechnologiesSection />
           <MobileAppIndustriesSection />
           <MobileAppProjectsSection />
-          <MobileAppFaqSection />
+          <FaqSection page="mobile-app" />
         </>
       ) : (
-        <div className="pt-10 pb-16 border-b border-slate-100">
+        <div className="pt-24 sm:pt-28 lg:pt-32 pb-16 border-b border-slate-100">
           <Container>
             {/* Breadcrumb Navigation */}
             <div className="flex items-center gap-2 text-xs text-slate-500 mb-8">

@@ -26,7 +26,7 @@ export const HomeHowWeDeliver: React.FC = () => {
   ];
 
   return (
-    <section className="py-20 lg:py-24 bg-white border-b border-slate-100">
+    <section className="pt-14 pb-8 sm:pt-18 sm:pb-10 lg:pt-20 lg:pb-12 bg-white">
       <Container>
         {/* Header matching Home V1-2 */}
         <div className="max-w-3xl mx-auto text-center mb-14 space-y-3">

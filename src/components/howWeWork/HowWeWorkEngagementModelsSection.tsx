@@ -216,7 +216,7 @@ export const HowWeWorkEngagementModelsSection: React.FC = () => {
   const currentMobileModel = ENGAGEMENT_MODELS[mobileStep];
 
   return (
-    <section className="bg-white border-b border-slate-100 select-none">
+    <section className="bg-white border-b border-slate-100">
       {/* ============================================================== */}
       {/* SECTION HEADER                                                 */}
       {/* Exactly matching Frame 2121455061 (2).png                      */}
@@ -342,7 +342,7 @@ export const HowWeWorkEngagementModelsSection: React.FC = () => {
       {/* Descriptions always visible; ONLY cards collapsible with arrow   */}
       {/* No text like "click arrow to collapse cards"                   */}
       {/* ============================================================== */}
-      <div className="md:hidden px-4 pb-16 space-y-5 select-none">
+      <div className="md:hidden px-4 pb-16 space-y-5">
         {/* Stepper Header with Navigation */}
         <div className="flex items-center justify-between px-1 text-slate-500">
           <span className="text-xs font-bold text-slate-500 uppercase tracking-wider">

@@ -31,14 +31,10 @@ export const BlogPage: React.FC<BlogPageProps> = ({
       />
 
       {/* 3. Pre-footer CTA */}
-      <div className="pb-16 sm:pb-24">
-        <Container>
-          <CtaCard
-            onOpenConsultation={onOpenConsultation}
-            onOpenCalendly={onOpenConsultation}
-          />
-        </Container>
-      </div>
+      <CtaCard
+        onOpenConsultation={onOpenConsultation}
+        onOpenCalendly={onOpenConsultation}
+      />
     </div>
   );
 };
