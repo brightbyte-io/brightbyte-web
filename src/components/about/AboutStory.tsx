@@ -44,7 +44,7 @@ export const AboutStory: React.FC = () => {
             {/* Exact 3D Isometric Laptop & Workspace illustration */}
             <div className="py-1 flex justify-start">
               <img
-                src="/images/about-story-laptop.jpg"
+                src="/images/about-story-laptop.svg"
                 alt="The BrightByte Story 3D Isometric Laptop"
                 className="w-full max-w-[340px] sm:max-w-[380px] md:max-w-[400px] h-auto object-contain select-none"
                 loading="lazy"

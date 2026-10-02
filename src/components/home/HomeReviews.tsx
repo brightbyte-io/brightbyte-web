@@ -2,18 +2,19 @@ import React, { useState, useEffect, useRef } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { Container } from '../layout/Container';
 
-// Exact double quotation mark SVG matching Figma
+// Double quotation mark icon using /images/quote-mark-icon.svg
 const QuoteMarkIcon: React.FC<{ className?: string; isMuted?: boolean }> = ({
-  className = 'w-9 h-6.5',
+  className = 'w-8 h-8',
   isMuted = false,
 }) => (
-  <svg
-    viewBox="0 0 46 36"
-    className={`${className} ${isMuted ? 'text-[#9BB7D6]' : 'text-[#205CA4]'} fill-current transition-colors duration-300`}
-    aria-hidden="true"
-  >
-    <path d="M13.2 0C5.9 0 0 5.9 0 13.2c0 7.3 4.4 13.3 10.9 14.8l-2 8h7.2l3.3-10.1c.8-2.3 1.3-4.8 1.3-7.5C20.7 5.9 17.3 0 13.2 0zm25.3 0C31.2 0 25.3 5.9 25.3 13.2c0 7.3 4.4 13.3 10.9 14.8l-2 8h7.2l3.3-10.1c.8-2.3 1.3-4.8 1.3-7.5C46 5.9 42.6 0 38.5 0z" />
-  </svg>
+  <img
+    src="/images/quote-mark-icon.svg"
+    alt="Quote"
+    className={`${className} object-contain transition-opacity duration-300 select-none ${
+      isMuted ? 'opacity-40' : 'opacity-100'
+    }`}
+    loading="lazy"
+  />
 );
 
 export const HomeReviews: React.FC = () => {
@@ -220,7 +221,7 @@ export const HomeReviews: React.FC = () => {
                     {/* Double quotation mark icon */}
                     <QuoteMarkIcon
                       isMuted={!isSlotActive}
-                      className="w-9 h-6.5"
+                      className="w-8 h-8"
                     />
 
                     {/* Review quote text: formatted with generous line-height so 4-line quotes never crowd the author */}
@@ -294,7 +295,7 @@ export const HomeReviews: React.FC = () => {
             className={`w-full bg-[#EEF2F5] rounded-[24px] p-6 shadow-sm border border-slate-200/40 flex flex-col justify-between min-h-[235px] space-y-4 transition-all duration-300 ease-out will-change-transform ${mobileAnimClass}`}
           >
             <div className="space-y-3">
-              <QuoteMarkIcon className="w-9 h-6 text-[#18529B]" />
+              <QuoteMarkIcon className="w-8 h-8" />
               <p className="text-sm text-slate-800 leading-relaxed font-normal">
                 {reviews[currentIndex].quote}
               </p>
