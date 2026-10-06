@@ -1,7 +1,5 @@
 import React, { useState } from 'react';
 import {
-  ChevronLeft,
-  ChevronRight,
   CheckCircle2,
 } from 'lucide-react';
 import { Container } from '../layout/Container';
@@ -86,35 +84,6 @@ const SERVICES_LIST = [
 export const ContactHeroSection: React.FC<ContactHeroSectionProps> = ({ onSuccess }) => {
   const { addToast } = useToast();
 
-  // Contact items matching Frame 2121455032.png
-  const contactItems = [
-    {
-      id: 'email',
-      title: 'Email',
-      value: 'contact@brightbyte.io',
-      href: 'mailto:contact@brightbyte.io',
-      icon: <ExactPhoneBadgeIcon className="w-7 h-10" />,
-    },
-    {
-      id: 'phone',
-      title: 'Pakistan • Islamabad',
-      value: '+92 51 2719015',
-      href: 'tel:+92512719015',
-      icon: <ExactPinBadgeIcon className="w-8 h-10" />,
-    },
-  ];
-
-  // Mobile stepper for contact items (< 768px: "only in bleow 768 show one by one")
-  const [mobileIndex, setMobileIndex] = useState(0);
-
-  const nextItem = () => {
-    setMobileIndex((prev) => (prev + 1) % contactItems.length);
-  };
-
-  const prevItem = () => {
-    setMobileIndex((prev) => (prev - 1 + contactItems.length) % contactItems.length);
-  };
-
   // Form states
   const [formData, setFormData] = useState({
     fullName: '',
@@ -168,133 +137,91 @@ export const ContactHeroSection: React.FC<ContactHeroSectionProps> = ({ onSucces
   };
 
   return (
-    <section className="relative pt-24 sm:pt-28 lg:pt-32 pb-16 sm:pb-24 bg-white overflow-hidden">
-      <Container>
+    <section className="relative pt-28 sm:pt-32 lg:pt-36 pb-16 sm:pb-24 bg-white overflow-hidden">
+      {/* Ambient background soft light and glowing arcs matching Figma */}
+      <div className="absolute -left-28 -top-20 w-[520px] h-[520px] rounded-full border-[54px] border-[#DCE7F5]/45 blur-lg pointer-events-none -z-0" />
+      <div className="absolute -right-24 top-16 w-[560px] h-[560px] rounded-full border-[58px] border-[#E2EEF8]/55 blur-lg pointer-events-none -z-0" />
+      <div className="absolute right-1/4 top-28 w-[380px] h-[380px] rounded-full bg-blue-100/25 blur-3xl pointer-events-none -z-0" />
+
+      <Container className="relative z-10">
         {/* ============================================================== */}
-        {/* HERO HEADER: EXACT MATCH TO Frame 2121455032.png               */}
+        {/* HERO HEADER: EXACT MATCH TO FIGMA                             */}
         {/* ============================================================== */}
-        <div className="pt-2 sm:pt-4 pb-12 sm:pb-16">
-          <div className="grid grid-cols-1 md:grid-cols-12 gap-10 lg:gap-16 items-center">
+        <div className="pt-2 sm:pt-4 pb-14 sm:pb-20">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
             {/* Left Column: Eyebrow + 2-line Heading + Subtitle */}
-            <div className="md:col-span-6 lg:col-span-7 space-y-4">
-              <span className="inline-block text-xs sm:text-[13px] font-extrabold uppercase tracking-widest text-[#18529B]">
+            <div className="lg:col-span-6 space-y-4">
+              <span className="inline-block text-xs font-bold uppercase tracking-wider text-[#18529B]">
                 CONTACT US
               </span>
 
-              <h1 className="text-4xl sm:text-5xl lg:text-[56px] font-extrabold text-[#0B1528] tracking-tight leading-[1.08]">
+              <h1 className="text-4xl sm:text-5xl lg:text-[48px] xl:text-[52px] font-extrabold text-[#0B1528] tracking-tight leading-[1.12]">
                 Let's talk about<br />your project.
               </h1>
 
-              <p className="text-base sm:text-lg text-slate-500 font-normal leading-[1.65] max-w-[480px] pt-1">
+              <p className="text-sm sm:text-base lg:text-[16px] text-slate-500 font-normal leading-relaxed max-w-[460px] pt-1">
                 Tell us what you’re building. We will respond within one business day and set up a free call to discuss the details properly.
               </p>
             </div>
 
-            {/* Right Column: Contact items with Floating Circular Badges */}
-            <div className="md:col-span-6 lg:col-span-5 flex flex-col justify-center">
-              {/* DESKTOP & TABLET VIEW (>= 768px): Exactly matching Frame 2121455032.png */}
-              <div className="hidden md:flex flex-col space-y-10 lg:space-y-12">
-                {/* Row 1: Email */}
-                <div className="flex items-center justify-between gap-6">
-                  <div>
-                    <h3 className="text-[22px] font-bold text-[#0B1528] tracking-tight mb-1">
-                      Email
-                    </h3>
-                    <a
-                      href="mailto:contact@brightbyte.io"
-                      className="text-[15px] text-slate-500 hover:text-[#18529B] transition-colors font-normal block"
-                    >
-                      contact@brightbyte.io
-                    </a>
-                  </div>
-
-                  {/* Circular White Badge with Exact Phone Icon */}
-                  <div className="w-[88px] h-[88px] rounded-full bg-white shadow-[0_16px_38px_rgba(15,23,42,0.08),0_4px_12px_rgba(15,23,42,0.04)] border border-slate-100/90 flex items-center justify-center shrink-0">
-                    {contactItems[0].icon}
-                  </div>
-                </div>
-
-                {/* Row 2: Pakistan • Islamabad */}
-                <div className="flex items-center justify-between gap-6">
-                  <div>
-                    <h3 className="text-[22px] font-bold text-[#0B1528] tracking-tight mb-1">
-                      Pakistan • Islamabad
-                    </h3>
-                    <a
-                      href="tel:+92512719015"
-                      className="text-[15px] text-slate-500 hover:text-[#18529B] transition-colors font-normal block"
-                    >
-                      +92 51 2719015
-                    </a>
-                  </div>
-
-                  {/* Circular White Badge with Exact Map Pin Icon */}
-                  <div className="w-[88px] h-[88px] rounded-full bg-white shadow-[0_16px_38px_rgba(15,23,42,0.08),0_4px_12px_rgba(15,23,42,0.04)] border border-slate-100/90 flex items-center justify-center shrink-0">
-                    {contactItems[1].icon}
-                  </div>
-                </div>
+            {/* Right Column: 3D Paper Airplane + 2 Floating Contact Cards */}
+            <div className="lg:col-span-6 relative flex flex-col items-center lg:items-end justify-center">
+              {/* 3D Blue Origami Paper Airplane (Desktop / Tablet) */}
+              <div className="hidden lg:block absolute -left-24 xl:-left-32 top-1/2 -translate-y-[62%] w-52 xl:w-60 pointer-events-none select-none z-10 transition-transform duration-500 hover:scale-105">
+                <img
+                  src="/images/contact-paper-plane.png"
+                  alt=""
+                  className="w-full h-auto drop-shadow-[0_16px_28px_rgba(24,82,155,0.22)] select-none pointer-events-none"
+                  draggable={false}
+                />
               </div>
 
-              {/* MOBILE VIEW (< 768px: "only in bleow 768 show one by one") */}
-              <div className="md:hidden w-full max-w-sm mx-auto space-y-4 pt-2">
-                {/* Stepper Header */}
-                <div className="flex items-center justify-between px-1 text-slate-500">
-                  <span className="text-xs font-bold text-slate-500 uppercase tracking-wider">
-                    Contact 0{mobileIndex + 1} of 0{contactItems.length}
-                  </span>
+              {/* Mobile Paper Airplane Illustration */}
+              <div className="flex lg:hidden justify-center pb-6">
+                <img
+                  src="/images/contact-paper-plane.png"
+                  alt=""
+                  className="w-40 sm:w-48 h-auto drop-shadow-md select-none pointer-events-none"
+                  draggable={false}
+                />
+              </div>
 
-                  <div className="flex items-center gap-2">
-                    <button
-                      onClick={prevItem}
-                      aria-label="Previous contact item"
-                      className="w-8 h-8 rounded-full bg-white hover:bg-slate-100 flex items-center justify-center transition-all cursor-pointer text-slate-700 border border-slate-200 shadow-2xs"
-                    >
-                      <ChevronLeft className="w-4 h-4" />
-                    </button>
-                    <button
-                      onClick={nextItem}
-                      aria-label="Next contact item"
-                      className="w-8 h-8 rounded-full bg-[#18529B] text-white hover:bg-[#133F77] flex items-center justify-center transition-all cursor-pointer shadow-2xs"
-                    >
-                      <ChevronRight className="w-4 h-4" />
-                    </button>
+              {/* 2 Floating Contact Cards */}
+              <div className="relative z-20 w-full max-w-[420px] space-y-5 sm:space-y-6">
+                {/* Card 1: Email */}
+                <div className="relative bg-white rounded-[22px] sm:rounded-[26px] p-5 sm:p-6 lg:p-7 shadow-[0_10px_32px_rgba(15,23,42,0.06)] border border-slate-100/90 pr-18 sm:pr-20">
+                  <h3 className="text-lg sm:text-[20px] font-bold text-[#0B1528] tracking-tight mb-1">
+                    Email
+                  </h3>
+                  <a
+                    href="mailto:contact@brightbyte.io"
+                    className="text-sm sm:text-[15px] text-slate-500 hover:text-[#18529B] transition-colors font-normal block truncate"
+                  >
+                    contact@brightbyte.io
+                  </a>
+
+                  {/* Circular Badge at top-right corner */}
+                  <div className="absolute -top-4 -right-4 sm:-top-5 sm:-right-5 w-16 h-16 sm:w-[74px] sm:h-[74px] rounded-full bg-white shadow-[0_12px_28px_rgba(15,23,42,0.1),0_2px_8px_rgba(15,23,42,0.04)] border border-slate-100/90 flex items-center justify-center shrink-0">
+                    <ExactPhoneBadgeIcon className="w-6 h-8 sm:w-7 sm:h-9" />
                   </div>
                 </div>
 
-                {/* Single Active Contact Item (< 768px) */}
-                <div className="bg-white rounded-2xl p-5 border border-slate-200/90 shadow-[0_8px_24px_rgba(15,23,42,0.05)] flex items-center justify-between gap-4 animate-fadeIn">
-                  <div>
-                    <h3 className="text-lg font-bold text-[#0B1528] tracking-tight mb-1">
-                      {contactItems[mobileIndex].title}
-                    </h3>
-                    <a
-                      href={contactItems[mobileIndex].href}
-                      className="text-sm font-normal text-slate-500 hover:text-[#18529B] transition-colors"
-                    >
-                      {contactItems[mobileIndex].value}
-                    </a>
-                  </div>
+                {/* Card 2: Pakistan • Islamabad */}
+                <div className="relative bg-white rounded-[22px] sm:rounded-[26px] p-5 sm:p-6 lg:p-7 shadow-[0_10px_32px_rgba(15,23,42,0.06)] border border-slate-100/90 pr-18 sm:pr-20">
+                  <h3 className="text-lg sm:text-[20px] font-bold text-[#0B1528] tracking-tight mb-1">
+                    Pakistan • Islamabad
+                  </h3>
+                  <a
+                    href="tel:+92512719015"
+                    className="text-sm sm:text-[15px] text-slate-500 hover:text-[#18529B] transition-colors font-normal block truncate"
+                  >
+                    +92 51 2719015
+                  </a>
 
-                  {/* Circular Badge */}
-                  <div className="w-16 h-16 rounded-full bg-white border border-slate-100 shadow-[0_8px_24px_rgba(15,23,42,0.08)] flex items-center justify-center shrink-0">
-                    {contactItems[mobileIndex].icon}
+                  {/* Circular Badge at bottom-right corner */}
+                  <div className="absolute -bottom-4 -right-4 sm:-bottom-5 sm:-right-5 w-16 h-16 sm:w-[74px] sm:h-[74px] rounded-full bg-white shadow-[0_12px_28px_rgba(15,23,42,0.1),0_2px_8px_rgba(15,23,42,0.04)] border border-slate-100/90 flex items-center justify-center shrink-0">
+                    <ExactPinBadgeIcon className="w-6 h-8 sm:w-7 sm:h-9" />
                   </div>
-                </div>
-
-                {/* Indicator dots */}
-                <div className="flex items-center justify-center gap-1.5 pt-1">
-                  {contactItems.map((_, idx) => (
-                    <button
-                      key={idx}
-                      onClick={() => setMobileIndex(idx)}
-                      aria-label={`Go to item ${idx + 1}`}
-                      className={`transition-all rounded-full h-1.5 cursor-pointer ${
-                        mobileIndex === idx
-                          ? 'w-6 bg-[#18529B]'
-                          : 'w-1.5 bg-slate-300 hover:bg-slate-400'
-                      }`}
-                    />
-                  ))}
                 </div>
               </div>
             </div>

@@ -27,9 +27,14 @@ export const AboutMission: React.FC = () => {
 
   return (
     <section className="relative overflow-hidden py-16 sm:py-20 lg:py-24 bg-white">
-      {/* Ambient background soft light */}
-      <div className="absolute -left-24 bottom-12 w-[500px] h-[500px] bg-sky-100/30 rounded-full blur-3xl pointer-events-none -z-0" />
-      <div className="absolute -right-24 -bottom-20 w-[550px] h-[550px] bg-blue-100/35 rounded-full blur-3xl pointer-events-none -z-0" />
+      {/* Background SVG from /images/about-mission-background.svg */}
+      <img
+        src="/images/about-mission-background.svg"
+        alt=""
+        aria-hidden="true"
+        className="absolute inset-0 w-full h-full object-cover pointer-events-none select-none -z-0"
+        draggable={false}
+      />
 
       <Container className="relative z-10">
         {/* ============================================================== */}

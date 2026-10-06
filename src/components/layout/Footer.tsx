@@ -42,16 +42,15 @@ export interface FooterProps {
 
 export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
   return (
-    <footer className="relative bg-gradient-to-r from-[#DFEBF7] via-[#EBF2F9] to-[#E5EFF8] text-slate-700 pt-14 pb-5 sm:pb-6 overflow-hidden">
-      {/* ============================================================== */}
-      {/* AMBIENT CURVED LIGHT ARCS MATCHING Footer.png                  */}
-      {/* ============================================================== */}
-      {/* Large sweeping white curve arc on the left behind logo */}
-      <div className="absolute -left-32 -top-20 w-[680px] h-[680px] rounded-full border-[70px] border-white/50 blur-2xl pointer-events-none -z-0" />
-      <div className="absolute -left-12 top-8 w-[480px] h-[480px] rounded-full border-[45px] border-blue-50/60 blur-xl pointer-events-none -z-0" />
-
-      {/* Soft ambient white glow on right */}
-      <div className="absolute -right-28 top-1/3 w-[520px] h-[520px] rounded-full border-[60px] border-white/40 blur-2xl pointer-events-none -z-0" />
+    <footer className="relative bg-white text-slate-700 pt-14 pb-5 sm:pb-6 overflow-hidden">
+      {/* Background SVG from /images/footer-background.svg */}
+      <img
+        src="/images/footer-background.svg"
+        alt=""
+        aria-hidden="true"
+        className="absolute inset-0 w-full h-full object-cover pointer-events-none select-none -z-0"
+        draggable={false}
+      />
 
       <Container className="relative z-10">
         {/* ============================================================== */}

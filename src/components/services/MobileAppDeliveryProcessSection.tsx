@@ -493,11 +493,10 @@ export const MobileAppDeliveryProcessSection: React.FC = () => {
                 key={card.step}
                 onClick={() => setMobileStep(idx)}
                 aria-label={`Go to step ${card.step}`}
-                className={`transition-all rounded-full h-1.5 cursor-pointer ${
-                  mobileStep === idx
-                    ? 'w-6 bg-[#18529B]'
-                    : 'w-1.5 bg-slate-300 hover:bg-slate-400'
-                }`}
+                className={`transition-all rounded-full h-1.5 cursor-pointer ${mobileStep === idx
+                  ? 'w-6 bg-[#18529B]'
+                  : 'w-1.5 bg-slate-300 hover:bg-slate-400'
+                  }`}
               />
             ))}
           </div>

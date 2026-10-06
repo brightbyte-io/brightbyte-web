@@ -1,5 +1,4 @@
 import React from 'react';
-import { ArrowRight, Calendar } from 'lucide-react';
 import { Container } from '../layout/Container';
 import { useToast } from '../ui/Toast';
 
@@ -30,15 +29,14 @@ export const ContactCalendlyBannerSection: React.FC<ContactCalendlyBannerSection
         {/* ============================================================== */}
         {/* BANNER CARD CONTAINER: EXACT MATCH TO Frame 2121455058.png     */}
         {/* ============================================================== */}
-        <div className="relative w-full rounded-[28px] sm:rounded-[34px] bg-[#2573B7] text-white overflow-hidden px-7 py-10 sm:px-12 sm:py-12 lg:px-16 lg:py-14 shadow-[0_12px_36px_rgba(24,82,155,0.18)]">
-          {/* Subtle darker blue watermark ring on the right matching Frame 2121455058.png */}
-          <div
-            className="absolute -right-20 top-1/2 -translate-y-1/2 w-[440px] h-[440px] rounded-full border-[54px] border-black/10 pointer-events-none"
+        <div className="relative w-full rounded-[24px] sm:rounded-[32px] bg-[#1E6099] text-white overflow-hidden px-7 py-10 sm:px-12 sm:py-12 lg:px-16 lg:py-12 shadow-[0_12px_36px_rgba(24,82,155,0.15)] min-h-[192px] flex flex-col justify-center">
+          {/* Background SVG from /images/contact-cta-background.svg */}
+          <img
+            src="/images/contact-cta-background.svg"
+            alt=""
             aria-hidden="true"
-          />
-          <div
-            className="absolute -right-36 top-1/2 -translate-y-1/2 w-[580px] h-[580px] rounded-full border-[36px] border-white/[0.04] pointer-events-none"
-            aria-hidden="true"
+            className="absolute inset-0 w-full h-full object-cover pointer-events-none select-none -z-0"
+            draggable={false}
           />
 
           {/* DESKTOP & TABLET VIEW (>= 768px): Row Layout */}

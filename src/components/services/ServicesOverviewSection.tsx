@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ArrowRight, ChevronDown, ChevronUp, ChevronLeft, ChevronRight } from 'lucide-react';
+import { ArrowRight, ChevronDown, ChevronUp } from 'lucide-react';
 import { Container } from '../layout/Container';
 import { PageId } from '../../types';
 
@@ -330,66 +330,49 @@ export const ServicesOverviewSection: React.FC<ServicesOverviewSectionProps> = (
     setExpandedSubId((prev) => (prev === subId ? null : subId));
   };
 
-  const nextMobile = () => {
-    setMobileIndex((prev) => (prev + 1) % SERVICES_LIST.length);
-  };
-
-  const prevMobile = () => {
-    setMobileIndex((prev) => (prev - 1 + SERVICES_LIST.length) % SERVICES_LIST.length);
-  };
-
-  const currentMobileService = SERVICES_LIST[mobileIndex];
-
   return (
-    <section className="py-16 sm:py-20 lg:py-24 bg-white border-b border-slate-100">
+    <section className="pt-12 sm:pt-16 lg:pt-20 pb-10 sm:pb-12 lg:pb-14 bg-white">
       <Container>
         {/* ============================================================== */}
         {/* SECTION HEADER                                                 */}
-        {/* Exactly matching Frame 2121455061.png                          */}
+        {/* Exactly matching screenshot                                    */}
         {/* ============================================================== */}
-        <div className="text-center max-w-3xl mx-auto mb-14 sm:mb-20 space-y-3.5">
-          <span className="inline-block text-xs sm:text-[13px] font-extrabold uppercase tracking-widest text-[#18529B]">
+        <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-14 space-y-2.5">
+          <span className="inline-block text-xs font-bold uppercase tracking-wider text-[#18529B]">
             SERVICES OVERVIEW
           </span>
-          <h2 className="text-3xl sm:text-4xl lg:text-[46px] font-extrabold text-slate-950 tracking-tight leading-[1.16]">
-            We’ve got pretty much every service<br className="hidden sm:inline" /> you need, covered.
+          <h2 className="text-2xl sm:text-3xl lg:text-[38px] xl:text-[40px] font-bold text-[#0B1528] tracking-tight leading-[1.2]">
+            We’ve got pretty much every service<br />
+            you need, covered.
           </h2>
         </div>
 
         {/* ============================================================== */}
-        {/* DESKTOP & TABLET VIEW (>= 768px): ALL 9 CARDS STACKED          */}
-        {/* Exactly matching Frame 2121455061.png                          */}
+        {/* ALL SERVICE CARDS: STACKED ON ALL SCREEN SIZES                 */}
         {/* ============================================================== */}
-        <div className="hidden md:flex flex-col space-y-6 lg:space-y-8">
+        <div className="flex flex-col space-y-5 sm:space-y-6 lg:space-y-8">
           {SERVICES_LIST.map((service) => {
             const isExpanded = expandedCardId === service.id;
 
             return (
               <div
                 key={service.id}
-                className="relative overflow-hidden rounded-[28px] bg-[#EEF2F6] transition-all duration-300 border border-slate-200/50"
+                className="relative overflow-hidden rounded-[24px] sm:rounded-[28px] bg-[#EEF2F6] transition-all duration-300 border border-slate-200/50"
               >
-                {/* Large watermark Android Dev Icon in background of expanded card */}
-                {isExpanded && (
-                  <div className="absolute -bottom-8 -left-6 pointer-events-none opacity-[0.09] text-[#18529B] z-0">
-                    <AndroidDevIcon className="w-64 h-80" />
-                  </div>
-                )}
-
-                <div className="relative z-10 p-7 sm:p-9 lg:p-11">
-                  <div className="grid grid-cols-12 gap-6 lg:gap-10 items-start">
+                <div className="relative z-10 p-5 sm:p-7 md:p-9 lg:p-11">
+                  <div className="grid grid-cols-1 md:grid-cols-12 gap-5 md:gap-6 lg:gap-10 items-start">
                     {/* LEFT COLUMN: Icon + Title */}
-                    <div className="col-span-5 flex items-start gap-5">
+                    <div className="md:col-span-5 flex items-start gap-4 sm:gap-5">
                       <div className="shrink-0 text-slate-950 mt-1">
-                        <AndroidDevIcon className="w-8 h-10 sm:w-9 sm:h-11" />
+                        <AndroidDevIcon className="w-7 h-9 sm:w-8 sm:h-10 md:w-9 md:h-11" />
                       </div>
-                      <h3 className="text-2xl lg:text-[27px] font-extrabold text-slate-950 leading-[1.2] whitespace-pre-line tracking-tight">
+                      <h3 className="text-xl sm:text-2xl lg:text-[27px] font-extrabold text-slate-950 leading-[1.2] whitespace-pre-line tracking-tight">
                         {service.title}
                       </h3>
                     </div>
 
                     {/* RIGHT COLUMN: Description + (Sub-accordions if expanded) + Actions */}
-                    <div className="col-span-7 space-y-6">
+                    <div className="md:col-span-7 space-y-5 sm:space-y-6">
                       <p className="text-xs sm:text-sm text-slate-600 leading-relaxed max-w-xl">
                         {service.description}
                       </p>
@@ -403,24 +386,24 @@ export const ServicesOverviewSection: React.FC<ServicesOverviewSectionProps> = (
                             return (
                               <div
                                 key={sub.id}
-                                className="bg-white rounded-2xl shadow-2xs border border-slate-100 transition-all duration-200 overflow-hidden"
+                                className="bg-white rounded-xl sm:rounded-2xl shadow-2xs border border-slate-100 transition-all duration-200 overflow-hidden"
                               >
                                 <button
                                   onClick={() => toggleSubItem(sub.id)}
-                                  className="w-full px-5 py-4 flex items-center justify-between text-left cursor-pointer hover:bg-slate-50/60 transition-colors"
+                                  className="w-full px-4 sm:px-5 py-3.5 sm:py-4 flex items-center justify-between text-left cursor-pointer hover:bg-slate-50/60 transition-colors"
                                 >
                                   <span className="font-bold text-slate-900 text-sm sm:text-base">
                                     {sub.title}
                                   </span>
                                   {isSubOpen ? (
-                                    <ChevronUp className="w-5 h-5 text-slate-700 shrink-0" />
+                                    <ChevronUp className="w-4 sm:w-5 h-4 sm:h-5 text-slate-700 shrink-0" />
                                   ) : (
-                                    <ChevronDown className="w-5 h-5 text-slate-700 shrink-0" />
+                                    <ChevronDown className="w-4 sm:w-5 h-4 sm:h-5 text-slate-700 shrink-0" />
                                   )}
                                 </button>
 
                                 {isSubOpen && (
-                                  <div className="px-5 pb-4 pt-1 text-xs sm:text-sm text-slate-500 leading-relaxed border-t border-slate-50">
+                                  <div className="px-4 sm:px-5 pb-4 pt-1 text-xs sm:text-sm text-slate-500 leading-relaxed border-t border-slate-50">
                                     {sub.description}
                                   </div>
                                 )}
@@ -434,7 +417,7 @@ export const ServicesOverviewSection: React.FC<ServicesOverviewSectionProps> = (
                       <div className="flex items-center justify-between pt-2">
                         <button
                           onClick={() => onNavigate('service-detail', service.id)}
-                          className="inline-flex items-center gap-1.5 px-5 py-2.5 rounded-full bg-[#18529B] text-white text-xs sm:text-sm font-semibold hover:bg-[#133F77] transition-all shadow-xs cursor-pointer active:scale-95"
+                          className="inline-flex items-center gap-1.5 px-4 sm:px-5 py-2 sm:py-2.5 rounded-full bg-[#18529B] text-white text-xs sm:text-sm font-semibold hover:bg-[#133F77] transition-all shadow-xs cursor-pointer active:scale-95"
                         >
                           <span>Explore</span>
                           <ArrowRight className="w-3.5 h-3.5" />
@@ -443,7 +426,7 @@ export const ServicesOverviewSection: React.FC<ServicesOverviewSectionProps> = (
                         <button
                           onClick={() => toggleCard(service.id)}
                           aria-label={isExpanded ? 'Collapse service' : 'Expand service'}
-                          className="w-10 h-10 rounded-full bg-white shadow-xs border border-slate-200/70 flex items-center justify-center text-slate-700 hover:bg-slate-50 transition-all cursor-pointer active:scale-90"
+                          className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-white shadow-xs border border-slate-200/70 flex items-center justify-center text-slate-700 hover:bg-slate-50 transition-all cursor-pointer active:scale-90"
                         >
                           {isExpanded ? (
                             <ChevronUp className="w-4 h-4" />
@@ -458,92 +441,6 @@ export const ServicesOverviewSection: React.FC<ServicesOverviewSectionProps> = (
               </div>
             );
           })}
-        </div>
-
-        {/* ============================================================== */}
-        {/* MOBILE VIEW (< 768px): SHOW ONE BY ONE                          */}
-        {/* Requirement: "only in bleow 768 show one by one"                 */}
-        {/* ============================================================== */}
-        <div className="md:hidden space-y-4 max-w-sm mx-auto pt-2">
-          {/* Mobile Stepper Header with Cursor Click Controls */}
-          <div className="flex items-center justify-between px-2">
-            <span className="text-xs font-bold text-slate-500 uppercase tracking-wider">
-              Service {mobileIndex + 1} of {SERVICES_LIST.length}
-            </span>
-            <div className="flex items-center gap-2">
-              <button
-                onClick={prevMobile}
-                aria-label="Previous service"
-                className="w-8 h-8 rounded-full bg-white text-slate-700 shadow-xs hover:bg-slate-50 active:scale-90 flex items-center justify-center transition-all cursor-pointer border border-slate-200"
-              >
-                <ChevronLeft className="w-4 h-4" />
-              </button>
-              <button
-                onClick={nextMobile}
-                aria-label="Next service"
-                className="w-8 h-8 rounded-full bg-[#18529B] text-white shadow-xs hover:bg-[#133F77] active:scale-90 flex items-center justify-center transition-all cursor-pointer"
-              >
-                <ChevronRight className="w-4 h-4" />
-              </button>
-            </div>
-          </div>
-
-          {/* ACTIVE SERVICE CARD SHOWN ONE BY ONE */}
-          <div className="rounded-3xl bg-[#EEF2F6] p-6 shadow-xs border border-slate-200/50 space-y-5">
-            {/* Header: Icon + Title */}
-            <div className="flex items-start gap-4">
-              <div className="shrink-0 text-slate-950 mt-0.5">
-                <AndroidDevIcon className="w-8 h-10" />
-              </div>
-              <h3 className="text-xl font-extrabold text-slate-950 leading-tight whitespace-pre-line">
-                {currentMobileService.title}
-              </h3>
-            </div>
-
-            <p className="text-xs text-slate-600 leading-relaxed">
-              {currentMobileService.description}
-            </p>
-
-            {/* Sub-capabilities list */}
-            <div className="space-y-2 pt-1">
-              <div className="text-[11px] font-bold text-slate-500 uppercase tracking-wider">
-                Practice Highlights:
-              </div>
-              {currentMobileService.subServices.slice(0, 3).map((sub) => (
-                <div key={sub.id} className="bg-white rounded-xl p-3 shadow-2xs border border-slate-100">
-                  <div className="font-bold text-slate-900 text-xs">{sub.title}</div>
-                  <div className="text-[11px] text-slate-500 mt-0.5">{sub.description}</div>
-                </div>
-              ))}
-            </div>
-
-            {/* Mobile Action: Explore Practice */}
-            <div className="pt-2 flex items-center justify-between">
-              <button
-                onClick={() => onNavigate('service-detail', currentMobileService.id)}
-                className="w-full inline-flex items-center justify-center gap-1.5 px-5 py-2.5 rounded-full bg-[#18529B] text-white text-xs font-semibold hover:bg-[#133F77] transition-all shadow-xs cursor-pointer"
-              >
-                <span>Explore {currentMobileService.title.replace('\n', ' ')}</span>
-                <ArrowRight className="w-3.5 h-3.5" />
-              </button>
-            </div>
-          </div>
-
-          {/* Indicator dots for mobile navigation */}
-          <div className="flex items-center justify-center gap-1.5 pt-1">
-            {SERVICES_LIST.map((service, idx) => (
-              <button
-                key={service.id}
-                onClick={() => setMobileIndex(idx)}
-                aria-label={`Go to service ${idx + 1}`}
-                className={`transition-all rounded-full h-1.5 cursor-pointer ${
-                  mobileIndex === idx
-                    ? 'w-6 bg-[#18529B]'
-                    : 'w-1.5 bg-slate-300 hover:bg-slate-400'
-                }`}
-              />
-            ))}
-          </div>
         </div>
       </Container>
     </section>
