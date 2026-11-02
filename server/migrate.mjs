@@ -19,6 +19,9 @@ try {
     await client.query('SELECT pg_advisory_xact_lock(815002)');
     const initialInstall = !(await client.query("SELECT to_regclass('public.posts') AS existing")).rows[0].existing;
     await client.query(schema);
+    const metadata = JSON.parse(await readFile(new URL('../src/data/pageMetadata.json', import.meta.url), 'utf8'));
+    const entries = [['defaults', metadata.defaults], ['blog-template', { title: metadata.blog.titleTemplate, description: metadata.blog.descriptionFallback }], ...Object.entries(metadata.pages).map(([key,value]) => ['page:'+key,value]), ...Object.entries(metadata.services).map(([key,value]) => ['service:'+key,value]), ...Object.entries(metadata.blog.overrides).map(([key,value]) => ['blog:'+key,value])];
+    for (const [key, value] of entries) await client.query('INSERT INTO page_metadata(key,title,description) VALUES($1,$2,$3) ON CONFLICT DO NOTHING', [key,value.title,value.description]);
     await client.query('INSERT INTO users(id,username,email,name,password_hash,user_type) VALUES($1,$2,$3,$4,$5,$6) ON CONFLICT (lower(username)) DO NOTHING', [randomUUID(), process.env.ADMIN_USERNAME, process.env.ADMIN_EMAIL, process.env.ADMIN_NAME || 'BrightByte Admin', passwordHash, 'admin']);
     const { rows: [admin] } = await client.query('SELECT id FROM users WHERE lower(username)=lower($1)', [process.env.ADMIN_USERNAME]);
     let added = 0;

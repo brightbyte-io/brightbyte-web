@@ -13,7 +13,7 @@ test('PostgreSQL admin API: authentication, roles, JSONB posts and deletion', { 
   const base = createPool(process.env);
   const schema = `bb_test_${randomUUID().replaceAll('-','')}`;
   assert.match(schema, /^bb_test_[a-f0-9]{32}$/);
-  const rewrite = sql => sql.replace(/\b(users|posts|postmeta|contact_settings|contact_submissions|mail_settings)\b/g, `"${schema}".$1`);
+  const rewrite = sql => sql.replace(/\b(users|posts|postmeta|contact_settings|contact_submissions|mail_settings|page_metadata)\b/g, `"${schema}".$1`);
   const pool = {
     query: (sql, values) => base.query(rewrite(sql), values),
     connect: async () => { const client = await base.connect(); return { query: (sql, values) => client.query(rewrite(sql), values), release: () => client.release() }; },
@@ -38,6 +38,14 @@ test('PostgreSQL admin API: authentication, roles, JSONB posts and deletion', { 
     return {status:response.status,body:await response.json(),cookie:response.headers.get('set-cookie')};
   };
   const login = async username => { const result=await request('/auth/login',{method:'POST',body:{username,password}});assert.equal(result.status,200);return {cookie:result.cookie.split(';')[0],csrfToken:result.body.csrfToken}; };
+  await t.test('database metadata is public and updates require authentication', async () => {
+    const session = await login('admin');
+    const body = { key: 'page:home', title: 'Custom homepage', description: 'Database description' };
+    assert.equal((await request('/admin/metadata', {method:'PUT',body})).status,401);
+    assert.equal((await request('/admin/metadata', {method:'PUT',session,body:{...body,title:''}})).status,400);
+    assert.equal((await request('/admin/metadata', {method:'PUT',session,body})).status,200);
+    assert.equal((await request('/metadata')).body.pages.home.title,body.title);
+  });
   await t.test('dashboard returns role-scoped summaries', async () => {
     assert.equal((await request('/admin/dashboard')).status,401);
     const session = await login('admin');
@@ -121,7 +129,7 @@ test('PostgreSQL admin API: authentication, roles, JSONB posts and deletion', { 
     const viewer=await request('/admin/users',{method:'POST',body:{username:'viewer',name:'Test Viewer',email:'viewer@test.invalid',password,userType:'viewer',isActive:true},session:admin});assert.equal(viewer.status,201);viewerId=viewer.body.id;
     const editor=await request('/admin/users',{method:'POST',body:{username:'editor',name:'Test Editor',email:'editor@test.invalid',password,userType:'editor',isActive:true},session:admin});assert.equal(editor.status,201);editorId=editor.body.id;
     const stored=(await pool.query('SELECT password_hash,user_type FROM users WHERE id=$1',[viewerId])).rows[0];assert.notEqual(stored.password_hash,password);assert.match(stored.password_hash,/^scrypt\$/);assert.equal(stored.user_type,'viewer');
-    const viewerSession=await login('viewer');assert.equal((await request('/admin/posts',{session:viewerSession})).status,200);assert.equal((await request('/admin/posts',{method:'POST',body,session:viewerSession})).status,403);assert.equal((await request('/admin/users',{session:viewerSession})).status,403);
+    const viewerSession=await login('viewer');assert.equal((await request('/admin/metadata',{session:viewerSession})).status,403);assert.equal((await request('/admin/metadata',{method:'PUT',session:viewerSession,body:{key:'page:home',title:'Denied',description:'Denied'}})).status,403);assert.equal((await request('/admin/posts',{session:viewerSession})).status,200);assert.equal((await request('/admin/posts',{method:'POST',body,session:viewerSession})).status,403);assert.equal((await request('/admin/users',{session:viewerSession})).status,403);
     assert.equal((await request('/admin/submissions',{session:viewerSession})).status,403);assert.equal((await request('/admin/mail-settings',{session:viewerSession})).status,403);const overview=(await request('/admin/dashboard',{session:viewerSession})).body;assert.ok(overview.posts);assert.equal('users' in overview,false);assert.equal('submissions' in overview,false);assert.equal('email' in overview,false);
     const editorSession=await login('editor');assert.equal((await request('/admin/contact-settings',{session:editorSession})).status,403);assert.equal((await request('/admin/users',{session:editorSession})).status,403);
     assert.equal((await request('/admin/posts',{method:'POST',body:{...body,slug:'editor-article'},session:editorSession})).status,201);

@@ -1,5 +1,4 @@
 import { useEffect } from 'react';
-import metadata from '../../data/pageMetadata.json';
 import { PageId } from '../../types';
 import { apiRequest } from '../../utils/adminApi';
 
@@ -22,7 +21,10 @@ function apply(value: Metadata, article = false) {
 export function PageMetadata({ page, detailId }: { page: PageId; detailId?: string }) {
   useEffect(() => {
     let cancelled = false;
-    const pages = metadata.pages as Record<string, Metadata>;
+    apply({ title: 'BrightByte Consulting', description: '', robots: page === 'admin' ? 'noindex, nofollow' : undefined });
+    apiRequest<{ defaults: Metadata; pages: Record<string, Metadata>; services: Record<string, Metadata>; blog: { titleTemplate: string; descriptionFallback: string; overrides: Record<string, Metadata> } }>('/metadata').then(metadata => {
+    if (cancelled) return;
+    const pages = metadata.pages;
     let value = pages[page] || metadata.defaults;
     if (page === 'service-detail' && detailId) {
       const services = metadata.services as Record<string, Metadata>;
@@ -31,12 +33,14 @@ export function PageMetadata({ page, detailId }: { page: PageId; detailId?: stri
     }
     const overrides = metadata.blog.overrides as Record<string, Metadata>;
     if (page === 'blog-post' && detailId && overrides[detailId]) value = overrides[detailId];
+    if (page === 'admin') value = { ...value, robots: 'noindex, nofollow' };
     apply(value, page === 'blog-post');
     if (page === 'blog-post' && detailId && !overrides[detailId]) {
       apiRequest<{ title: string; summary: string }>(`/posts/${encodeURIComponent(detailId)}`).then(post => {
         if (!cancelled) apply({ title: metadata.blog.titleTemplate.replace('{title}', post.title), description: post.summary || metadata.blog.descriptionFallback }, true);
       }).catch(() => { /* Keep the route fallback while the article is unavailable. */ });
     }
+    }).catch(() => { /* Keep the safe default if metadata is unavailable. */ });
     return () => { cancelled = true; };
   }, [page, detailId]);
   return null;

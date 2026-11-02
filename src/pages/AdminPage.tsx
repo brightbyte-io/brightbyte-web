@@ -1,3 +1,4 @@
+import { SeoSettingsPanel } from '../components/admin/SeoSettingsPanel';
 import React, { useCallback, useEffect, useRef, useState } from 'react';
 import { ArrowLeft, Eye, FileText, LayoutDashboard, LogOut, Plus, Redo2, Save, Undo2, Search, Users, Inbox, Settings, ExternalLink, ChevronDown } from 'lucide-react';
 import { BlogBlockEditor } from '../components/blog/BlogBlockEditor';
@@ -45,7 +46,7 @@ const AdminWorkspace: React.FC<{ user: AdminUser; onLogout: () => Promise<void> 
   const [active, setActive] = useState<ManagedBlog | null>(null); const [query, setQuery] = useState('');
   const [filter, setFilter] = useState<'all' | ManagedBlog['status']>('all'); const [selected, setSelected] = useState<string[]>([]);
   const [message, setMessage] = useState(''); const [dirty, setDirty] = useState(false); const [preview, setPreview] = useState(false);
-  const [view, setView] = useState<'dashboard' | 'posts' | 'all-posts' | 'new-post' | 'edit-post' | 'users' | 'submissions' | 'submission-settings' | 'email-settings'>('dashboard');
+  const [view, setView] = useState<'dashboard' | 'posts' | 'all-posts' | 'new-post' | 'edit-post' | 'users' | 'submissions' | 'submission-settings' | 'email-settings' | 'seo-settings'>('dashboard');
   const [postsExpanded, setPostsExpanded] = useState(false);
   const [submissionsExpanded, setSubmissionsExpanded] = useState(false);
   useEffect(() => { if (['posts', 'all-posts', 'new-post', 'edit-post'].includes(view)) setPostsExpanded(true); if (['submissions', 'submission-settings'].includes(view)) setSubmissionsExpanded(true); }, [view]);
@@ -122,11 +123,12 @@ const AdminWorkspace: React.FC<{ user: AdminUser; onLogout: () => Promise<void> 
         </div>
       </>}
       {user.userType === 'admin' && <button className={view === 'users' ? 'active' : ''} aria-current={view === 'users' ? 'page' : undefined} onClick={() => { if (discard()) { setActive(null); setDirty(false); setView('users'); } }}><Users size={18} />Users</button>}
+      {user.userType === 'admin' && <button className={view === 'seo-settings' ? 'active' : ''} aria-current={view === 'seo-settings' ? 'page' : undefined} onClick={() => { if (!saving && discard()) { setActive(null); setDirty(false); setMessage(''); setView('seo-settings'); } }}><Settings size={18} />SEO Settings</button>}
       {user.userType === 'admin' && <button className={view === 'email-settings' ? 'active' : ''} aria-current={view === 'email-settings' ? 'page' : undefined} onClick={() => { if (!saving && discard()) { setActive(null); setDirty(false); setMessage(''); setView('email-settings'); } }}><Settings size={18} />Email Settings</button>}
     </aside>
     <main className="wp-main">
       {message && <div className="wp-message" role="status">{message}</div>}
-      {view === 'dashboard' ? <DashboardPanel newPost={canEdit ? newPost : undefined} navigate={target => { setActive(null); setDirty(false); setMessage(''); setView(target); }} /> : view === 'email-settings' ? <MailSettingsPanel /> : view === 'submissions' || view === 'submission-settings' ? <SubmissionsPanel settings={view === 'submission-settings'} /> : view === 'users' ? <UsersPanel /> : !active ? <>
+      {view === 'dashboard' ? <DashboardPanel newPost={canEdit ? newPost : undefined} navigate={target => { setActive(null); setDirty(false); setMessage(''); setView(target); }} /> : view === 'seo-settings' ? <SeoSettingsPanel /> : view === 'email-settings' ? <MailSettingsPanel /> : view === 'submissions' || view === 'submission-settings' ? <SubmissionsPanel settings={view === 'submission-settings'} /> : view === 'users' ? <UsersPanel /> : !active ? <>
         <div className="wp-page-heading"><div><h1>Posts</h1><p>Create, organize, and publish your stories.</p></div><div className="wp-page-actions"><button className="wp-primary" disabled={!canEdit || saving} onClick={newPost}><Plus size={17} />Add New Post</button></div></div>
         <nav className="wp-post-filters" aria-label="Post status filters">{(['all', 'published', 'draft', 'trash'] as const).map(status => <button key={status} className={filter === status ? 'selected' : ''} aria-pressed={filter === status} onClick={() => { setFilter(status); setSelected([]); }}>{status === 'all' ? 'All' : status === 'published' ? 'Published' : status === 'draft' ? 'Drafts' : 'Trash'} <span>({allPosts.filter(post => status === 'all' ? post.status !== 'trash' : post.status === status).length})</span></button>)}</nav>
         <section className="wp-posts-panel">

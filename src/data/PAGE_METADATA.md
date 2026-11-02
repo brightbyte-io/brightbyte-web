@@ -1,7 +1,7 @@
 # Page metadata
 
-Edit pageMetadata.json for title and description values. pages holds main routes, services holds each service slug, and defaults is the fallback. Admin is marked noindex.
+Manage titles and descriptions under Admin > SEO Settings. Values are stored in PostgreSQL page_metadata and read through /api/metadata. Service pages and individual blog articles have separate entries. Clear both article fields to restore automatic metadata from its title and summary. The blog-template entry controls the automatic article title and fallback description. Administration always remains noindex.
 
-Blog article metadata uses database title and summary, controlled by blog.titleTemplate and blog.descriptionFallback. Add a slug entry under blog.overrides with title and description to override an article centrally.
+pageMetadata.json now seeds new database entries during npm run db:migrate and provides build-time HTML fallback values. Migration never overwrites saved admin edits. Runtime navigation updates title, description, Open Graph and Twitter tags from the database without rebuilding.
 
-The shared PageMetadata component updates document title, description, Open Graph, Twitter and robots tags when navigating. The Vite build uses JSON home metadata in the initial HTML. Other route tags update when JavaScript runs; static hosting does not prerender unique HTML for each route.
+The initial static HTML still uses the build-time homepage fallback; route metadata updates when JavaScript runs. Static hosting requires the configured Node API for database changes to appear.

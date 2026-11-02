@@ -57,3 +57,5 @@ CREATE TABLE IF NOT EXISTS mail_settings (
   api_key_encrypted text NOT NULL DEFAULT '',
   updated_at timestamptz NOT NULL DEFAULT now()
 );
+
+CREATE TABLE IF NOT EXISTS page_metadata (key text PRIMARY KEY,title text NOT NULL,description text NOT NULL,updated_at timestamptz NOT NULL DEFAULT now());

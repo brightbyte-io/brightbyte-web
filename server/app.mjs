@@ -1,3 +1,4 @@
+import { registerMetadata } from './metadata.mjs';
 import express from 'express';
 import { randomUUID } from 'node:crypto';
 import { hashPassword, verifyPassword, signSession, readSession, publicUser } from './auth.mjs';
@@ -140,6 +141,7 @@ export function createApi({ pool, env, sendMail }) {
       return (await client.query('UPDATE users SET username=$2,email=$3,name=$4,password_hash=COALESCE($5,password_hash),user_type=$6,is_active=$7,session_version=session_version+1,updated_at=now() WHERE id=$1 RETURNING *', [old.id,data.username,data.email,data.name,hash,data.userType,data.isActive !== false])).rows[0];
     }); res.json(publicUser(user));
   });
+  registerMetadata(app, { pool, authenticate, admin });
   registerContact(app, { pool, env, authenticate, admin, sendMail });
   app.use((req,res) => res.status(404).json({ message: 'API endpoint not found.' }));
   app.use((error, req, res, next) => {
