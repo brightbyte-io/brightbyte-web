@@ -1,15 +1,15 @@
-import React from 'react';
-import { HomeHero } from '../components/home/HomeHero';
-import { HomeTrustedBy } from '../components/home/HomeTrustedBy';
-import { HomeBentoServices } from '../components/home/HomeBentoServices';
-import { HomeOemSourcing } from '../components/home/HomeOemSourcing';
-import { HomeWaysToWork } from '../components/home/HomeWaysToWork';
-import { HomeNumbers } from '../components/home/HomeNumbers';
-import { HomeHowWeDeliver } from '../components/home/HomeHowWeDeliver';
-import { HomeReviews } from '../components/home/HomeReviews';
-import { FaqSection } from '../components/layout/FaqSection';
-import { CtaCard } from '../components/layout/CtaCard';
-import { PageId } from '../types';
+import React from "react";
+import { HomeHero } from "../components/home/HomeHero";
+import { HomeTrustedBy } from "../components/home/HomeTrustedBy";
+import { HomeBentoServices } from "../components/home/HomeBentoServices";
+import { HomeOemSourcing } from "../components/home/HomeOemSourcing";
+import { HomeWaysToWork } from "../components/home/HomeWaysToWork";
+import { HomeNumbers } from "../components/home/HomeNumbers";
+import { HomeHowWeDeliver } from "../components/home/HomeHowWeDeliver";
+import { HomeReviews } from "../components/home/HomeReviews";
+import { FaqSection } from "../components/layout/FaqSection";
+import { CtaCard } from "../components/layout/CtaCard";
+import { PageId } from "../types";
 
 export interface HomePageProps {
   onOpenConsultation: () => void;
@@ -33,20 +33,14 @@ export const HomePage: React.FC<HomePageProps> = ({
         onNavigate={onNavigate}
       />
 
-
-
       {/* 2. Trusted by the best (Frame 2121455038) */}
       <HomeTrustedBy />
 
       {/* 3. What We Do: Every service your product needs (8 bento cards) */}
-      <HomeBentoServices
-        onNavigate={onNavigate}
-      />
+      <HomeBentoServices onNavigate={onNavigate} />
 
       {/* 3. OEM Global Sourcing: 4 cards + Learn more */}
-      <HomeOemSourcing
-        onNavigate={onNavigate}
-      />
+      <HomeOemSourcing onNavigate={onNavigate} />
 
       {/* 4. How We Engage: Four ways to work with us (01-04 cards + Explore models) */}
       <HomeWaysToWork

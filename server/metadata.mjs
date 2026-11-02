@@ -1,18 +1,9 @@
+import { loadMetadata } from './pageHtml.mjs';
 import { ApiError } from './posts.mjs';
 
 export function registerMetadata(app, { pool, authenticate, admin }) {
   app.get('/metadata', async (req, res) => {
-    const { rows } = await pool.query('SELECT key,title,description FROM page_metadata ORDER BY key');
-    const data = { defaults: { title: 'BrightByte Consulting', description: '' }, pages: {}, services: {}, blog: { titleTemplate: '{title} | BrightByte Blog', descriptionFallback: '', overrides: {} } };
-    for (const { key, title, description } of rows) {
-      const value = { title, description };
-      if (key === 'defaults') data.defaults = value;
-      else if (key === 'blog-template') Object.assign(data.blog, { titleTemplate: title, descriptionFallback: description });
-      else if (key.startsWith('page:')) data.pages[key.slice(5)] = value;
-      else if (key.startsWith('service:')) data.services[key.slice(8)] = value;
-      else if (key.startsWith('blog:')) data.blog.overrides[key.slice(5)] = value;
-    }
-    res.json(data);
+    res.json(await loadMetadata(pool));
   });
   app.get('/admin/metadata', authenticate, admin, async (req, res) => {
     const { rows } = await pool.query('SELECT key,title,description FROM page_metadata ORDER BY key');

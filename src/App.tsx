@@ -17,8 +17,8 @@ import { ProjectInquiryModal } from './components/modals/ProjectInquiryModal';
 import { PageId } from './types';
 import { parseRoute, navigateTo, getRouteUrl } from './utils/router';
 
-export default function App() {
-  const initialRoute = parseRoute();
+export default function App({ pathname }: { pathname?: string }) {
+  const initialRoute = pathname === undefined ? parseRoute() : parseRoute(pathname, '');
   const [currentPage, setCurrentPage] = useState<PageId>(initialRoute.page);
   const [selectedServiceId, setSelectedServiceId] = useState<string>(
     initialRoute.detailId || 'mobile-app'
@@ -28,6 +28,7 @@ export default function App() {
   );
   // Sync state whenever the URL link changes in the browser
   useEffect(() => {
+    const hadHash = Boolean(window.location.hash);
     // If the browser address bar still has a /#/ or # from before, clean it to clean path immediately
     if (window.location.hash) {
       const { page, detailId } = parseRoute();
@@ -45,6 +46,8 @@ export default function App() {
       }
       window.scrollTo({ top: 0, behavior: 'smooth' });
     };
+
+    if (hadHash) handleUrlChange();
 
     window.addEventListener('popstate', handleUrlChange);
     // Also listen to hashchange just in case an external anchor or old link is hit

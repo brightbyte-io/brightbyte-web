@@ -1,4 +1,4 @@
-import { useEffect, useSyncExternalStore } from 'react';
+import { createContext, useContext, useEffect, useSyncExternalStore } from 'react';
 import { apiRequest } from './adminApi';
 
 export type BlogBlockType = 'paragraph' | 'heading' | 'list' | 'quote' | 'image' | 'divider' | 'accordion';
@@ -29,7 +29,11 @@ export interface ManagedBlog {
   version?: number;
 }
 
-let snapshot: { posts: ManagedBlog[]; loading: boolean; error: string } = { posts: [], loading: true, error: '' };
+export interface BlogSnapshot { posts: ManagedBlog[]; loading: boolean; error: string }
+export const initialBlogSnapshot: BlogSnapshot = { posts: [], loading: true, error: '' };
+export const BlogSsrContext = createContext<BlogSnapshot>(initialBlogSnapshot);
+let snapshot = initialBlogSnapshot;
+export function initializeBlogs(value: BlogSnapshot) { snapshot = value; }
 const listeners = new Set<() => void>();
 let pending: Promise<void> | null = null;
 const emit = () => listeners.forEach(listener => listener());
@@ -43,7 +47,8 @@ export function refreshPublishedBlogs(): Promise<void> {
   return pending;
 }
 export function usePublicBlogs() {
-  const state = useSyncExternalStore(callback => { listeners.add(callback); return () => { listeners.delete(callback); }; }, () => snapshot);
+  const serverSnapshot = useContext(BlogSsrContext);
+  const state = useSyncExternalStore(callback => { listeners.add(callback); return () => { listeners.delete(callback); }; }, () => snapshot, () => serverSnapshot);
   useEffect(() => {
     void refreshPublishedBlogs();
     const refresh = () => { if (document.visibilityState === 'visible') void refreshPublishedBlogs(); };

@@ -5,11 +5,12 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc && vite build",
+    "build": "tsc && vite build && vite build --ssr src/entry-server.tsx --outDir dist/server && node server/prerender.mjs",
     "lint": "tsc --noEmit",
     "db:migrate": "node server/migrate.mjs",
     "start": "node server/index.mjs",
     "test:api": "node --test server/api.test.mjs",
+    "test:ssr": "npm run build && node --test server/pageHtml.test.mjs server/ssr.test.mjs",
     "preview": "node server/index.mjs"
   },
   "dependencies": {
