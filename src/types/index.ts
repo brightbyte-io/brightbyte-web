@@ -6,6 +6,9 @@ export type PageId =
   | 'contact'
   | 'blog'
   | 'blog-post'
+  | 'privacy-policy'
+  | 'terms-of-service'
+  | 'admin'
   | 'service-detail';
 
 export interface NavItem {
@@ -91,6 +94,7 @@ export interface FaqItem {
 }
 
 export interface BlogPost {
+  blocks?: import('../utils/blogContent').BlogBlock[];
   id: string;
   title: string;
   category: string;

@@ -1,3 +1,5 @@
+import { MainHeading } from '../ui/MainHeading';
+import { SectionLabel } from '../ui/SectionLabel';
 import React, { useState, useEffect, useRef } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { Container } from '../layout/Container';
@@ -147,12 +149,8 @@ export const HomeReviews: React.FC = () => {
         {/* Single line title, exact typography matching Figma              */}
         {/* ============================================================== */}
         <div className="max-w-4xl mx-auto text-center mb-8 sm:mb-10 space-y-2">
-          <span className="text-xs font-bold uppercase tracking-wider text-[#18529B]">
-            CLIENT REVIEWS
-          </span>
-          <h2 className="text-2xl sm:text-3xl lg:text-[34px] font-bold text-slate-950 tracking-tight leading-snug whitespace-normal sm:whitespace-nowrap">
-            Our work has got people vouching for us!
-          </h2>
+          <SectionLabel labelKey="clientReviews" />
+          <MainHeading headingKey="HomeReviews" as="h2" variant="section" className="text-2xl sm:text-3xl lg:text-[34px] font-bold text-slate-950 tracking-tight leading-snug whitespace-normal sm:whitespace-nowrap" />
         </div>
       </Container>
 

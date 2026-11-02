@@ -1,3 +1,4 @@
+import { MainHeading } from '../ui/MainHeading';
 import React, { useState } from 'react';
 import { Calculator, Sparkles, Check, ArrowRight, Clock, Users, DollarSign } from 'lucide-react';
 import { Container } from '../layout/Container';
@@ -66,9 +67,7 @@ export const InteractiveEstimator: React.FC<InteractiveEstimatorProps> = ({
       <Container>
         <div className="max-w-3xl mx-auto text-center mb-16 space-y-4">
           <Badge variant="bluePill">INSTANT SCOPING CALCULATOR</Badge>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 tracking-tight">
-            Estimate Your Software Project
-          </h2>
+          <MainHeading headingKey="InteractiveEstimator" as="h2" variant="section" className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 tracking-tight" />
           <p className="text-base sm:text-lg text-slate-600 leading-relaxed">
             Select your target engagement model and architectural components to receive an instant sprint timeline and squad composition estimate.
           </p>

@@ -11,7 +11,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onOpenConsultation }) 
   return (
     <div className="bg-white">
       {/* 1. First Section: Consultation Hero Header & Form (Matching Frame 2121455032.png & Frame 2121455261.png) */}
-      <ContactHeroSection onSuccess={onOpenConsultation} />
+      <ContactHeroSection />
 
       {/* 2. Second Section: Global Delivery Network World Map (Matching Frame 2121455062.png) */}
       <ContactGlobalLocationsSection />

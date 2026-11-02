@@ -1,3 +1,4 @@
+import { RightArrow } from '../ui/RightArrow';
 import React from 'react';
 import { Container } from '../layout/Container';
 import { useToast } from '../ui/Toast';
@@ -58,7 +59,7 @@ export const ContactCalendlyBannerSection: React.FC<ContactCalendlyBannerSection
                 className="inline-flex items-center justify-center gap-2 bg-white hover:bg-slate-50 text-[#18529B] font-semibold text-sm sm:text-base px-8 py-3.5 rounded-full shadow-md hover:shadow-lg transition-all cursor-pointer whitespace-nowrap active:scale-[0.98]"
               >
                 <span>Book on Calendly</span>
-                <span className="text-lg leading-none">→</span>
+                <RightArrow />
               </button>
             </div>
           </div>
@@ -82,7 +83,7 @@ export const ContactCalendlyBannerSection: React.FC<ContactCalendlyBannerSection
                 className="w-full inline-flex items-center justify-center gap-2 bg-white hover:bg-slate-50 text-[#18529B] font-semibold text-sm sm:text-base px-6 py-3.5 rounded-full shadow-md transition-all cursor-pointer whitespace-nowrap active:scale-[0.98]"
               >
                 <span>Book on Calendly</span>
-                <span className="text-lg leading-none">→</span>
+                <RightArrow />
               </button>
             </div>
           </div>

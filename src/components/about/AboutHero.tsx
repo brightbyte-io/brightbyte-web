@@ -1,3 +1,5 @@
+import { MainHeading } from '../ui/MainHeading';
+import { SectionLabel } from '../ui/SectionLabel';
 import React from 'react';
 
 export const AboutHero: React.FC = () => {
@@ -18,18 +20,13 @@ export const AboutHero: React.FC = () => {
           {/* LEFT COLUMN: Headings and Story Intro                           */}
           {/* ============================================================== */}
           <div className="lg:col-span-5 lg:self-start lg:pt-28 xl:pt-32 2xl:pt-36 lg:pb-16 space-y-4 lg:space-y-5">
-            <span className="inline-block text-xs font-bold uppercase tracking-wider text-[#18529B]">
-              ABOUT US
-            </span>
+            <SectionLabel labelKey="aboutUs" />
 
-            <h1 className="text-3xl sm:text-4xl lg:text-[44px] xl:text-[48px] font-extrabold text-[#0B1528] tracking-tight leading-[1.14]">
-              Built by developers.<br />
-              Trusted by growing<br />
-              businesses.
-            </h1>
+            <MainHeading headingKey="AboutHero" as="h1" variant="hero" className="text-3xl sm:text-4xl lg:text-[44px] xl:text-[48px] font-extrabold text-[#0B1528] tracking-tight leading-[1.14]" />
 
             <p className="text-sm sm:text-base text-slate-500 font-normal leading-relaxed max-w-md">
-              Bright Byte Consulting began with a vision to deliver quality software quickly and affordably. Today, our diverse team provides tailored solutions to clients worldwide.
+              
+              BrightByte Consulting brings software design, engineering and delivery together. We help businesses build practical digital products around their users, systems and goals.
             </p>
           </div>
 

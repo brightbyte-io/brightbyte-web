@@ -1,3 +1,4 @@
+import { MainHeading } from '../ui/MainHeading';
 import React, { useState, useEffect, useRef } from 'react';
 import { Container } from '../layout/Container';
 
@@ -10,7 +11,7 @@ interface StatItem {
 const STATS: StatItem[] = [
   { target: 50, suffix: '+', label: 'Projects Shipped' },
   { target: 95, suffix: '%', label: 'Client Retention Rate' },
-  { target: 2, suffix: '×', label: 'Avg. Velocity Gain' },
+  { target: 2, suffix: '\u00D7', label: 'Avg. Velocity Gain' },
   { target: 30, suffix: '%', label: 'Avg. Cost Reduction' },
 ];
 
@@ -57,13 +58,13 @@ const StatCard: React.FC<{ stat: StatItem; isVisible: boolean }> = ({ stat, isVi
   const count = useCountUp(stat.target, 1600, isVisible);
 
   return (
-    <div className="bg-white rounded-[22px] sm:rounded-[26px] py-7 px-4 sm:py-10 sm:px-6 border-t-4 border-t-[#18529B] border-x border-b border-slate-100 shadow-[0_10px_28px_rgba(24,82,155,0.06),0_2px_8px_rgba(0,0,0,0.04)] hover:shadow-xl hover:-translate-y-1 transition-all duration-300 text-center flex flex-col items-center justify-center space-y-2 group">
+    <div className="bg-white rounded-[22px] min-h-[160px] lg:min-h-[186px] py-8 px-4 lg:px-6 border-t-[3px] border-t-[#1E6099] shadow-[0_16px_36px_rgba(0,0,0,0.12)] hover:shadow-xl hover:-translate-y-1 transition-all duration-300 text-center flex flex-col items-center justify-center space-y-2 group">
       {/* Reduced thickness to font-semibold */}
-      <div className="text-4xl sm:text-[46px] lg:text-[50px] font-semibold text-[#18529B] tabular-nums tracking-tight leading-none group-hover:scale-105 transition-transform duration-300">
+      <div className="text-4xl sm:text-[46px] lg:text-[60px] font-semibold text-[#1E6099] tabular-nums tracking-tight leading-none group-hover:scale-105 transition-transform duration-300">
         {isVisible ? count : 1}
         {stat.suffix}
       </div>
-      <div className="text-xs sm:text-sm font-medium text-slate-600 leading-snug">
+      <div className="text-xs sm:text-sm lg:text-[18px] font-normal text-[#666666] leading-snug">
         {stat.label}
       </div>
     </div>
@@ -96,23 +97,23 @@ export const HomeNumbers: React.FC = () => {
   return (
     <section
       ref={sectionRef}
-      className="py-14 sm:py-18 lg:py-20 bg-gradient-to-b from-[#EFF6FD] via-[#E6F1FD] to-[#EFF6FD] relative overflow-hidden"
+      className="pt-14 pb-24 sm:pt-18 sm:pb-36 lg:pt-20 lg:pb-[230px] bg-white bg-no-repeat relative overflow-hidden"
+      style={{
+        backgroundImage: "linear-gradient(to bottom, #fff 0%, rgba(255,255,255,0.85) 10%, rgba(255,255,255,0) 38%), url('/images/home-counter-backround.svg')",
+        backgroundSize: '100% 100%, cover',
+        backgroundPosition: 'center bottom',
+      }}
     >
-      {/* Background ambient curve */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[350px] bg-white/50 blur-3xl pointer-events-none rounded-full" />
-
       <Container className="relative z-10">
         <div className="max-w-3xl mx-auto text-center mb-10 sm:mb-12">
-          <h2 className="text-3xl sm:text-4xl lg:text-[42px] font-extrabold text-slate-950 tracking-tight leading-tight">
-            It's all there in the numbers!
-          </h2>
+          <MainHeading headingKey="HomeNumbers" as="h2" variant="section" className="text-3xl sm:text-4xl lg:text-[44px] font-semibold text-[#0A0A0A] tracking-tight leading-tight" />
         </div>
 
         {/* ============================================================== */}
         {/* STATS GRID: 2 cols on mobile, 4 cols on desktop                */}
         {/* All numbers count up smoothly from 1 upon scroll into view      */}
         {/* ============================================================== */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 max-w-5xl mx-auto">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 lg:gap-8 max-w-[1140px] mx-auto">
           {STATS.map((stat) => (
             <StatCard key={stat.label} stat={stat} isVisible={isVisible} />
           ))}

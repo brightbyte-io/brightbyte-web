@@ -1,0 +1,29 @@
+.how-work-hero { padding-top: 100px; padding-bottom: 0; }
+.how-work-hero .how-work-hero-container { max-width: 1280px; padding-inline: 40px; }
+.how-work-hero-layout { grid-template-columns: minmax(0, 1.08fr) minmax(0, 1fr); gap: 40px; }
+.how-work-hero-copy { padding-bottom: 8px; }
+.how-work-hero-eyebrow { display: block; margin-bottom: 32px; color: #1e609b; font-size: 14px; font-weight: 700; letter-spacing: .5px; }
+.how-work-hero-title { max-width: 640px; margin: 0; color: #080808; font-size: clamp(36px, 4.17vw, 60px); font-weight: 700; letter-spacing: -1.5px; line-height: 1.14; }
+.how-work-hero-description { max-width: 570px; margin-top: 32px; color: #858585; font-size: 20px; font-weight: 600; line-height: 1.4; }
+.how-work-hero-art img { max-width: 556px; }
+@media (min-width: 768px) and (max-width: 1100px) {
+  .how-work-hero { padding-top: 88px; padding-bottom: 0; }
+  .how-work-hero .how-work-hero-container { padding-inline: 8.33%; }
+  .how-work-hero-layout { gap: 24px; }
+  .how-work-hero-eyebrow { margin-bottom: 22px; font-size: 11px; }
+  .how-work-hero-title { font-size: clamp(30px, 4.17vw, 46px); letter-spacing: -1px; }
+  .how-work-hero-description { margin-top: 24px; font-size: 15px; }
+}
+@media (max-width: 767px) {
+  .how-work-hero { padding-top: 88px; padding-bottom: 12px; }
+  .how-work-hero .how-work-hero-container { padding-inline: 20px; }
+}
+
+@media (max-width: 767px) {
+  .how-work-hero { padding-top: 112px; }
+  .how-work-hero-layout { grid-template-columns: minmax(0, 1fr); gap: 24px; }
+  .how-work-hero-eyebrow { margin-bottom: 20px; font-size: 12px; }
+  .how-work-hero-title { font-size: 32px; letter-spacing: -.8px; }
+  .how-work-hero-description { margin-top: 22px; font-size: 16px; line-height: 1.5; }
+  .how-work-hero-art img { max-width: 440px; }
+}

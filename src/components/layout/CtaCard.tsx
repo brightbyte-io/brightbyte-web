@@ -1,3 +1,4 @@
+import { MainHeading } from '../ui/MainHeading';
 import React from 'react';
 import { ArrowRight, Calendar } from 'lucide-react';
 import { Button } from '../ui/Button';
@@ -26,11 +27,9 @@ export const CtaCard: React.FC<CtaCardProps> = ({
         />
 
         <div className="relative z-10 max-w-3xl mx-auto space-y-4">
-          <h2 className="text-2xl sm:text-3xl lg:text-[40px] font-extrabold tracking-tight text-white leading-tight">
-            Ready to build something great?
-          </h2>
+          <MainHeading headingKey="CtaCard" as="h2" variant="section" className="text-2xl sm:text-3xl lg:text-[40px] font-extrabold tracking-tight text-white leading-tight" />
           <p className="text-blue-100 text-sm sm:text-base max-w-2xl mx-auto leading-relaxed">
-            Book a free 30-minute consultation. We’ll listen to your goals and tell you honestly how we can help. No pitch, no pressure.
+            Discuss your software requirements in a free consultation. We will review your goals, technical needs and possible next steps.
           </p>
 
           <div className="pt-2 sm:pt-3 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4">

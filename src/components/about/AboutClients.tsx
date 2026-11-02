@@ -1,3 +1,5 @@
+import { MainHeading } from '../ui/MainHeading';
+import { SectionLabel } from '../ui/SectionLabel';
 import React from 'react';
 import { Container } from '../layout/Container';
 
@@ -63,14 +65,8 @@ export const AboutClients: React.FC = () => {
         {/* Exact typography and styling matching screenshot                */}
         {/* ============================================================== */}
         <div className="text-center max-w-2xl mx-auto mb-12 sm:mb-16 space-y-3">
-          <span className="inline-block text-xs sm:text-[13px] font-extrabold uppercase tracking-widest text-[#18529B]">
-            OUR CLIENTS
-          </span>
-          <h2 className="text-3xl sm:text-4xl lg:text-[44px] font-bold text-slate-950 tracking-tight leading-[1.18]">
-            Only the best choose to work
-            <br />
-            with BrightByte
-          </h2>
+          <SectionLabel labelKey="ourClients" />
+          <MainHeading headingKey="AboutClients" as="h2" variant="section" className="text-3xl sm:text-4xl lg:text-[44px] font-bold text-slate-950 tracking-tight leading-[1.18]" />
         </div>
       </Container>
 

@@ -1,0 +1,208 @@
+{
+  "defaults": {
+    "hero": {
+      "mobile": 32,
+      "tablet": 36,
+      "desktop": 48,
+      "weight": 700,
+      "lineHeight": 1.14,
+      "letterSpacing": -1.2
+    },
+    "section": {
+      "mobile": 30,
+      "tablet": 36,
+      "desktop": 44,
+      "weight": 700,
+      "lineHeight": 1.18,
+      "letterSpacing": -0.8
+    }
+  },
+  "headings": {
+    "AboutClients": {
+      "text": "Collaboration built on\nclear communication"
+    },
+    "AboutHero": {
+      "text": "Software expertise.\nPractical business\nsolutions."
+    },
+    "AboutMission": {
+      "text": "Building reliable software, thoughtfully\nand collaboratively."
+    },
+    "AboutStory": {
+      "text": "The BrightByte Approach"
+    },
+    "BlogHeroSection": {
+      "text": "Software Insights for\nBusiness Growth."
+    },
+    "BlogRelatedArticlesSection": {
+      "text": "You may also be interested in"
+    },
+    "ContactHeroSection": {
+      "text": "Let's talk about\nyour project."
+    },
+    "ContactHeroSection.2": {
+      "text": "Schedule a Consultation"
+    },
+    "FaqSection": {
+      "text": "Clear Answers to Common Questions"
+    },
+    "HeroSection": {
+      "text": "We Build Software That Moves Businesses Forward."
+    },
+    "HomeBentoServices": {
+      "text": "Software services your business needs"
+    },
+    "HomeHero": {
+      "text": "We build software that moves businesses forward."
+    },
+    "HomeHowWeDeliver": {
+      "text": "From requirements to reliable software"
+    },
+    "HomeNumbers": {
+      "text": "It's all there in the numbers!"
+    },
+    "HomeOemSourcing": {
+      "text": "OEM Global Sourcing"
+    },
+    "HomeReviews": {
+      "text": "Client perspectives on working together"
+    },
+    "HomeWaysToWork": {
+      "text": "Four delivery models for your team"
+    },
+    "InteractiveEstimator": {
+      "text": "Estimate Your Software Project"
+    },
+    "OemSourcingSection": {
+      "text": "End-to-End OEM & Global Sourcing Solutions"
+    },
+    "ProcessSection": {
+      "text": "How We Deliver Every Project"
+    },
+    "ServicesSection": {
+      "text": "High-Impact Software Engineering & Consulting Services"
+    },
+    "TestimonialsSection": {
+      "text": "Trusted by Leaders Across High-Growth Industries"
+    },
+    "HowWeWorkEngagementModelsSection": {
+      "text": "Our engagement models"
+    },
+    "HowWeWorkHero": {
+      "text": "Four ways to work together. Choose what fits your team."
+    },
+    "CtaCard": {
+      "text": "Ready to discuss your next project?"
+    },
+    "MobileAppIndustriesSection": {
+      "text": "Industries we serve"
+    },
+    "MobileAppTechnologiesSection": {
+      "text": "What we build with"
+    },
+    "MobileAppWhyChooseSection": {
+      "text": "Built for release and continued use"
+    },
+    "ServicesHero": {
+      "text": "Software services\nfor your business\nand its next stage."
+    },
+    "ServicesOverviewSection": {
+      "text": "Software development and consulting\nfor your business needs."
+    },
+    "faq": {
+      "text": "Frequently asked questions"
+    },
+    "delivery.howWeWork": {
+      "text": "How we deliver every project"
+    },
+    "delivery.mobileApp": {
+      "text": "How we deliver every project"
+    },
+    "portfolio.mobile-app": {
+      "text": "Selected project examples"
+    },
+    "portfolio.web-enterprise": {
+      "text": "Selected project examples"
+    },
+    "portfolio.ai-app": {
+      "text": "Selected project examples"
+    },
+    "portfolio.devops": {
+      "text": "Selected project examples"
+    },
+    "portfolio.erp": {
+      "text": "Selected project examples"
+    },
+    "portfolio.business-auditing": {
+      "text": "Selected project examples"
+    },
+    "portfolio.project-management": {
+      "text": "Selected project examples"
+    },
+    "portfolio.seo-marketing": {
+      "text": "Selected project examples"
+    },
+    "portfolio.oem-sourcing": {
+      "text": "Selected project examples"
+    },
+    "service.mobile-app.hero": {
+      "text": "Native Android and iOS apps, built for your users."
+    },
+    "service.mobile-app.overview": {
+      "text": "Mobile App Development"
+    },
+    "service.web-enterprise.hero": {
+      "text": "Web platforms for your business."
+    },
+    "service.web-enterprise.overview": {
+      "text": "Web & Enterprise App Development"
+    },
+    "service.ai-app.hero": {
+      "text": "AI applications with a clear purpose."
+    },
+    "service.ai-app.overview": {
+      "text": "AI App Development"
+    },
+    "service.devops.hero": {
+      "text": "Reliable delivery for your software."
+    },
+    "service.devops.overview": {
+      "text": "DevOps"
+    },
+    "service.erp.hero": {
+      "text": "Connect your business operations."
+    },
+    "service.erp.overview": {
+      "text": "Enterprise Resource Planning (ERP)"
+    },
+    "service.business-auditing.hero": {
+      "text": "Understand your systems and risks."
+    },
+    "service.business-auditing.overview": {
+      "text": "Business Auditing"
+    },
+    "service.project-management.hero": {
+      "text": "Bring structure to software delivery."
+    },
+    "service.project-management.overview": {
+      "text": "Project Management"
+    },
+    "service.seo-marketing.hero": {
+      "text": "Build search visibility that matters."
+    },
+    "service.seo-marketing.overview": {
+      "text": "SEO & Social Media Marketing"
+    },
+    "service.oem-sourcing.hero": {
+      "text": "OEM sourcing for your product needs."
+    },
+    "service.oem-sourcing.overview": {
+      "text": "OEM Global Sourcing"
+    },
+    "privacyPolicy": {
+      "text": "Privacy Policy"
+    },
+    "termsOfService": {
+      "text": "Terms of Service"
+    }
+  }
+}

@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
-import { ChevronLeft, ChevronRight } from 'lucide-react';
+import { MainHeading } from '../ui/MainHeading';
+import React from 'react';
+
 import { Container } from '../layout/Container';
 
 // Icon 1: UI / UX Design (Window wireframe with cursor click)
@@ -134,43 +135,30 @@ export const MOBILE_APP_SERVICES: MobileAppServiceCard[] = [
   {
     id: 'ui-ux-design',
     title: 'UI / UX Design',
-    description: 'User-focused design from wireframes through to final, polished screens.',
+    description: "User-centered mobile design, from wireframes to production-ready screens.",
     icon: <UiUxDesignIcon className="w-10 h-10 text-slate-950" />,
   },
   {
     id: 'android-development',
     title: 'Android Development',
-    description: 'Native Android apps built for performance and usability across devices.',
+    description: "Native Android development with responsive layouts and device testing.",
     icon: <AndroidDevCardIcon className="w-9 h-11 text-slate-950" />,
   },
   {
     id: 'ios-development',
     title: 'iOS Development',
-    description: 'Native iOS apps designed for Apple ecosystem with Apple Store-ready code.',
+    description: "Native iOS development for Apple devices, with App Store submission support.",
     icon: <IosDevCardIcon className="w-9 h-11 text-slate-950" />,
   },
   {
     id: 'qa-testing',
     title: 'QA & Testing',
-    description: 'Thorough testing at every stage so issues are caught before they reach users.',
+    description: "Functional and regression testing to identify issues throughout delivery.",
     icon: <QaTestingCardIcon className="w-10 h-11 text-slate-950" />,
   },
 ];
 
-export const MobileAppServicesSection: React.FC = () => {
-  // Mobile index for screens below 768px ("show one by one")
-  const [mobileIndex, setMobileIndex] = useState(0);
-
-  const nextMobile = () => {
-    setMobileIndex((prev) => (prev + 1) % MOBILE_APP_SERVICES.length);
-  };
-
-  const prevMobile = () => {
-    setMobileIndex((prev) => (prev - 1 + MOBILE_APP_SERVICES.length) % MOBILE_APP_SERVICES.length);
-  };
-
-  const currentService = MOBILE_APP_SERVICES[mobileIndex];
-
+export const MobileAppServicesSection: React.FC<{ headingKey?: string; title?: string; description?: string; tags?: string[]; cards?: MobileAppServiceCard[] }> = ({ headingKey = "service.mobile-app.overview", title, description, tags, cards }) => {
   return (
     <section className="py-16 sm:py-20 lg:py-24 bg-white border-b border-slate-100">
       <Container>
@@ -179,21 +167,18 @@ export const MobileAppServicesSection: React.FC = () => {
         {/* Exactly matching Frame 2121455061 (1).png                      */}
         {/* ============================================================== */}
         <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16 space-y-4">
-          <h2 className="text-3xl sm:text-4xl lg:text-[44px] font-extrabold text-slate-950 tracking-tight leading-tight">
-            Mobile App Development
-          </h2>
+          <MainHeading headingKey={headingKey} as="h2" variant="section" className="text-3xl sm:text-4xl lg:text-[44px] font-extrabold text-slate-950 tracking-tight leading-tight">
+            {title || 'Mobile App Development'}
+          </MainHeading>
 
           <p className="text-sm sm:text-base text-slate-600 max-w-2xl mx-auto leading-relaxed">
-            We build Android and iOS applications ranging from a focused MVP to a fully featured consumer or enterprise app. Our team handles UI/UX design, development, quality assurance, and App Store or Google Play submission.
+            {description || 'We build Android and iOS applications ranging from a focused MVP to a fully featured consumer or enterprise app. Our team handles UI/UX design, development, quality assurance, and App Store or Google Play submission.'}
           </p>
 
           {/* Badges / Pill Tags Row */}
           <div className="pt-2 flex flex-wrap items-center justify-center gap-2 sm:gap-2.5">
-            {['Android', 'iOS', 'UI/UX Design', 'QA & Testing'].map((tag) => (
-              <span
-                key={tag}
-                className="px-4 py-1.5 rounded-full bg-white border border-slate-200 text-slate-800 text-xs sm:text-[13px] font-medium shadow-2xs"
-              >
+            {(tags || ['Android', 'iOS', 'UI/UX Design', 'QA & Testing']).map((tag) => (
+              <span key={tag} className="px-4 py-1.5 rounded-full bg-white border border-slate-200 text-slate-800 text-xs sm:text-[13px] font-medium shadow-2xs">
                 {tag}
               </span>
             ))}
@@ -204,8 +189,8 @@ export const MobileAppServicesSection: React.FC = () => {
         {/* DESKTOP & TABLET VIEW (>= 768px): 2x2 GRID                     */}
         {/* Exactly matching Frame 2121455061 (1).png                      */}
         {/* ============================================================== */}
-        <div className="hidden md:grid md:grid-cols-2 gap-6 lg:gap-8">
-          {MOBILE_APP_SERVICES.map((card) => (
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
+          {(cards || MOBILE_APP_SERVICES).map((card) => (
             <div
               key={card.id}
               className="rounded-[28px] bg-[#EEF2F6] p-8 sm:p-10 lg:p-11 border border-slate-200/50 flex flex-col justify-start transition-all duration-200 hover:shadow-xs"
@@ -225,57 +210,6 @@ export const MobileAppServicesSection: React.FC = () => {
         {/* MOBILE VIEW (< 768px): SHOW ONE BY ONE                          */}
         {/* Requirement: "only in bleow 768 show one by one"                 */}
         {/* ============================================================== */}
-        <div className="md:hidden space-y-4 max-w-sm mx-auto pt-2">
-          {/* Mobile Stepper Header with Cursor Click Controls */}
-          <div className="flex items-center justify-between px-2">
-            <span className="text-xs font-bold text-slate-500 uppercase tracking-wider">
-              Service 0{mobileIndex + 1} of 0{MOBILE_APP_SERVICES.length}
-            </span>
-            <div className="flex items-center gap-2">
-              <button
-                onClick={prevMobile}
-                aria-label="Previous card"
-                className="w-8 h-8 rounded-full bg-white text-slate-700 shadow-xs hover:bg-slate-50 active:scale-90 flex items-center justify-center transition-all cursor-pointer border border-slate-200"
-              >
-                <ChevronLeft className="w-4 h-4" />
-              </button>
-              <button
-                onClick={nextMobile}
-                aria-label="Next card"
-                className="w-8 h-8 rounded-full bg-[#18529B] text-white shadow-xs hover:bg-[#133F77] active:scale-90 flex items-center justify-center transition-all cursor-pointer"
-              >
-                <ChevronRight className="w-4 h-4" />
-              </button>
-            </div>
-          </div>
-
-          {/* ACTIVE CARD SHOWN ONE BY ONE */}
-          <div className="rounded-[28px] bg-[#EEF2F6] p-7 shadow-xs border border-slate-200/50 space-y-4">
-            <div>{currentService.icon}</div>
-            <h3 className="text-2xl font-extrabold text-slate-950 tracking-tight">
-              {currentService.title}
-            </h3>
-            <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
-              {currentService.description}
-            </p>
-          </div>
-
-          {/* Indicator dots for mobile navigation */}
-          <div className="flex items-center justify-center gap-1.5 pt-2">
-            {MOBILE_APP_SERVICES.map((card, idx) => (
-              <button
-                key={card.id}
-                onClick={() => setMobileIndex(idx)}
-                aria-label={`Go to ${card.title}`}
-                className={`transition-all rounded-full h-1.5 cursor-pointer ${
-                  mobileIndex === idx
-                    ? 'w-6 bg-[#18529B]'
-                    : 'w-1.5 bg-slate-300 hover:bg-slate-400'
-                }`}
-              />
-            ))}
-          </div>
-        </div>
       </Container>
     </section>
   );

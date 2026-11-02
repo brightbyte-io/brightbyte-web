@@ -1,0 +1,290 @@
+{
+  "mobile-app": {
+    "description": "Illustrative project scopes. Discuss relevant delivery experience with our team.",
+    "backgroundImage": "/images/single-service-portfolio-background.svg",
+    "projects": [
+      {
+        "id": "banking-app",
+        "tag": "IOS & ANDROID",
+        "title": "Consumer banking app",
+        "description": "Account views, transaction history and mobile journeys designed around clear user needs.",
+        "image": "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=900&q=80",
+        "alt": "Hand holding smartphone with consumer banking interface"
+      },
+      {
+        "id": "self-service-app",
+        "tag": "IOS & ANDROID",
+        "title": "Self-service app",
+        "description": "Mobile account tools, service requests and notifications in a focused customer experience.",
+        "image": "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=900&q=80",
+        "alt": "Person using self-service ordering application on mobile device at table"
+      },
+      {
+        "id": "marketplace-mvp",
+        "tag": "IOS & ANDROID",
+        "title": "Marketplace MVP",
+        "description": "Product discovery, seller listings and checkout flows for validating a marketplace idea.",
+        "image": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=900&q=80",
+        "alt": "Laptop displaying marketplace dashboard and platform metrics on desk"
+      }
+    ],
+    "labelKey": "portfolio",
+    "headingKey": "portfolio.mobile-app"
+  },
+  "web-enterprise": {
+    "description": "Illustrative project scopes. Discuss relevant delivery experience with our team.",
+    "backgroundImage": "/images/single-service-portfolio-background.svg",
+    "projects": [
+      {
+        "id": "banking-app",
+        "tag": "WEB PLATFORM",
+        "title": "Customer web portal",
+        "description": "Account management, service requests and shared records through a responsive web portal.",
+        "image": "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=900&q=80",
+        "alt": "Hand holding smartphone with consumer banking interface"
+      },
+      {
+        "id": "self-service-app",
+        "tag": "ENTERPRISE",
+        "title": "Operations dashboard",
+        "description": "Reporting views and role-based workflows that bring operational information into one place.",
+        "image": "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=900&q=80",
+        "alt": "Person using self-service ordering application on mobile device at table"
+      },
+      {
+        "id": "marketplace-mvp",
+        "tag": "E-COMMERCE",
+        "title": "Online storefront",
+        "description": "Product browsing, basket management and payment integrations for an online retail service.",
+        "image": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=900&q=80",
+        "alt": "Laptop displaying marketplace dashboard and platform metrics on desk"
+      }
+    ],
+    "labelKey": "portfolio",
+    "headingKey": "portfolio.web-enterprise"
+  },
+  "ai-app": {
+    "description": "Illustrative project scopes. Discuss relevant delivery experience with our team.",
+    "backgroundImage": "/images/single-service-portfolio-background.svg",
+    "projects": [
+      {
+        "id": "banking-app",
+        "tag": "AI FEATURES",
+        "title": "Knowledge assistant",
+        "description": "Search internal information with source references and controls for reviewing AI responses.",
+        "image": "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=900&q=80",
+        "alt": "Hand holding smartphone with consumer banking interface"
+      },
+      {
+        "id": "self-service-app",
+        "tag": "AUTOMATION",
+        "title": "Document processing",
+        "description": "Extract and review key fields from documents before handing results to business systems.",
+        "image": "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=900&q=80",
+        "alt": "Person using self-service ordering application on mobile device at table"
+      },
+      {
+        "id": "marketplace-mvp",
+        "tag": "DATA ANALYTICS",
+        "title": "Data insights tool",
+        "description": "Explore business data through focused reports, trend analysis and assisted query workflows.",
+        "image": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=900&q=80",
+        "alt": "Laptop displaying marketplace dashboard and platform metrics on desk"
+      }
+    ],
+    "labelKey": "portfolio",
+    "headingKey": "portfolio.ai-app"
+  },
+  "devops": {
+    "description": "Illustrative project scopes. Discuss relevant delivery experience with our team.",
+    "backgroundImage": "/images/single-service-portfolio-background.svg",
+    "projects": [
+      {
+        "id": "banking-app",
+        "tag": "CI/CD PIPELINE",
+        "title": "Release pipeline",
+        "description": "Build, test and deploy application changes through a repeatable release workflow.",
+        "image": "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=900&q=80",
+        "alt": "Hand holding smartphone with consumer banking interface"
+      },
+      {
+        "id": "self-service-app",
+        "tag": "CLOUD SYSTEMS",
+        "title": "Cloud environment",
+        "description": "Version-controlled infrastructure with environment settings and planned deployment controls.",
+        "image": "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=900&q=80",
+        "alt": "Person using self-service ordering application on mobile device at table"
+      },
+      {
+        "id": "marketplace-mvp",
+        "tag": "OPERATIONS",
+        "title": "Service monitoring",
+        "description": "Logs, metrics and alerts that help teams investigate application behavior and incidents.",
+        "image": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=900&q=80",
+        "alt": "Laptop displaying marketplace dashboard and platform metrics on desk"
+      }
+    ],
+    "labelKey": "portfolio",
+    "headingKey": "portfolio.devops"
+  },
+  "erp": {
+    "description": "Illustrative project scopes. Discuss relevant delivery experience with our team.",
+    "backgroundImage": "/images/single-service-portfolio-background.svg",
+    "projects": [
+      {
+        "id": "banking-app",
+        "tag": "ERP WORKFLOWS",
+        "title": "Inventory workspace",
+        "description": "Stock records, purchase requests and reporting views aligned with day-to-day operations.",
+        "image": "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=900&q=80",
+        "alt": "Hand holding smartphone with consumer banking interface"
+      },
+      {
+        "id": "self-service-app",
+        "tag": "INTEGRATIONS",
+        "title": "Finance integration",
+        "description": "Connect approved transaction data and reporting workflows across business applications.",
+        "image": "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=900&q=80",
+        "alt": "Person using self-service ordering application on mobile device at table"
+      },
+      {
+        "id": "marketplace-mvp",
+        "tag": "BUSINESS TOOLS",
+        "title": "Team operations hub",
+        "description": "Role-based workflows for internal requests, approvals and shared operational information.",
+        "image": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=900&q=80",
+        "alt": "Laptop displaying marketplace dashboard and platform metrics on desk"
+      }
+    ],
+    "labelKey": "portfolio",
+    "headingKey": "portfolio.erp"
+  },
+  "business-auditing": {
+    "description": "Illustrative project scopes. Discuss relevant delivery experience with our team.",
+    "backgroundImage": "/images/single-service-portfolio-background.svg",
+    "projects": [
+      {
+        "id": "banking-app",
+        "tag": "TECH REVIEW",
+        "title": "Systems assessment",
+        "description": "Review application structure, dependencies and maintenance risks against an agreed scope.",
+        "image": "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=900&q=80",
+        "alt": "Hand holding smartphone with consumer banking interface"
+      },
+      {
+        "id": "self-service-app",
+        "tag": "PROCESS REVIEW",
+        "title": "Workflow review",
+        "description": "Map operational handoffs and identify bottlenecks, control gaps and improvement priorities.",
+        "image": "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=900&q=80",
+        "alt": "Person using self-service ordering application on mobile device at table"
+      },
+      {
+        "id": "marketplace-mvp",
+        "tag": "REVIEW REPORT",
+        "title": "Improvement roadmap",
+        "description": "Organize review findings into practical recommendations with priorities and next steps.",
+        "image": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=900&q=80",
+        "alt": "Laptop displaying marketplace dashboard and platform metrics on desk"
+      }
+    ],
+    "labelKey": "portfolio",
+    "headingKey": "portfolio.business-auditing"
+  },
+  "project-management": {
+    "description": "Illustrative project scopes. Discuss relevant delivery experience with our team.",
+    "backgroundImage": "/images/single-service-portfolio-background.svg",
+    "projects": [
+      {
+        "id": "banking-app",
+        "tag": "PROJECT PLAN",
+        "title": "Product delivery plan",
+        "description": "Define scope, milestones and dependencies so teams have a shared path toward release.",
+        "image": "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=900&q=80",
+        "alt": "Hand holding smartphone with consumer banking interface"
+      },
+      {
+        "id": "self-service-app",
+        "tag": "AGILE DELIVERY",
+        "title": "Sprint coordination",
+        "description": "Coordinate backlog priorities, sprint reviews and stakeholder decisions during development.",
+        "image": "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=900&q=80",
+        "alt": "Person using self-service ordering application on mobile device at table"
+      },
+      {
+        "id": "marketplace-mvp",
+        "tag": "RELEASE PLAN",
+        "title": "Release readiness",
+        "description": "Track open risks, ownership and launch requirements before handing software into operation.",
+        "image": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=900&q=80",
+        "alt": "Laptop displaying marketplace dashboard and platform metrics on desk"
+      }
+    ],
+    "labelKey": "portfolio",
+    "headingKey": "portfolio.project-management"
+  },
+  "seo-marketing": {
+    "description": "Illustrative project scopes. Discuss relevant delivery experience with our team.",
+    "backgroundImage": "/images/single-service-portfolio-background.svg",
+    "projects": [
+      {
+        "id": "banking-app",
+        "tag": "TECHNICAL SEO",
+        "title": "Search visibility plan",
+        "description": "Review site structure, page content and search opportunities to guide optimization work.",
+        "image": "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=900&q=80",
+        "alt": "Hand holding smartphone with consumer banking interface"
+      },
+      {
+        "id": "self-service-app",
+        "tag": "CONTENT PLAN",
+        "title": "Content program",
+        "description": "Plan useful website content around audience questions, service relevance and search intent.",
+        "image": "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=900&q=80",
+        "alt": "Person using self-service ordering application on mobile device at table"
+      },
+      {
+        "id": "marketplace-mvp",
+        "tag": "ANALYTICS",
+        "title": "Campaign reporting",
+        "description": "Bring channel activity and conversion data into reports that support marketing decisions.",
+        "image": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=900&q=80",
+        "alt": "Laptop displaying marketplace dashboard and platform metrics on desk"
+      }
+    ],
+    "labelKey": "portfolio",
+    "headingKey": "portfolio.seo-marketing"
+  },
+  "oem-sourcing": {
+    "description": "Illustrative project scopes. Discuss relevant delivery experience with our team.",
+    "backgroundImage": "/images/single-service-portfolio-background.svg",
+    "projects": [
+      {
+        "id": "banking-app",
+        "tag": "SUPPLIERS",
+        "title": "Supplier shortlist",
+        "description": "Compare potential manufacturers against product specifications, capacity and quotation needs.",
+        "image": "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=900&q=80",
+        "alt": "Hand holding smartphone with consumer banking interface"
+      },
+      {
+        "id": "self-service-app",
+        "tag": "QUALITY CHECK",
+        "title": "Quality review plan",
+        "description": "Define sample reviews and inspection checkpoints against agreed product requirements.",
+        "image": "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=900&q=80",
+        "alt": "Person using self-service ordering application on mobile device at table"
+      },
+      {
+        "id": "marketplace-mvp",
+        "tag": "SOURCING",
+        "title": "Delivery coordination",
+        "description": "Coordinate order updates, freight documents and delivery milestones across sourcing partners.",
+        "image": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=900&q=80",
+        "alt": "Laptop displaying marketplace dashboard and platform metrics on desk"
+      }
+    ],
+    "labelKey": "portfolio",
+    "headingKey": "portfolio.oem-sourcing"
+  }
+}

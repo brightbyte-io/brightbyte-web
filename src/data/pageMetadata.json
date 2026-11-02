@@ -1,0 +1,96 @@
+{
+  "defaults": {
+    "title": "BrightByte Consulting | Software Development & Consulting",
+    "description": "BrightByte Consulting builds mobile apps, web platforms, AI solutions and enterprise systems with dedicated engineering teams."
+  },
+  "pages": {
+    "home": {
+      "title": "BrightByte Consulting | Software That Moves Businesses Forward",
+      "description": "Build mobile apps, web platforms, AI solutions and enterprise systems with BrightByte Consulting. Explore our engineering services and delivery models."
+    },
+    "about": {
+      "title": "About Us | BrightByte Consulting",
+      "description": "Learn about BrightByte Consulting, our approach to custom software development and how we connect engineering decisions with business requirements."
+    },
+    "services": {
+      "title": "Software Development & Consulting Services | BrightByte",
+      "description": "Explore mobile apps, web and enterprise development, AI, DevOps, ERP, auditing, project management, marketing and OEM sourcing services."
+    },
+    "how-we-work": {
+      "title": "How We Work | BrightByte Consulting",
+      "description": "Choose staff augmentation, dedicated teams, project outsourcing or managed IT support. Explore how BrightByte plans software design, development and delivery."
+    },
+    "blog": {
+      "title": "Software Engineering Insights & Articles | BrightByte Blog",
+      "description": "Read practical articles on software development, AI integration, engineering collaboration and technology planning from BrightByte Consulting."
+    },
+    "contact": {
+      "title": "Contact Us | BrightByte Consulting",
+      "description": "Tell BrightByte about your project. Request a consultation to discuss your goals, requirements and next steps."
+    },
+    "admin": {
+      "title": "Administration | BrightByte Consulting",
+      "description": "Sign in to manage BrightByte website content and settings.",
+      "robots": "noindex, nofollow"
+    },
+    "service-detail": {
+      "title": "Software Development Services | BrightByte Consulting",
+      "description": "Explore BrightByte engineering services and discuss your project with our team."
+    },
+    "blog-post": {
+      "title": "Article | BrightByte Blog",
+      "description": "Read the latest software engineering insights from BrightByte Consulting."
+    },
+    "privacy-policy": {
+      "title": "Privacy Policy | BrightByte Consulting",
+      "description": "Learn how BrightByte Consulting collects, uses and protects information submitted through its website, and how to contact us about privacy."
+    },
+    "terms-of-service": {
+      "title": "Terms of Service | BrightByte Consulting",
+      "description": "Read the terms for using the BrightByte Consulting website, including information about service agreements, content and third-party resources."
+    }
+  },
+  "services": {
+    "mobile-app": {
+      "title": "Mobile App Development | BrightByte Consulting",
+      "description": "Build native Android and iOS apps with BrightByte. Our team handles design, development, testing, and app store submission."
+    },
+    "web-enterprise": {
+      "title": "Web & Enterprise App Development | BrightByte Consulting",
+      "description": "Build web platforms and enterprise applications with BrightByte. Explore architecture, development, integrations and ongoing support."
+    },
+    "ai-app": {
+      "title": "AI App Development | BrightByte Consulting",
+      "description": "Create AI applications and integrations with BrightByte. Turn business requirements into practical, maintainable software solutions."
+    },
+    "devops": {
+      "title": "DevOps & Cloud Services | BrightByte Consulting",
+      "description": "Improve software delivery with BrightByte DevOps and cloud services, including deployment automation, infrastructure and monitoring."
+    },
+    "erp": {
+      "title": "ERP Solutions | BrightByte Consulting",
+      "description": "Connect business workflows with BrightByte ERP services, including implementation, customization and system integrations."
+    },
+    "business-auditing": {
+      "title": "Business Auditing | BrightByte Consulting",
+      "description": "Review business processes and technology with BrightByte auditing services. Identify gaps and plan practical improvements."
+    },
+    "project-management": {
+      "title": "Project Management | BrightByte Consulting",
+      "description": "Plan and deliver technology projects with BrightByte project management, transparent communication and structured delivery."
+    },
+    "seo-marketing": {
+      "title": "SEO & Digital Marketing | BrightByte Consulting",
+      "description": "Grow your online presence with BrightByte SEO and digital marketing services tailored to your business."
+    },
+    "oem-sourcing": {
+      "title": "OEM Global Sourcing | BrightByte Consulting",
+      "description": "Find and coordinate OEM suppliers with BrightByte, from supplier identification and quality control to shipping and logistics."
+    }
+  },
+  "blog": {
+    "titleTemplate": "{title} | BrightByte Blog",
+    "descriptionFallback": "Software engineering insights and perspectives from BrightByte Consulting.",
+    "overrides": {}
+  }
+}

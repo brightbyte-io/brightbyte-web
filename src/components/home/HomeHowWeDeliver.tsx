@@ -1,3 +1,5 @@
+import { MainHeading } from '../ui/MainHeading';
+import { SectionLabel } from '../ui/SectionLabel';
 import React from 'react';
 import { Container } from '../layout/Container';
 
@@ -6,22 +8,22 @@ export const HomeHowWeDeliver: React.FC = () => {
     {
       num: '01',
       title: 'Design',
-      desc: 'Wireframes, user interfaces, and system architecture. All aligned before a single line of code is written.',
+      desc: "Define user journeys, interface designs and system architecture. Agree on requirements before development begins.",
     },
     {
       num: '02',
       title: 'Development',
-      desc: 'Agile sprints, regular check-ins, and clean code. You see real progress every week.',
+      desc: "Build in focused sprints, with code reviews and regular demos to track progress.",
     },
     {
       num: '03',
       title: 'Testing',
-      desc: 'QA at every stage, not just the end. Bugs are found and fixed before they reach your users.',
+      desc: "Test features throughout delivery, with functional checks and regression testing before release.",
     },
     {
       num: '04',
       title: 'Deployment',
-      desc: 'We ship, monitor, and stay on hand after launch. Going live is just the beginning.',
+      desc: "Plan the release, monitor key workflows and agree on support as your product moves into use.",
     },
   ];
 
@@ -30,15 +32,12 @@ export const HomeHowWeDeliver: React.FC = () => {
       <Container>
         {/* Header matching Home V1-2 */}
         <div className="max-w-3xl mx-auto text-center mb-14 space-y-3">
-          <span className="text-xs font-bold uppercase tracking-wider text-[#18529B]">
-            WHAT WE DO
-          </span>
-          <h2 className="text-3xl sm:text-4xl lg:text-[40px] font-extrabold text-slate-900 tracking-tight">
-            How we deliver every project
-          </h2>
+          <SectionLabel labelKey="whatWeDo" />
+          <MainHeading headingKey="HomeHowWeDeliver" as="h2" variant="section" className="text-3xl sm:text-4xl lg:text-[40px] font-extrabold text-slate-900 tracking-tight" />
           <p className="text-sm sm:text-base text-slate-600">
-            The same four-step process. Every project, every engagement, every time.
-          </p>
+            
+              A clear delivery process, from initial design through release and support.
+            </p>
         </div>
 
         {/* 4 Cards in a row */}

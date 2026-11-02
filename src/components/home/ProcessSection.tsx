@@ -1,3 +1,4 @@
+import { MainHeading } from '../ui/MainHeading';
 import React from 'react';
 import { ArrowRight, Compass, Layout, Code2, ShieldAlert, Rocket, CheckCircle } from 'lucide-react';
 import { Container } from '../layout/Container';
@@ -38,9 +39,7 @@ export const ProcessSection: React.FC<ProcessSectionProps> = ({
         {/* Section Header */}
         <div className="max-w-3xl mx-auto text-center mb-16 space-y-4">
           <Badge variant="bluePill">DELIVERY METHODOLOGY</Badge>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 tracking-tight">
-            How We Deliver Every Project
-          </h2>
+          <MainHeading headingKey="ProcessSection" as="h2" variant="section" className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 tracking-tight" />
           <p className="text-base sm:text-lg text-slate-600 leading-relaxed">
             Our structured, milestone-driven agile methodology guarantees transparent communication, zero scope surprises, and rigorous engineering excellence.
           </p>

@@ -1,3 +1,4 @@
+import { MainHeading } from '../ui/MainHeading';
 import React from 'react';
 import { ArrowRight, Smartphone, Globe, Sparkles, Server, Database, FileCheck, CalendarCheck, BarChart3, Users, ChevronRight } from 'lucide-react';
 import { Container } from '../layout/Container';
@@ -47,9 +48,7 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({
         {/* Section Header */}
         <div className="max-w-3xl mx-auto text-center mb-16 space-y-4">
           <Badge variant="bluePill">OUR EXPERTISE</Badge>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 tracking-tight">
-            High-Impact Software Engineering & Consulting Services
-          </h2>
+          <MainHeading headingKey="ServicesSection" as="h2" variant="section" className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 tracking-tight" />
           <p className="text-base sm:text-lg text-slate-600 leading-relaxed">
             From intuitive consumer mobile apps to robust enterprise architectures and AI solutions, we deliver precision digital products tailored to your business goals.
           </p>

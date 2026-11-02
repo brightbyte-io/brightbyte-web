@@ -1,3 +1,6 @@
+import { MainHeading } from '../ui/MainHeading';
+import { SectionLabel } from '../ui/SectionLabel';
+import { RightArrow } from '../ui/RightArrow';
 import React from 'react';
 import { Container } from '../layout/Container';
 import { PageId } from '../../types';
@@ -15,7 +18,7 @@ export const HomeWaysToWork: React.FC<HomeWaysToWorkProps> = ({
     {
       num: '01',
       title: 'Staff Augmentation',
-      desc: 'Our engineers join your team directly and help you ship 1.5–2× faster. Perfect when you have deadlines or skill gaps.',
+      desc: 'Add software engineers to your team for delivery deadlines, specialist skills, and support with an expanding roadmap.',
     },
     {
       num: '02',
@@ -25,7 +28,7 @@ export const HomeWaysToWork: React.FC<HomeWaysToWorkProps> = ({
     {
       num: '03',
       title: 'Project Outsourcing',
-      desc: 'Hand us the brief and we handle everything. Design, Dev, QA, and Delivery. All the while saving up to 30% in costs.',
+      desc: "Work with one delivery team for discovery, design, development, testing and release, with scope and milestones agreed.",
     },
     {
       num: '04',
@@ -43,7 +46,7 @@ export const HomeWaysToWork: React.FC<HomeWaysToWorkProps> = ({
   };
 
   return (
-    <section className="relative overflow-hidden py-14 sm:py-16 lg:py-20 bg-white border-b border-slate-100">
+    <section className="relative overflow-hidden py-14 sm:py-16 lg:py-20 bg-white">
       {/* Background ambient light arcs */}
       <div className="absolute -top-24 -right-24 w-[460px] h-[460px] rounded-full border-[55px] border-blue-50/60 blur-2xl pointer-events-none -z-0" />
       <div className="absolute -bottom-24 -left-24 w-[480px] h-[480px] rounded-full border-[60px] border-slate-50/80 blur-2xl pointer-events-none -z-0" />
@@ -54,12 +57,8 @@ export const HomeWaysToWork: React.FC<HomeWaysToWorkProps> = ({
           {/* SECTION HEADER MATCHING FIGMA                                  */}
           {/* ============================================================== */}
           <div className="max-w-3xl mx-auto text-center mb-10 sm:mb-12 lg:mb-14 space-y-2.5">
-            <span className="text-xs font-bold uppercase tracking-widest text-[#18529B]">
-              HOW WE ENGAGE
-            </span>
-            <h2 className="text-3xl sm:text-4xl lg:text-[44px] font-extrabold text-slate-950 tracking-tight leading-tight">
-              Four ways to work with us
-            </h2>
+            <SectionLabel labelKey="howWeEngage" />
+            <MainHeading headingKey="HomeWaysToWork" as="h2" variant="section" className="text-3xl sm:text-4xl lg:text-[44px] font-extrabold text-slate-950 tracking-tight leading-tight" />
             <p className="text-sm sm:text-base lg:text-lg text-slate-500 font-normal max-w-2xl mx-auto">
               Flexible engagement models built around how your team operates.
             </p>
@@ -102,7 +101,7 @@ export const HomeWaysToWork: React.FC<HomeWaysToWorkProps> = ({
               className="inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-full bg-[#18529B] hover:bg-[#133F77] text-white font-semibold text-xs sm:text-sm transition-all shadow-md shadow-blue-900/15 cursor-pointer"
             >
               <span>Explore engagement models</span>
-              <span className="text-base font-normal leading-none">→</span>
+              <RightArrow />
             </button>
           </div>
         </div>

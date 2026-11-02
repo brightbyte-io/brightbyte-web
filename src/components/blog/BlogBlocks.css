@@ -1,0 +1,20 @@
+.blog-blocks { overflow-wrap: anywhere; color: #374151; font-size: 17px; line-height: 1.85; }
+.blog-blocks > * + * { margin-top: 24px; }
+.blog-blocks p { white-space: pre-wrap; }
+.blog-blocks h2 { font-size: 30px; font-weight: 650; line-height: 1.3; color: #111827; padding-top: 12px; }
+.blog-blocks h3 { font-size: 24px; font-weight: 650; line-height: 1.4; color: #111827; }
+.blog-blocks strong { font-weight: 700; }
+.blog-blocks ul { list-style: disc; padding-left: 24px; }
+.blog-blocks li + li { margin-top: 6px; }
+.blog-blocks blockquote { border-left: 4px solid #1e6099; padding: 12px 24px; color: #536173; background: #f4f8fb; font-style: italic; white-space: pre-wrap; }
+.blog-blocks a { color: #1e6099; text-decoration: underline; text-underline-offset: 3px; }
+.blog-blocks figure img { width: 100%; height: auto; border-radius: 10px; }
+.blog-blocks figcaption { text-align: center; font-size: 13px; color: #64748b; margin-top: 10px; }
+.blog-blocks hr { border: 0; border-top: 1px solid #d5dde5; margin: 32px 0; }
+.blog-faq > h2 { margin-bottom: 20px; }
+.blog-faq details { border: 1px solid #dce3eb; border-radius: 8px; margin-top: 12px; overflow: hidden; }
+.blog-faq summary { display: flex; justify-content: space-between; align-items: center; gap: 16px; padding: 18px 22px; cursor: pointer; font-weight: 600; color: #172539; list-style: none; }
+.blog-faq summary::-webkit-details-marker { display: none; }
+.blog-faq summary > span { flex-shrink: 0; font-size: 23px; font-weight: 400; }
+.blog-faq details[open] summary > span { transform: rotate(45deg); }
+.blog-faq details > div { padding: 0 22px 20px; white-space: pre-wrap; }

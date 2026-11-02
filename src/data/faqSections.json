@@ -1,0 +1,266 @@
+{
+  "home": [
+    {
+      "id": "home-partner",
+      "question": "Why work with BrightByte Consulting?",
+      "answer": "We connect software design, development and delivery in one process. Your team has clear milestones, regular reviews and a shared understanding of scope, priorities and technical decisions."
+    },
+    {
+      "id": "home-services",
+      "question": "Which software services do you offer?",
+      "answer": "Our services cover mobile and web development, AI integration, DevOps, ERP systems, technology reviews, project management, digital marketing and OEM sourcing, with scope agreed for each engagement."
+    },
+    {
+      "id": "home-consultation",
+      "question": "How can I discuss a software project?",
+      "answer": "Use the Contact page to share your goals, requirements and any existing systems. Our team will review the inquiry and arrange a discussion about scope, technical options and the next steps."
+    },
+    {
+      "id": "home-estimate",
+      "question": "Can you provide a project estimate?",
+      "answer": "Yes. Share the features, integrations and delivery priorities you have in mind. We review the requirements and assumptions before proposing an initial scope, delivery approach and indicative budget."
+    }
+  ],
+  "services": [
+    {
+      "id": "services-why-partner",
+      "question": "Why work with BrightByte Consulting?",
+      "answer": "We connect software design, development and delivery in one process. Your team has clear milestones, regular reviews and a shared understanding of scope, priorities and technical decisions."
+    },
+    {
+      "id": "services-what-services",
+      "question": "Which software services do you offer?",
+      "answer": "Our services cover mobile and web development, AI integration, DevOps, ERP systems, technology reviews, project management, digital marketing and OEM sourcing, with scope agreed for each engagement."
+    },
+    {
+      "id": "services-how-consultation",
+      "question": "How can I discuss a software project?",
+      "answer": "Use the Contact page to share your goals, requirements and any existing systems. Our team will review the inquiry and arrange a discussion about scope, technical options and the next steps."
+    },
+    {
+      "id": "services-request-estimate",
+      "question": "Can you provide a project estimate?",
+      "answer": "Yes. Share the features, integrations and delivery priorities you have in mind. We review the requirements and assumptions before proposing an initial scope, delivery approach and indicative budget."
+    }
+  ],
+  "mobile-app": [
+    {
+      "id": "mobile-partner",
+      "question": "Why choose BrightByte for mobile apps?",
+      "answer": "We bring app design, engineering, testing and release preparation into a coordinated delivery plan. Your team reviews progress, product decisions and the priorities needed for launch."
+    },
+    {
+      "id": "mobile-services",
+      "question": "Which mobile platforms can you support?",
+      "answer": "We scope native iOS and Android development or a shared-code approach around your users, device needs and budget. Integrations, offline behavior and platform requirements are reviewed during planning."
+    },
+    {
+      "id": "mobile-consultation",
+      "question": "How can I discuss a software project?",
+      "answer": "Share your app goals, target platforms and requirements through the Contact page. We will review the inquiry and discuss scope, options and next steps."
+    },
+    {
+      "id": "mobile-estimate",
+      "question": "Can you provide a project estimate?",
+      "answer": "Yes. Share your planned features, integrations and release priorities. We review the assumptions before proposing a scope, delivery approach and indicative budget."
+    }
+  ],
+  "how-we-work": [
+    {
+      "id": "hww-methodology",
+      "question": "What delivery methodology does Brightbyte use?",
+      "answer": "We plan delivery around milestones, reviews and testing. Sprint length, reporting and collaboration tools are agreed around your project and team responsibilities."
+    },
+    {
+      "id": "hww-ip",
+      "question": "Who owns the code and intellectual property produced during sprints?",
+      "answer": "Ownership, repository access, confidentiality and licensing are defined in the project agreement. We discuss these before work starts so both teams understand the deliverables and handover arrangements."
+    },
+    {
+      "id": "hww-kickoff",
+      "question": "How quickly can Brightbyte kick off an engagement?",
+      "answer": "Kickoff timing depends on the agreed scope, team availability and access to required systems. After discovery, we confirm the onboarding steps, delivery plan and an achievable start date with you."
+    },
+    {
+      "id": "hww-collaboration",
+      "question": "Can BrightByte collaborate with our existing in-house team?",
+      "answer": "Yes. We can support your existing team through staff augmentation or a dedicated delivery team, using agreed tools, review practices and communication channels to coordinate the work."
+    }
+  ],
+  "web-enterprise": [
+    {
+      "id": "web-enterprise-faq-1",
+      "question": "How do you approach web and enterprise applications?",
+      "answer": "Web applications, customer portals, operational dashboards and integrations can be scoped around your workflows. We review data access, performance requirements and deployment needs during planning."
+    },
+    {
+      "id": "web-enterprise-faq-2",
+      "question": "What does a typical engagement include?",
+      "answer": "We agree on requirements, deliverables and responsibilities before starting. The scope may cover discovery, implementation, reviews, documentation and handover support."
+    },
+    {
+      "id": "web-enterprise-faq-3",
+      "question": "How can I discuss a software project?",
+      "answer": "Use the Contact page to share your goals, requirements and any existing systems. Our team will review the inquiry and arrange a discussion about scope, technical options and the next steps."
+    },
+    {
+      "id": "web-enterprise-faq-4",
+      "question": "Can you provide a project estimate?",
+      "answer": "Yes. Share the features, integrations and delivery priorities you have in mind. We review the requirements and assumptions before proposing an initial scope, delivery approach and indicative budget."
+    }
+  ],
+  "ai-app": [
+    {
+      "id": "ai-app-faq-1",
+      "question": "How do you approach AI applications and integrations?",
+      "answer": "We help define AI use cases, connect suitable models and data sources, and evaluate outputs. Scope includes access controls, review workflows and operational checks appropriate to the application."
+    },
+    {
+      "id": "ai-app-faq-2",
+      "question": "What does a typical engagement include?",
+      "answer": "We agree on requirements, deliverables and responsibilities before starting. The scope may cover discovery, implementation, reviews, documentation and handover support."
+    },
+    {
+      "id": "ai-app-faq-3",
+      "question": "How can I discuss a software project?",
+      "answer": "Use the Contact page to share your goals, requirements and any existing systems. Our team will review the inquiry and arrange a discussion about scope, technical options and the next steps."
+    },
+    {
+      "id": "ai-app-faq-4",
+      "question": "Can you provide a project estimate?",
+      "answer": "Yes. Share the features, integrations and delivery priorities you have in mind. We review the requirements and assumptions before proposing an initial scope, delivery approach and indicative budget."
+    }
+  ],
+  "devops": [
+    {
+      "id": "devops-faq-1",
+      "question": "How do you approach DevOps and cloud delivery?",
+      "answer": "We review existing build and deployment workflows before proposing automation, infrastructure configuration and monitoring. Cloud choices and operational responsibilities are agreed with your team."
+    },
+    {
+      "id": "devops-faq-2",
+      "question": "What does a typical engagement include?",
+      "answer": "We agree on requirements, deliverables and responsibilities before starting. The scope may cover discovery, implementation, reviews, documentation and handover support."
+    },
+    {
+      "id": "devops-faq-3",
+      "question": "How can I discuss a software project?",
+      "answer": "Use the Contact page to share your goals, requirements and any existing systems. Our team will review the inquiry and arrange a discussion about scope, technical options and the next steps."
+    },
+    {
+      "id": "devops-faq-4",
+      "question": "Can you provide a project estimate?",
+      "answer": "Yes. Share the features, integrations and delivery priorities you have in mind. We review the requirements and assumptions before proposing an initial scope, delivery approach and indicative budget."
+    }
+  ],
+  "erp": [
+    {
+      "id": "erp-faq-1",
+      "question": "How do you approach ERP implementation and integration?",
+      "answer": "We start with business workflows, source data and integration requirements. Configuration, migration checks, testing and user handover are planned around the modules included in your project."
+    },
+    {
+      "id": "erp-faq-2",
+      "question": "What does a typical engagement include?",
+      "answer": "We agree on requirements, deliverables and responsibilities before starting. The scope may cover discovery, implementation, reviews, documentation and handover support."
+    },
+    {
+      "id": "erp-faq-3",
+      "question": "How can I discuss a software project?",
+      "answer": "Use the Contact page to share your goals, requirements and any existing systems. Our team will review the inquiry and arrange a discussion about scope, technical options and the next steps."
+    },
+    {
+      "id": "erp-faq-4",
+      "question": "Can you provide a project estimate?",
+      "answer": "Yes. Share the features, integrations and delivery priorities you have in mind. We review the requirements and assumptions before proposing an initial scope, delivery approach and indicative budget."
+    }
+  ],
+  "business-auditing": [
+    {
+      "id": "business-auditing-faq-1",
+      "question": "How do you approach technology and process reviews?",
+      "answer": "We agree on the systems, workflows and evidence included in the review. Findings are documented with their operational impact and prioritized recommendations; formal certification is outside a standard review."
+    },
+    {
+      "id": "business-auditing-faq-2",
+      "question": "What does a typical engagement include?",
+      "answer": "We agree on requirements, deliverables and responsibilities before starting. The scope may cover discovery, implementation, reviews, documentation and handover support."
+    },
+    {
+      "id": "business-auditing-faq-3",
+      "question": "How can I discuss a software project?",
+      "answer": "Use the Contact page to share your goals, requirements and any existing systems. Our team will review the inquiry and arrange a discussion about scope, technical options and the next steps."
+    },
+    {
+      "id": "business-auditing-faq-4",
+      "question": "Can you provide a project estimate?",
+      "answer": "Yes. Share the features, integrations and delivery priorities you have in mind. We review the requirements and assumptions before proposing an initial scope, delivery approach and indicative budget."
+    }
+  ],
+  "project-management": [
+    {
+      "id": "project-management-faq-1",
+      "question": "How do you approach software project management?",
+      "answer": "We support project planning, backlog coordination, dependency tracking and stakeholder reporting. The delivery method and decision-making responsibilities are adapted to your team and project scope."
+    },
+    {
+      "id": "project-management-faq-2",
+      "question": "What does a typical engagement include?",
+      "answer": "We agree on requirements, deliverables and responsibilities before starting. The scope may cover discovery, implementation, reviews, documentation and handover support."
+    },
+    {
+      "id": "project-management-faq-3",
+      "question": "How can I discuss a software project?",
+      "answer": "Use the Contact page to share your goals, requirements and any existing systems. Our team will review the inquiry and arrange a discussion about scope, technical options and the next steps."
+    },
+    {
+      "id": "project-management-faq-4",
+      "question": "Can you provide a project estimate?",
+      "answer": "Yes. Share the features, integrations and delivery priorities you have in mind. We review the requirements and assumptions before proposing an initial scope, delivery approach and indicative budget."
+    }
+  ],
+  "seo-marketing": [
+    {
+      "id": "seo-marketing-faq-1",
+      "question": "How do you approach SEO and digital marketing?",
+      "answer": "We review website structure, content and audience needs before planning search and social activity. Reporting focuses on agreed indicators; rankings, traffic and leads are not guaranteed."
+    },
+    {
+      "id": "seo-marketing-faq-2",
+      "question": "What does a typical engagement include?",
+      "answer": "We agree on requirements, deliverables and responsibilities before starting. The scope may cover discovery, implementation, reviews, documentation and handover support."
+    },
+    {
+      "id": "seo-marketing-faq-3",
+      "question": "How can I discuss a software project?",
+      "answer": "Use the Contact page to share your goals, requirements and any existing systems. Our team will review the inquiry and arrange a discussion about scope, technical options and the next steps."
+    },
+    {
+      "id": "seo-marketing-faq-4",
+      "question": "Can you provide a project estimate?",
+      "answer": "Yes. Share the features, integrations and delivery priorities you have in mind. We review the requirements and assumptions before proposing an initial scope, delivery approach and indicative budget."
+    }
+  ],
+  "oem-sourcing": [
+    {
+      "id": "oem-sourcing-faq-1",
+      "question": "How do you approach OEM sourcing and coordination?",
+      "answer": "We help organize supplier research, quotations, quality checkpoints and shipment coordination. Product specifications, inspection scope, commercial terms and delivery responsibilities are agreed before sourcing."
+    },
+    {
+      "id": "oem-sourcing-faq-2",
+      "question": "What does a typical engagement include?",
+      "answer": "We agree on requirements, deliverables and responsibilities before starting. The scope may cover discovery, implementation, reviews, documentation and handover support."
+    },
+    {
+      "id": "oem-sourcing-faq-3",
+      "question": "How can I discuss a software project?",
+      "answer": "Use the Contact page to share your goals, requirements and any existing systems. Our team will review the inquiry and arrange a discussion about scope, technical options and the next steps."
+    },
+    {
+      "id": "oem-sourcing-faq-4",
+      "question": "Can you provide a project estimate?",
+      "answer": "Yes. Share the features, integrations and delivery priorities you have in mind. We review the requirements and assumptions before proposing an initial scope, delivery approach and indicative budget."
+    }
+  ]
+}

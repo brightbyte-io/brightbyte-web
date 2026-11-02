@@ -1,0 +1,16 @@
+import './config.mjs';
+import express from 'express';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
+import { createPool } from './db.mjs';
+import { createApi } from './app.mjs';
+const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
+process.env.NODE_ENV ||= 'production';
+const pool = createPool(process.env);
+const app = express();
+app.use('/api', createApi({ pool, env: process.env }));
+app.use(express.static(path.join(root, 'dist')));
+app.get('/{*path}', (req,res) => res.sendFile(path.join(root,'dist/index.html')));
+const server = app.listen(Number(process.env.PORT || 4000), process.env.HOST || '127.0.0.1', () => console.log('BrightByte application server is running.'));
+const stop = () => server.close(async () => { await pool.end(); process.exit(0); });
+process.on('SIGTERM',stop); process.on('SIGINT',stop);

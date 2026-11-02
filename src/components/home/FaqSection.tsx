@@ -1,3 +1,4 @@
+import { MainHeading } from '../ui/MainHeading';
 import React, { useState } from 'react';
 import { ChevronDown } from 'lucide-react';
 import { Container } from '../layout/Container';
@@ -18,9 +19,7 @@ export const FaqSection: React.FC = () => {
         {/* Section Header */}
         <div className="max-w-3xl mx-auto text-center mb-16 space-y-4">
           <Badge variant="bluePill">FREQUENTLY ASKED QUESTIONS</Badge>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 tracking-tight">
-            Clear Answers to Common Questions
-          </h2>
+          <MainHeading headingKey="FaqSection" as="h2" variant="section" className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 tracking-tight" />
           <p className="text-base sm:text-lg text-slate-600 leading-relaxed">
             Everything you need to know about our engagement models, code ownership, sprint cadence, and engineering quality assurance.
           </p>

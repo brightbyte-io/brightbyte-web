@@ -1,3 +1,4 @@
+import { MainHeading } from '../ui/MainHeading';
 import React from 'react';
 import { Star, CheckCircle2, Building, Quote } from 'lucide-react';
 import { Container } from '../layout/Container';
@@ -11,9 +12,7 @@ export const TestimonialsSection: React.FC = () => {
         {/* Section Header */}
         <div className="max-w-3xl mx-auto text-center mb-16 space-y-4">
           <Badge variant="bluePill">TESTIMONIALS & REVIEWS</Badge>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 tracking-tight">
-            Trusted by Leaders Across High-Growth Industries
-          </h2>
+          <MainHeading headingKey="TestimonialsSection" as="h2" variant="section" className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 tracking-tight" />
           <p className="text-base sm:text-lg text-slate-600 leading-relaxed">
             See how BrightByte Consulting empowers engineering heads, product owners, and founders to accelerate delivery and scale with certainty.
           </p>

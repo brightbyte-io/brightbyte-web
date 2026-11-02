@@ -1,3 +1,5 @@
+import { MainHeading } from '../ui/MainHeading';
+import { SectionLabel } from '../ui/SectionLabel';
 import React from 'react';
 
 export const ServicesHero: React.FC = () => {
@@ -17,15 +19,9 @@ export const ServicesHero: React.FC = () => {
 
           {/* LEFT COLUMN */}
           <div className="lg:col-span-5 lg:self-center lg:pt-10 lg:pb-16 space-y-4 lg:space-y-5">
-            <span className="inline-block text-xs font-bold uppercase tracking-wider text-[#18529B]">
-              OUR SERVICES
-            </span>
+            <SectionLabel labelKey="ourServices" />
 
-            <h1 className="text-3xl sm:text-4xl lg:text-[44px] xl:text-[48px] font-extrabold text-[#0B1528] tracking-tight leading-[1.14]">
-              Everything your<br />
-              product needs to<br />
-              ship and scale.
-            </h1>
+            <MainHeading headingKey="ServicesHero" as="h1" variant="hero" className="text-3xl sm:text-4xl lg:text-[44px] xl:text-[48px] font-extrabold text-[#0B1528] tracking-tight leading-[1.14]" />
 
             <p className="text-sm sm:text-base text-slate-500 font-normal leading-relaxed max-w-md">
               From Android apps to AI integrations, DevOps pipelines, ERP systems, and global hardware sourcing, all delivered by teams that specialize in them.

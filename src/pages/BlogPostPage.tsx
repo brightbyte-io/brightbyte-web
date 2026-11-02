@@ -6,8 +6,9 @@ import { Button } from '../components/ui/Button';
 import { CtaCard } from '../components/layout/CtaCard';
 import { BlogSingleHeroSection } from '../components/blog/BlogSingleHeroSection';
 import { BlogRelatedArticlesSection } from '../components/blog/BlogRelatedArticlesSection';
-import { blogPosts } from '../data/mockData';
 import { PageId, BlogPost } from '../types';
+import { asPublicPost, usePublicBlogs } from '../utils/blogContent';
+import { BlogBlocks } from '../components/blog/BlogBlocks';
 
 export interface BlogPostPageProps {
   postId?: string;
@@ -20,8 +21,11 @@ export const BlogPostPage: React.FC<BlogPostPageProps> = ({
   onNavigate,
   onOpenConsultation,
 }) => {
-  const post: BlogPost =
-    blogPosts.find((p) => p.id === postId) || blogPosts[0];
+  const { posts: managed, loading, error } = usePublicBlogs();
+  const customPost = managed.find(post => post.status === 'published' && (post.slug === postId || post.id === postId));
+  const post: BlogPost | undefined = customPost ? asPublicPost(customPost) : undefined;
+  if (loading || error) return <main className="pt-40 pb-24 text-center" role="status"><p>{loading ? 'Loading article…' : error}</p></main>;
+  if (!post) return <main className="pt-40 pb-24 text-center"><h1 className="text-3xl font-semibold">Article not found</h1><a className="inline-block mt-6 text-[#18529B]" href="/blog">Back to articles</a></main>;
 
   const authorName = typeof post.author === 'object' && post.author ? post.author.name : post.author || 'Ahmed Nadeem';
   const authorRole = typeof post.author === 'object' && post.author ? post.author.role : post.authorRole || 'Lead Technical Architect';
@@ -114,6 +118,9 @@ export const BlogPostPage: React.FC<BlogPostPageProps> = ({
 
         {/* Article Body matching Blog Individual.png */}
         <div className="max-w-3xl mx-auto prose prose-slate space-y-8 text-slate-700 leading-relaxed text-sm sm:text-base">
+          {post.blocks ? <BlogBlocks blocks={post.blocks} /> : post.content?.length ? post.content.map((paragraph, index) => (
+            <p className="whitespace-pre-wrap" key={index}>{paragraph}</p>
+          )) : <>
           <p>
             When architecting modern enterprise digital products, the distinction between functional code and enduring, maintainable software comes down to architectural intentionality. As engineering systems scale, unstructured dependencies and coupled domain logic compound into critical bottlenecks.
           </p>
@@ -184,6 +191,7 @@ export class EnterpriseOrderEngine implements OrderService {
           <p>
             By pairing onshore lead architects with dedicated international engineering pods, organizations unlock round-the-clock development momentum. With clear milestone handovers and structured documentation, sprints advance seamlessly across time zones without quality degradation.
           </p>
+          </>}
         </div>
 
         {/* Author Bio Box */}
@@ -201,7 +209,7 @@ export class EnterpriseOrderEngine implements OrderService {
         </div>
 
         {/* Related Articles matching Frame 2085662448.png */}
-        <BlogRelatedArticlesSection onNavigate={onNavigate} />
+        <BlogRelatedArticlesSection excludeId={post.id} onNavigate={onNavigate} />
 
         {/* Pre-footer CTA */}
         <CtaCard

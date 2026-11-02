@@ -1,3 +1,5 @@
+import { MainHeading } from '../ui/MainHeading';
+import { RightArrow } from '../ui/RightArrow';
 import React, { useState } from 'react';
 import { Users, Shield, Zap, Clock, CheckCircle2, ArrowRight, Globe, Layers, UserCheck } from 'lucide-react';
 import { Container } from '../layout/Container';
@@ -26,9 +28,7 @@ export const OemSourcingSection: React.FC<OemSourcingSectionProps> = ({
         {/* Section Header */}
         <div className="max-w-3xl mx-auto text-center mb-16 space-y-4">
           <Badge variant="bluePill">GLOBAL DELIVERY CAPABILITIES</Badge>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 tracking-tight">
-            End-to-End OEM & Global Sourcing Solutions
-          </h2>
+          <MainHeading headingKey="OemSourcingSection" as="h2" variant="section" className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 tracking-tight" />
           <p className="text-base sm:text-lg text-slate-600 leading-relaxed">
             Overcome talent shortages, reduce overhead, and accelerate time-to-market with rigorously vetted engineering pods, offshore software teams, and managed technology infrastructure.
           </p>
@@ -109,9 +109,9 @@ export const OemSourcingSection: React.FC<OemSourcingSectionProps> = ({
                 </Button>
                 <button
                   onClick={() => onNavigate('service-detail', 'oem-global-sourcing')}
-                  className="text-xs font-bold text-[#18529B] hover:underline cursor-pointer"
+                  className="inline-flex items-center gap-2 text-xs font-bold text-[#18529B] hover:underline cursor-pointer"
                 >
-                  Read full OEM Global Sourcing guide →
+                  Read full OEM Global Sourcing guide <RightArrow />
                 </button>
               </div>
             </div>

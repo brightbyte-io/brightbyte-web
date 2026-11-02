@@ -21,6 +21,13 @@ export function parseRoute(
   const second = segments[1];
 
   switch (first) {
+    case 'privacy-policy':
+      return { page: 'privacy-policy' };
+    case 'terms-of-service':
+    case 'terms':
+      return { page: 'terms-of-service' };
+    case 'admin':
+      return { page: 'admin' };
     case 'about':
       return { page: 'about' };
 
@@ -63,6 +70,12 @@ export function parseRoute(
  */
 export function getRouteUrl(page: PageId, detailId?: string): string {
   switch (page) {
+    case 'privacy-policy':
+      return '/privacy-policy';
+    case 'terms-of-service':
+      return '/terms-of-service';
+    case 'admin':
+      return '/admin';
     case 'home':
       return '/';
     case 'about':

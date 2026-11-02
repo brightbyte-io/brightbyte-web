@@ -1,0 +1,76 @@
+{
+  "privacy": {
+    "label": "Privacy",
+    "updated": "October 29, 2026",
+    "intro": "This policy explains how Bright Byte Consulting Inc. handles personal information collected through this website.",
+    "sections": [
+      {
+        "title": "Information you provide",
+        "text": "When you submit our contact form, we collect your name, phone number, business email, selected services and project description. Please avoid including passwords or other sensitive information in your message."
+      },
+      {
+        "title": "How we use information",
+        "text": "We use your information to respond to inquiries, discuss your project, arrange consultations and manage our business relationship. If enabled, we also send a confirmation of your request."
+      },
+      {
+        "title": "Storage and service providers",
+        "text": "Contact requests are stored in our database and are accessible to authorized administrators. Our hosting, database and email providers process information to operate these services. Email notifications are sent through Brevo when configured. Processing may take place in countries other than your own."
+      },
+      {
+        "title": "Cookies and external services",
+        "text": "Administrator sign-in uses a session cookie. External images, fonts and links may involve third-party services that receive connection information such as your IP address. Their own privacy policies apply when you use their services."
+      },
+      {
+        "title": "Retention and security",
+        "text": "We retain inquiry information as needed to respond to requests, support business relationships and meet applicable obligations. We use access restrictions and other safeguards to protect information, although no system can guarantee complete security."
+      },
+      {
+        "title": "Your choices",
+        "text": "You can contact us to request access, correction or deletion of your personal information, or to ask us to stop contacting you. We may need to verify your identity and consider any applicable retention requirements."
+      },
+      {
+        "title": "Contact and updates",
+        "text": "For privacy questions or requests, email contact@brightbyte.io. We may update this policy as our services change; the updated date appears above."
+      }
+    ]
+  },
+  "terms": {
+    "label": "Legal",
+    "updated": "October 29, 2026",
+    "intro": "These terms describe the conditions for using the Bright Byte Consulting Inc. website. Separate written agreements govern any services we provide.",
+    "sections": [
+      {
+        "title": "Using this website",
+        "text": "Use this website lawfully and do not attempt to compromise its security, interfere with its operation, impersonate others or submit misleading or harmful content."
+      },
+      {
+        "title": "Information and inquiries",
+        "text": "Website content describes our capabilities and provides general information. Submitting an inquiry, using an estimator or requesting a consultation does not create a service contract or guarantee availability, pricing, results or delivery dates."
+      },
+      {
+        "title": "Service agreements",
+        "text": "The scope of work, fees, timelines, intellectual property ownership, confidentiality and support terms for a project are defined in a separate written agreement. That agreement governs the services it covers."
+      },
+      {
+        "title": "Website content",
+        "text": "Website text, designs, branding and other materials belong to Bright Byte Consulting Inc. or their respective owners. Do not reproduce or distribute protected materials without authorization, except as permitted by applicable law."
+      },
+      {
+        "title": "Third-party resources",
+        "text": "We may link to external websites or use third-party services. Their terms and policies apply to those services. We do not control their content or availability."
+      },
+      {
+        "title": "Availability and responsibility",
+        "text": "We aim to keep website information accurate and available, but content may change and errors or interruptions may occur. Nothing in these terms excludes rights or responsibilities that cannot be excluded under applicable law."
+      },
+      {
+        "title": "Privacy",
+        "text": "Our Privacy Policy explains how we handle information submitted through the website."
+      },
+      {
+        "title": "Changes and contact",
+        "text": "We may revise these terms as the website changes. The updated date appears above. For questions, contact contact@brightbyte.io."
+      }
+    ]
+  }
+}

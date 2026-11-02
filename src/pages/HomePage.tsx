@@ -33,6 +33,8 @@ export const HomePage: React.FC<HomePageProps> = ({
         onNavigate={onNavigate}
       />
 
+
+
       {/* 2. Trusted by the best (Frame 2121455038) */}
       <HomeTrustedBy />
 
@@ -62,7 +64,7 @@ export const HomePage: React.FC<HomePageProps> = ({
       <HomeReviews />
 
       {/* 8. Frequently Asked Questions */}
-      <FaqSection page="home" className="!pt-6 sm:!pt-8 lg:!pt-10" />
+      <FaqSection page="home" />
 
       {/* 9. Ready to build something great? (Pre-footer callout) */}
       <CtaCard

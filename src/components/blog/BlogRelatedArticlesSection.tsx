@@ -1,3 +1,5 @@
+import { MainHeading } from '../ui/MainHeading';
+import { usePublicBlogs } from '../../utils/blogContent';
 import React, { useState } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { PageId } from '../../types';
@@ -14,80 +16,40 @@ export interface RelatedArticle {
   image: string;
 }
 
-export const RELATED_ARTICLES_DATA: RelatedArticle[] = [
-  {
-    id: 'right-place-to-work',
-    title: 'Is this the right place for me to work?',
-    author: {
-      name: 'Ahmed Nadeem',
-      role: 'Financial Risk Analyst',
-      avatarUrl:
-        'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&q=80',
-    },
-    snippet:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-    image:
-      'https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=800&q=80',
-  },
-  {
-    id: 'could-have-been-an-email',
-    title: 'This surely could have been an email right?',
-    author: {
-      name: 'Ahmed Nadeem',
-      role: 'Financial Risk Analyst',
-      avatarUrl:
-        'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&q=80',
-    },
-    snippet:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent commodo cursus magna, vel scelerisque nisl consectetur et.',
-    image:
-      'https://images.unsplash.com/photo-1531497865144-0464ef8fb9a9?auto=format&fit=crop&w=800&q=80',
-  },
-  {
-    id: 'cargo-shipment-insurance',
-    title: 'Have you gotten the right kind of insurance for your shipment?',
-    author: {
-      name: 'Ahmed Nadeem',
-      role: 'Financial Risk Analyst',
-      avatarUrl:
-        'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&q=80',
-    },
-    snippet:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-    image:
-      'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=800&q=80',
-  },
-];
-
 export interface BlogRelatedArticlesSectionProps {
+  excludeId?: string;
   onNavigate: (page: PageId, detailId?: string) => void;
 }
 
 export const BlogRelatedArticlesSection: React.FC<BlogRelatedArticlesSectionProps> = ({
-  onNavigate,
+  onNavigate, excludeId,
 }) => {
   // Mobile stepper active index (< 768px: "only in bleow 768 show one by one")
   const [mobileIdx, setMobileIdx] = useState(0);
+  const { posts } = usePublicBlogs();
+  const articles: RelatedArticle[] = posts.filter(post => post.id !== excludeId).slice(0, 3).map(post => ({
+    id: post.slug, title: post.title, snippet: post.summary, image: post.image || '/images/home-hero.svg',
+    author: { name: post.author, role: 'BrightByte Team', avatarUrl: '/images/bbc-logo.svg' },
+  }));
 
   const nextMobile = () => {
-    setMobileIdx((prev) => (prev + 1) % RELATED_ARTICLES_DATA.length);
+    setMobileIdx((prev) => (prev + 1) % articles.length);
   };
 
   const prevMobile = () => {
     setMobileIdx(
-      (prev) => (prev - 1 + RELATED_ARTICLES_DATA.length) % RELATED_ARTICLES_DATA.length
+      (prev) => (prev - 1 + articles.length) % articles.length
     );
   };
 
-  const currentMobileArticle = RELATED_ARTICLES_DATA[mobileIdx];
+  const currentMobileArticle = articles[mobileIdx] || articles[0];
+  if (!currentMobileArticle) return null;
 
   return (
     <div className="w-full my-16 sm:my-24">
       {/* Section Title matching Frame 2085662449.png */}
       <div className="text-center mb-10 sm:mb-14">
-        <h2 className="text-2xl sm:text-3xl lg:text-[34px] font-bold text-[#0B1528] tracking-tight">
-          You may also be interested in
-        </h2>
+        <MainHeading headingKey="BlogRelatedArticlesSection" as="h2" variant="section" className="text-2xl sm:text-3xl lg:text-[34px] font-bold text-[#0B1528] tracking-tight" />
       </div>
 
       {/* ============================================================== */}
@@ -95,7 +57,7 @@ export const BlogRelatedArticlesSection: React.FC<BlogRelatedArticlesSectionProp
       {/* 3-Column Grid side by side                                     */}
       {/* ============================================================== */}
       <div className="hidden md:grid md:grid-cols-3 gap-8 lg:gap-10">
-        {RELATED_ARTICLES_DATA.map((article) => (
+        {articles.map((article) => (
           <div
             key={article.id}
             className="flex flex-col space-y-4 group cursor-pointer"
@@ -152,7 +114,7 @@ export const BlogRelatedArticlesSection: React.FC<BlogRelatedArticlesSectionProp
         {/* Mobile Header Controls */}
         <div className="flex items-center justify-between px-1">
           <span className="text-xs font-bold text-slate-500 uppercase tracking-wider">
-            Related Article 0{mobileIdx + 1} of 0{RELATED_ARTICLES_DATA.length}
+            Related Article 0{mobileIdx + 1} of 0{articles.length}
           </span>
 
           <div className="flex items-center gap-2">
@@ -221,7 +183,7 @@ export const BlogRelatedArticlesSection: React.FC<BlogRelatedArticlesSectionProp
 
         {/* Stepper Dots */}
         <div className="flex items-center justify-center gap-1.5 pt-2">
-          {RELATED_ARTICLES_DATA.map((_, idx) => (
+          {articles.map((_, idx) => (
             <button
               key={idx}
               onClick={() => setMobileIdx(idx)}

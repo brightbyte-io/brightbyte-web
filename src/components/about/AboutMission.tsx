@@ -1,3 +1,5 @@
+import { MainHeading } from '../ui/MainHeading';
+import { SectionLabel } from '../ui/SectionLabel';
 import React from 'react';
 import { Container } from '../layout/Container';
 
@@ -6,22 +8,22 @@ export const AboutMission: React.FC = () => {
     {
       id: 'reach',
       title: 'Global reach',
-      desc: 'Comprehensive technology services delivered to businesses around the world via a diverse team of experts.',
+      desc: "Software design and engineering support for businesses building products, platforms and internal tools.",
     },
     {
       id: 'cost',
       title: 'Reduced time and cost',
-      desc: "Top-tier solutions that don't require enterprise budgets or enterprise timelines.",
+      desc: "Practical delivery plans that balance product scope, engineering effort and budget.",
     },
     {
       id: 'innovation',
       title: 'A catalyst for innovation',
-      desc: 'Products and services that genuinely help businesses compete and grow, not just technically impressive boxes ticked.',
+      desc: "Technology choices grounded in user needs, measurable priorities and the way your business operates.",
     },
     {
       id: 'needs',
       title: 'Built around your needs',
-      desc: 'Understanding and resonating with the evolving needs of the businesses we serve is central to everything we do.',
+      desc: "We define requirements together and review priorities as your product, team and business needs evolve.",
     },
   ];
 
@@ -42,12 +44,8 @@ export const AboutMission: React.FC = () => {
         {/* Exact typography matching Figma screenshot                      */}
         {/* ============================================================== */}
         <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-14 space-y-2.5">
-          <span className="inline-block text-xs font-bold uppercase tracking-wider text-[#18529B]">
-            OUR MISSION
-          </span>
-          <h2 className="text-2xl sm:text-3xl lg:text-[38px] font-bold text-slate-950 tracking-tight leading-snug">
-            Delivering quality technology, efficiently<br className="hidden sm:inline" /> and cost-effectively.
-          </h2>
+          <SectionLabel labelKey="ourMission" />
+          <MainHeading headingKey="AboutMission" as="h2" variant="section" className="text-2xl sm:text-3xl lg:text-[38px] font-bold text-slate-950 tracking-tight leading-snug" />
         </div>
 
         {/* ============================================================== */}

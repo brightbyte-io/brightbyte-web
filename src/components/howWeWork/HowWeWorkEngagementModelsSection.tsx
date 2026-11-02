@@ -1,3 +1,5 @@
+import { MainHeading } from '../ui/MainHeading';
+import { SectionLabel } from '../ui/SectionLabel';
 import React, { useState } from 'react';
 import {
   ChevronLeft,
@@ -44,14 +46,14 @@ export const ENGAGEMENT_MODELS: EngagementModelData[] = [
     title: 'Staff Augmentation',
     badge: 'Best for: Skill gaps and deadlines',
     paragraphs: [
-      'Our engineers and specialists join your existing team directly, attending standups, committing to your codebase, and working in your tools. There is no lengthy onboarding or process friction.',
+      "Our engineers join your existing team, contribute to your codebase, and work within your delivery tools. We agree on responsibilities and onboarding steps so collaboration fits your established process.",
     ],
     bgStyle: 'white',
     features: [
       {
         id: 'faster-delivery',
         title: 'Faster delivery',
-        description: '1.5–2× velocity increase reported by clients using augmentation.',
+        description: 'Add engineering capacity to support your delivery priorities.',
         icon: <Zap className="w-5 h-5 text-[#18529B]" />,
       },
       {
@@ -121,8 +123,8 @@ export const ENGAGEMENT_MODELS: EngagementModelData[] = [
     features: [
       {
         id: 'cost-savings',
-        title: 'Up to 30% cost savings',
-        description: 'Compared to building and managing the project internally.',
+        title: 'Planned delivery costs',
+        description: 'Scope and milestones agreed before development begins.',
         icon: <Percent className="w-5 h-5 text-[#18529B]" />,
       },
       {
@@ -222,13 +224,9 @@ export const HowWeWorkEngagementModelsSection: React.FC = () => {
       {/* Exactly matching Frame 2121455061 (2).png                      */}
       {/* ============================================================== */}
       <div className="pt-20 pb-14 sm:pt-24 sm:pb-16 text-center max-w-3xl mx-auto px-4 space-y-3.5">
-        <span className="inline-block text-xs sm:text-sm font-bold uppercase tracking-widest text-[#18529B]">
-          HOW WE ENGAGE
-        </span>
+        <SectionLabel labelKey="howWeEngage" />
 
-        <h2 className="text-3xl sm:text-4xl lg:text-[46px] font-extrabold text-[#0B1528] tracking-tight leading-tight">
-          Our engagement models
-        </h2>
+        <MainHeading headingKey="HowWeWorkEngagementModelsSection" as="h2" variant="section" className="text-3xl sm:text-4xl lg:text-[46px] font-extrabold text-[#0B1528] tracking-tight leading-tight" />
 
         <p className="text-base sm:text-lg text-slate-500 font-normal leading-relaxed max-w-2xl mx-auto">
           Each model is designed around a different set of needs. Most clients pick one, while some combine them as a project evolves.

@@ -606,20 +606,20 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
 
           <div className="flex items-center gap-6">
             <a
-              href="/about"
+              href="/terms-of-service"
               onClick={(e) => {
                 e.preventDefault();
-                onNavigate('about');
+                onNavigate('terms-of-service');
               }}
               className="hover:text-slate-800 transition-colors cursor-pointer"
             >
               Terms of Service
             </a>
             <a
-              href="/about"
+              href="/privacy-policy"
               onClick={(e) => {
                 e.preventDefault();
-                onNavigate('about');
+                onNavigate('privacy-policy');
               }}
               className="hover:text-slate-800 transition-colors cursor-pointer"
             >

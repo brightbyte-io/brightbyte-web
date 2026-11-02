@@ -1,0 +1,11 @@
+{
+  "mobile-app": "/images/services-hero-images/single-service-mobile.svg",
+  "web-enterprise": "/images/services-hero-images/single-service-web.svg",
+  "ai-app": "/images/services-hero-images/single-service-AI.svg",
+  "devops": "/images/services-hero-images/single-service-devops.svg",
+  "erp": "/images/services-hero-images/single-service-ERP.svg",
+  "business-auditing": "/images/services-hero-images/single-service-business-auditing.svg",
+  "project-management": "/images/services-hero-images/single-service-project-management.svg",
+  "seo-marketing": "/images/services-hero-images/single-service-seo.svg",
+  "oem-sourcing": "/images/services-hero-images/single-service-mobile-OEM.svg"
+}

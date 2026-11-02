@@ -1,3 +1,5 @@
+import { MainHeading } from '../ui/MainHeading';
+import { SectionLabel } from '../ui/SectionLabel';
 import React from 'react';
 import { ArrowRight } from 'lucide-react';
 import { Container } from '../layout/Container';
@@ -202,12 +204,8 @@ export const HomeBentoServices: React.FC<HomeBentoServicesProps> = ({
       <Container>
         {/* SECTION HEADER */}
         <div className="max-w-3xl mx-auto text-center mb-10 md:mb-14 space-y-2.5">
-          <span className="text-xs font-bold uppercase tracking-wider text-[#18529B]">
-            WHAT WE DO
-          </span>
-          <h2 className="text-3xl sm:text-4xl lg:text-[44px] font-extrabold text-slate-950 tracking-tight leading-[1.15]">
-            Every service your product needs
-          </h2>
+          <SectionLabel labelKey="whatWeDo" />
+          <MainHeading headingKey="HomeBentoServices" as="h2" variant="section" className="text-3xl sm:text-4xl lg:text-[44px] font-extrabold text-slate-950 tracking-tight leading-[1.15]" />
           <p className="text-sm sm:text-base lg:text-lg text-slate-500 font-normal">
             Nine practice areas. One focused team. No hand-offs to strangers.
           </p>

@@ -1,3 +1,4 @@
+import { MainHeading } from '../ui/MainHeading';
 import React from 'react';
 import { Container } from '../layout/Container';
 
@@ -6,22 +7,22 @@ export const AboutStory: React.FC = () => {
     {
       id: 'story-1',
       title: 'Our Inception',
-      text: 'Bright Byte Consulting was founded by a team of developers who wanted to build a company that does software the right way; prioritizing quality, client satisfaction, and honest communication above everything else.',
+      text: "BrightByte Consulting brings a developer-led approach to custom software. We focus on understanding business requirements, building maintainable systems, and keeping clients informed as their products take shape.",
     },
     {
       id: 'story-2',
       title: 'Global Growth',
-      text: "Over the years we've grown from a small team into a company with offices in Toronto and Islamabad, working with clients ranging from funded startups to financial institutions and government agencies across North America.",
+      text: "Our work connects software engineering with business operations. From planning a new product to improving an existing platform, we help teams define priorities, choose suitable technology, and organize delivery around their needs.",
     },
     {
       id: 'story-3',
       title: 'Client-Centric Philosophy',
-      text: "We've always believed the best technology companies are the ones that understand their clients' businesses deeply and build things that actually move the needle, not just technically impressive work for its own sake.",
+      text: "Effective software starts with a clear understanding of the people using it. We consider business workflows, technical constraints, and long-term maintenance so each feature serves a practical purpose and supports future development.",
     },
     {
       id: 'story-4',
       title: 'Comprehensive Capabilities',
-      text: 'Today, Bright Byte offers mobile and web development, AI integration, DevOps, SEO, ERP systems, business auditing, project management, and global OEM hardware sourcing, all performed by dedicated teams that specialize in the relevant fields.',
+      text: "Our services cover mobile and web development, AI integration, cloud delivery, ERP systems, technical reviews, project management, digital marketing and OEM sourcing. We align the scope, team and delivery approach with each engagement.",
     },
   ];
 
@@ -37,9 +38,7 @@ export const AboutStory: React.FC = () => {
           {/* LEFT COLUMN: Title + 3D Isometric Laptop Graphic + Caption     */}
           {/* ============================================================== */}
           <div className="md:col-span-5 lg:col-span-5 pt-1 sm:pt-2 space-y-4 lg:space-y-5">
-            <h2 className="text-2xl sm:text-3xl lg:text-[36px] font-bold text-slate-950 tracking-tight leading-snug">
-              The BrightByte Story
-            </h2>
+            <MainHeading headingKey="AboutStory" as="h2" variant="section" className="text-2xl sm:text-3xl lg:text-[36px] font-bold text-slate-950 tracking-tight leading-snug" />
 
             {/* Exact 3D Isometric Laptop & Workspace illustration */}
             <div className="py-1 flex justify-start">

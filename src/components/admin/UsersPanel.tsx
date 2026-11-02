@@ -1,0 +1,18 @@
+import React, { useEffect, useState } from 'react';
+import { apiRequest, AdminUser } from '../../utils/adminApi';
+const fresh = () => ({ username: '', email: '', name: '', password: '', userType: 'editor' as AdminUser['userType'], isActive: true });
+export const UsersPanel: React.FC = () => {
+  const [users, setUsers] = useState<AdminUser[]>([]);
+  const [editing, setEditing] = useState<string | null>(null);
+  const [form, setForm] = useState(fresh);
+  const [message, setMessage] = useState('');
+  const [busy, setBusy] = useState(false);
+  const load = async () => { try { setUsers(await apiRequest<AdminUser[]>('/admin/users')); } catch (error) { setMessage((error as Error).message); } };
+  useEffect(() => { void load(); }, []);
+  const update = (values: Partial<typeof form>) => setForm(current => ({ ...current, ...values }));
+  return <><div className="wp-page-heading"><div><h1>Users</h1><p>Manage administrator, editor, and read-only access.</p></div></div>{message && <div className="wp-message" role="status">{message}</div>}<div className="wp-user-layout"><section className="wp-posts-panel wp-user-list"><table><thead><tr><th>Name</th><th>Username / email</th><th>User type</th><th>Status</th><th /></tr></thead><tbody>{users.map(user => <tr key={user.id}><td>{user.name}</td><td>{user.username}<small>{user.email}</small></td><td>{user.userType}</td><td>{user.isActive ? 'Active' : 'Disabled'}</td><td><button onClick={() => { setEditing(user.id); setForm({ username: user.username, email: user.email, name: user.name, userType: user.userType, isActive: user.isActive, password: '' }); setMessage(''); }}>Edit</button></td></tr>)}</tbody></table></section><form className="wp-settings wp-user-form" onSubmit={async event => {
+    event.preventDefault(); setBusy(true); setMessage('');
+    try { await apiRequest(`/admin/users${editing ? `/${editing}` : ''}`, { method: editing ? 'PATCH' : 'POST', body: JSON.stringify(form) }); setMessage(editing ? 'User updated. Their existing sessions have been revoked.' : 'User created.'); setEditing(null); setForm(fresh()); await load(); }
+    catch (error) { setMessage((error as Error).message); } finally { setBusy(false); }
+  }}><h2>{editing ? 'Edit user' : 'Add user'}</h2><section><label>Full name<input required value={form.name} onChange={event => update({ name: event.target.value })} /></label><label>Username<input required minLength={3} value={form.username} onChange={event => update({ username: event.target.value })} autoComplete="off" /></label><label>Email<input required type="email" value={form.email} onChange={event => update({ email: event.target.value })} /></label><label>{editing ? 'New password (leave empty to keep current)' : 'Password'}<input required={!editing} minLength={12} maxLength={200} type="password" autoComplete="new-password" value={form.password} onChange={event => update({ password: event.target.value })} /></label><label>User type<select aria-label="User type" value={form.userType} onChange={event => update({ userType: event.target.value as AdminUser['userType'] })}><option value="admin">Administrator</option><option value="editor">Editor</option><option value="viewer">Viewer (read only)</option></select></label><label className="wp-checkbox-label"><input type="checkbox" checked={form.isActive} onChange={event => update({ isActive: event.target.checked })} />Account active</label><div className="wp-page-actions"><button className="wp-primary" disabled={busy}>{busy ? 'Saving…' : editing ? 'Save user' : 'Create user'}</button>{editing && <button type="button" onClick={() => { setEditing(null); setForm(fresh()); }}>Cancel</button>}</div></section></form></div></>;
+};

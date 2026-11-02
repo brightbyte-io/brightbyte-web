@@ -1,3 +1,4 @@
+import { MainHeading } from '../ui/MainHeading';
 import React from 'react';
 import { ArrowRight, Calendar, ShieldCheck, Zap, Award, Sparkles, CheckCircle2 } from 'lucide-react';
 import { Container } from '../layout/Container';
@@ -34,9 +35,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
           </div>
 
           {/* Headline from Home V1-2 */}
-          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 tracking-tight leading-[1.14] [text-wrap:balance]">
-            We Build Software That Moves Businesses Forward.
-          </h1>
+          <MainHeading headingKey="HeroSection" as="h1" variant="hero" className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 tracking-tight leading-[1.14] [text-wrap:balance]" />
 
           {/* Subtitle */}
           <p className="text-sm sm:text-base text-slate-600 max-w-xl mx-auto leading-relaxed [text-wrap:balance]">

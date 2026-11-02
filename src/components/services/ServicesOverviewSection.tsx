@@ -1,3 +1,5 @@
+import { MainHeading } from '../ui/MainHeading';
+import { SectionLabel } from '../ui/SectionLabel';
 import React, { useState } from 'react';
 import { ArrowRight, ChevronDown, ChevronUp } from 'lucide-react';
 import { Container } from '../layout/Container';
@@ -59,22 +61,22 @@ export const SERVICES_LIST: ServiceCardData[] = [
       {
         id: 'native-android',
         title: 'Native Android (Kotlin)',
-        description: 'Modern high-performance apps built with Jetpack Compose, Coroutines, and clean MVVM architecture.',
+        description: "Native Android applications with responsive interfaces, platform integrations and maintainable Kotlin code.",
       },
       {
         id: 'cross-platform',
         title: 'Cross-Platform (React Native & Flutter)',
-        description: 'Single codebase efficiency with native-like 60fps animations, offline sync, and deep platform API integration.',
+        description: "Shared-code mobile apps with platform-specific testing, integration planning and responsive user journeys.",
       },
       {
         id: 'ios-apps',
         title: 'iOS App Architecture (Swift & SwiftUI)',
-        description: 'Enterprise iOS solutions adhering strictly to Apple Human Interface Guidelines and App Store compliance.',
+        description: "Native iOS applications with clear navigation, device testing and preparation for the App Store review process.",
       },
       {
         id: 'app-store-ops',
         title: 'App Store Submission & Lifecycle',
-        description: 'Automated TestFlight distribution, Google Play console staging, certificate signing, and post-launch telemetry.',
+        description: "Build preparation, distribution settings, signing configuration and release checks for mobile app submission.",
       },
     ],
   },
@@ -87,22 +89,22 @@ export const SERVICES_LIST: ServiceCardData[] = [
       {
         id: 'web-applications',
         title: 'Web Applications',
-        description: 'User-focused design from wireframes through to final, polished screens.',
+        description: "Responsive web applications designed around user journeys, business workflows and maintainable frontend code.",
       },
       {
         id: 'enterprise-software',
         title: 'Enterprise Software',
-        description: 'Custom internal ERP systems, role-based workflows, automated audit logs, and mission-critical reliability.',
+        description: "Internal business systems with role-based workflows, clear data models and integrations with existing tools.",
       },
       {
         id: 'api-integration',
         title: 'API Integration',
-        description: 'Secure GraphQL and REST APIs connecting complex legacy databases to modern frontend applications.',
+        description: "REST and GraphQL integrations with defined data contracts, access controls and error handling between systems.",
       },
       {
         id: 'e-commerce',
         title: 'E-Commerce',
-        description: 'High-converting custom storefronts, omnichannel checkout flows, Stripe billing, and live inventory sync.',
+        description: "Online storefronts with product management, checkout integrations and order workflows aligned to retail needs.",
       },
     ],
   },
@@ -115,22 +117,22 @@ export const SERVICES_LIST: ServiceCardData[] = [
       {
         id: 'rag-workflows',
         title: 'Generative AI & Agent Workflows',
-        description: 'Custom LLM integration, retrieval-augmented generation (RAG), and reasoning agents tailored to your business data.',
+        description: "Language model integrations and retrieval workflows built around relevant data sources and review requirements.",
       },
       {
         id: 'computer-vision',
         title: 'Computer Vision & OCR Automation',
-        description: 'Automated document processing, image classification, real-time quality control, and edge camera inference.',
+        description: "Document extraction and image-processing workflows, with validation checks and review of uncertain outputs.",
       },
       {
         id: 'predictive-ml',
         title: 'Predictive Analytics & ML Models',
-        description: 'Custom scikit-learn and PyTorch time-series forecasting, predictive maintenance, and churn prevention engines.',
+        description: "Model experiments and forecasting workflows evaluated against relevant data, baselines and business criteria.",
       },
       {
         id: 'iot-edge',
         title: 'IoT & Edge Device Intelligence',
-        description: 'Lightweight on-device model deployment (TensorFlow Lite, ONNX) communicating securely over MQTT and BLE.',
+        description: "Device-data integrations and lightweight inference workflows planned around connectivity and operating needs.",
       },
     ],
   },
@@ -143,22 +145,22 @@ export const SERVICES_LIST: ServiceCardData[] = [
       {
         id: 'cicd',
         title: 'Automated CI/CD Pipelines',
-        description: 'Zero-downtime automated workflows using GitHub Actions, GitLab CI, and ArgoCD with automated canary testing.',
+        description: "Automated build, test and deployment workflows with release controls and rollback planning for your application.",
       },
       {
         id: 'cloud-iac',
         title: 'Cloud Infrastructure & Terraform (AWS/GCP)',
-        description: 'Modular Infrastructure as Code (IaC) provisioning high-availability Kubernetes (EKS/GKE) and serverless backends.',
+        description: "Version-controlled cloud infrastructure with repeatable configuration and capacity planning for your workloads.",
       },
       {
         id: 'observability',
         title: 'Observability & APM Monitoring',
-        description: 'Full-stack Prometheus, Grafana, Datadog dashboards, distributed tracing, and proactive incident response.',
+        description: "Application metrics, logs and tracing views that support troubleshooting, alerting and service health reviews.",
       },
       {
         id: 'security-compliance',
-        title: 'SOC2 & Security Hardening',
-        description: 'Automated vulnerability scanning, secrets management, SSL governance, and continuous penetration compliance.',
+        title: "Security & Access Hardening",
+        description: "Security checks, secret handling and access configuration incorporated into infrastructure and release workflows.",
       },
     ],
   },
@@ -171,22 +173,22 @@ export const SERVICES_LIST: ServiceCardData[] = [
       {
         id: 'technical-seo',
         title: 'Technical SEO & Core Web Vitals',
-        description: 'Complete codebase audits, Schema.org JSON-LD structured data, SSR rendering, and crawl budget optimization.',
+        description: "Review page structure, crawl access, metadata and performance issues to guide technical search improvements.",
       },
       {
         id: 'search-authority',
         title: 'High-Intent Search Authority',
-        description: 'Data-driven keyword clustering, competitive positioning, and bottom-of-funnel conversion copywriting.',
+        description: "Keyword research and content planning aligned with audience questions, service relevance and search intent.",
       },
       {
         id: 'social-growth',
         title: 'B2B & Social Media Campaigns',
-        description: 'Targeted LinkedIn and multi-channel campaigns engineered to generate qualified enterprise inbound leads.',
+        description: "Social campaign planning and content coordination around the channels your audience uses and agreed goals.",
       },
       {
         id: 'cro',
         title: 'Conversion Rate Optimization (CRO)',
-        description: 'A/B testing user landing pages, heatmaps, interactive calculators, and checkout funnel optimization.',
+        description: "Review landing pages and conversion journeys, then plan focused experiments around measurable user actions.",
       },
     ],
   },
@@ -199,22 +201,22 @@ export const SERVICES_LIST: ServiceCardData[] = [
       {
         id: 'financial-ledger',
         title: 'Core Financials & Multi-Currency Ledger',
-        description: 'Automated invoice generation, tax calculations, expense approvals, and real-time P&L reporting.',
+        description: "Configure finance-related workflows, transaction records and reporting requirements within the agreed ERP scope.",
       },
       {
         id: 'inventory-ops',
         title: 'Supply Chain & Inventory Management',
-        description: 'Barcode scanning, warehouse tracking, automated re-ordering thresholds, and logistics synchronization.',
+        description: "Inventory records, purchasing workflows and stock reporting connected to day-to-day operational requirements.",
       },
       {
         id: 'workforce-hr',
         title: 'Workforce & Project Resource Planning',
-        description: 'Team bandwidth scheduling, contractor billable hour tracking, and role-based access management.',
+        description: "Resource planning views, time records and access permissions tailored to team responsibilities and reporting.",
       },
       {
         id: 'legacy-migration',
         title: 'Legacy Database to Cloud ERP Migration',
-        description: 'Risk-free zero-downtime data ETL scripts and validation rules ensuring 100% data integrity.',
+        description: "Plan data mapping, migration checks and reconciliation before transitioning records into a new ERP environment.",
       },
     ],
   },
@@ -227,22 +229,22 @@ export const SERVICES_LIST: ServiceCardData[] = [
       {
         id: 'codebase-audit',
         title: 'Codebase & Architecture Due Diligence',
-        description: 'Deep architectural audits assessing scalability, tech debt, licensing risks, and documentation completeness.',
+        description: "Review architecture, technical debt, dependencies and documentation against an agreed assessment scope.",
       },
       {
         id: 'cost-optimization',
         title: 'Cloud Spend & License Optimization',
-        description: 'Comprehensive AWS/GCP bill audits, rightsizing idle instances, and cutting recurring SaaS overhead.',
+        description: "Review cloud usage and software licenses to identify capacity mismatches and practical cost-control options.",
       },
       {
         id: 'process-audit',
         title: 'Agile Team Velocity & Sprint Audits',
-        description: 'Identifying delivery bottlenecks, sprint churn, and implementing predictable milestone cadences.',
+        description: "Assess delivery workflows, recurring blockers and review practices to identify practical process improvements.",
       },
       {
         id: 'exec-roadmap',
         title: 'Executive Remediation Roadmap',
-        description: 'Prioritized ROI-ranked roadmap tailored for board members, CTOs, and investment stakeholders.',
+        description: "Summarize review findings with priorities, operational impact and next steps for technical and business owners.",
       },
     ],
   },
@@ -255,22 +257,22 @@ export const SERVICES_LIST: ServiceCardData[] = [
       {
         id: 'sprint-governance',
         title: 'Agile Sprint Planning & Execution',
-        description: 'Two-week sprint cadences, Jira/Linear task breakdown, daily asynchronous standups, and demo recordings.',
+        description: "Coordinate backlog priorities, sprint planning and review sessions around agreed milestones and responsibilities.",
       },
       {
         id: 'budget-control',
         title: 'Scope Creep & Budget Governance',
-        description: 'Transparent milestone burn-up charts, change order management, and upfront milestone approvals.',
+        description: "Track scope changes, delivery assumptions and budget decisions through a shared change-management process.",
       },
       {
         id: 'stakeholder-sync',
         title: 'Executive Reporting & Communication',
-        description: 'Weekly written progress digests, live staging environment releases, and real-time Slack/Teams access.',
+        description: "Provide agreed progress updates, open issue tracking and clear decision records for project stakeholders.",
       },
       {
         id: 'global-coordination',
         title: 'Onshore / Global Pod Coordination',
-        description: 'Seamless time-zone overlap management ensuring 24-hour continuous development cycles without friction.',
+        description: "Plan handoffs, communication windows and team responsibilities for collaboration across different time zones.",
       },
     ],
   },
@@ -283,22 +285,22 @@ export const SERVICES_LIST: ServiceCardData[] = [
       {
         id: 'factory-vetting',
         title: 'Factory Identification & On-Site Audits',
-        description: 'Direct verification of ISO-certified manufacturing facilities, background checks, and production capacity vetting.',
+        description: "Compare supplier capabilities, documentation and production capacity against the requirements of your order.",
       },
       {
         id: 'cad-prototyping',
         title: 'Tooling, CAD & Rapid PCB Prototyping',
-        description: 'Design-for-manufacturing (DFM) reviews, physical component sampling, tooling validation, and sign-offs.',
+        description: "Coordinate product specifications, sample reviews and tooling requirements with suitable sourcing partners.",
       },
       {
         id: 'qa-inspection',
-        title: 'Batch Inspection & CE/FCC Compliance',
-        description: 'Pre-shipment batch testing, drop tests, thermal analysis, and international regulatory certifications.',
+        title: "Batch Inspection & Quality Checks",
+        description: "Define product inspection criteria and review available test records against agreed quality requirements.",
       },
       {
         id: 'logistics-customs',
         title: 'Door-to-Door Freight & Customs Clearance',
-        description: 'Managing international bills of lading, tariff optimization, port clearance, and insured delivery to your facility.',
+        description: "Coordinate freight records, shipment documentation and customs handoffs with the relevant logistics partners.",
       },
     ],
   },
@@ -338,13 +340,8 @@ export const ServicesOverviewSection: React.FC<ServicesOverviewSectionProps> = (
         {/* Exactly matching screenshot                                    */}
         {/* ============================================================== */}
         <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-14 space-y-2.5">
-          <span className="inline-block text-xs font-bold uppercase tracking-wider text-[#18529B]">
-            SERVICES OVERVIEW
-          </span>
-          <h2 className="text-2xl sm:text-3xl lg:text-[38px] xl:text-[40px] font-bold text-[#0B1528] tracking-tight leading-[1.2]">
-            We’ve got pretty much every service<br />
-            you need, covered.
-          </h2>
+          <SectionLabel labelKey="servicesOverview" />
+          <MainHeading headingKey="ServicesOverviewSection" as="h2" variant="section" className="text-2xl sm:text-3xl lg:text-[38px] xl:text-[40px] font-bold text-[#0B1528] tracking-tight leading-[1.2]" />
         </div>
 
         {/* ============================================================== */}

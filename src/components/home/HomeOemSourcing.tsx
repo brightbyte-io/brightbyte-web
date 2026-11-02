@@ -1,6 +1,7 @@
-import React from 'react';
-import { Container } from '../layout/Container';
-import { PageId } from '../../types';
+import { MainHeading } from '../ui/MainHeading';
+import React from "react";
+import { Container } from "../layout/Container";
+import { PageId } from "../../types";
 
 export interface HomeOemSourcingProps {
   onNavigate: (page: PageId, detailId?: string) => void;
@@ -11,55 +12,46 @@ export const HomeOemSourcing: React.FC<HomeOemSourcingProps> = ({
 }) => {
   const cards = [
     {
-      step: '01',
-      title: 'Supplier Identification',
+      step: "01",
+      title: "Supplier Identification",
       description:
-        'Verified OEM manufacturers matched to your specifications and budget.',
+        "OEM supplier research aligned with your specifications and budget.",
     },
     {
-      step: '02',
-      title: 'Quality Control',
+      step: "02",
+      title: "Quality Control",
       description:
-        'Pre-shipment inspection ensuring products meet your requirements before they leave the factory.',
+        "Product inspections and quality checks against agreed specifications before factory dispatch.",
     },
     {
-      step: '03',
-      title: 'Shipping & Logistics',
+      step: "03",
+      title: "Shipping & Logistics",
       description:
-        'Shipped from the source using the most appropriate, yet cost-effective shipping methods.',
+        "Freight options and shipment coordination based on delivery needs, product type and budget.",
     },
     {
-      step: '04',
-      title: 'Customs & Delivery',
+      step: "04",
+      title: "Customs & Delivery",
       description:
-        'Import documentation, duty handling, and last-mile delivery to your location.',
+        "Import paperwork, customs coordination and final delivery planning for your location.",
     },
   ];
 
   return (
-    <section className="relative overflow-hidden py-10 sm:py-12 lg:py-14 bg-gradient-to-b from-[#EFF6FD] via-[#E8F2FC] to-[#EFF6FD] border-b border-blue-100/70">
-      {/* ============================================================== */}
-      {/* AMBIENT CURVED LIGHT RINGS MATCHING Frame 2121455053.png       */}
-      {/* ============================================================== */}
-      {/* Top-left ambient ring arc */}
-      <div className="absolute -top-24 -left-24 w-[480px] h-[480px] rounded-full border-[60px] border-white/40 blur-2xl pointer-events-none -z-0" />
-      <div className="absolute -top-12 -left-12 w-[340px] h-[340px] rounded-full border-[40px] border-sky-100/50 blur-xl pointer-events-none -z-0" />
-
-      {/* Bottom-right ambient ring arc */}
-      <div className="absolute -bottom-28 -right-28 w-[560px] h-[560px] rounded-full border-[70px] border-white/50 blur-2xl pointer-events-none -z-0" />
-      <div className="absolute -bottom-16 -right-16 w-[420px] h-[420px] rounded-full border-[45px] border-sky-100/60 blur-xl pointer-events-none -z-0" />
-
+    <section
+      className="relative overflow-hidden py-10 sm:py-12 lg:py-14 bg-[#EFF6FD] bg-cover bg-center bg-no-repeat border-b border-blue-100/70"
+      style={{ backgroundImage: "url('/images/home-oem-background.svg')" }}
+    >
       <Container className="relative z-10">
         {/* ============================================================== */}
         {/* SECTION HEADER MATCHING Frame 2121455053.png                   */}
         {/* ============================================================== */}
         <div className="max-w-3xl mx-auto text-center mb-8 sm:mb-10 lg:mb-12 space-y-2.5">
-          <h2 className="text-3xl sm:text-4xl lg:text-[44px] font-extrabold text-slate-950 tracking-tight leading-tight">
-            OEM Global Sourcing
-          </h2>
+          <MainHeading headingKey="HomeOemSourcing" as="h2" variant="section" className="text-3xl sm:text-4xl lg:text-[44px] font-extrabold text-slate-950 tracking-tight leading-tight" />
           <p className="text-sm sm:text-base lg:text-lg text-slate-500 font-normal max-w-2xl mx-auto">
-            End-to-end sourcing solutions from trusted global suppliers to your doorstep.
-          </p>
+            
+              OEM sourcing support, from supplier research to shipment and delivery.
+            </p>
         </div>
 
         {/* ============================================================== */}
@@ -87,11 +79,11 @@ export const HomeOemSourcing: React.FC<HomeOemSourcingProps> = ({
         {/* ============================================================== */}
         <div className="text-center pt-1">
           <button
-            onClick={() => onNavigate('service-detail', 'oem-sourcing')}
+            onClick={() => onNavigate("service-detail", "oem-sourcing")}
             className="inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-full bg-[#18529B] hover:bg-[#133F77] text-white font-semibold text-sm transition-all shadow-md shadow-blue-900/15 cursor-pointer"
           >
             <span>Learn more</span>
-            <span className="text-base font-normal leading-none">→</span>
+            <img src="/images/arrow-right-white.svg" alt="" aria-hidden="true" className="h-5 w-5 shrink-0" />
           </button>
         </div>
       </Container>

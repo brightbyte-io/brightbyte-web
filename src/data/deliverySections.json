@@ -1,0 +1,48 @@
+{
+  "howWeWork": {
+    "description": "A clear delivery process, from initial design through release and support.",
+    "steps": [
+      {
+        "title": "Design",
+        "description": "Define user journeys, interface designs and system architecture. Agree on requirements before development begins."
+      },
+      {
+        "title": "Development",
+        "description": "Build in focused sprints, with code reviews and regular demos to track progress."
+      },
+      {
+        "title": "Testing",
+        "description": "Test features throughout delivery, with functional checks and regression testing before release."
+      },
+      {
+        "title": "Deployment",
+        "description": "Plan the release, monitor key workflows and agree on support as your product moves into use."
+      }
+    ],
+    "labelKey": "whatWeDo",
+    "headingKey": "delivery.howWeWork"
+  },
+  "mobileApp": {
+    "description": "A clear delivery process, from initial design through release and support.",
+    "steps": [
+      {
+        "title": "Design",
+        "description": "Define user journeys, interface designs and system architecture. Agree on requirements before development begins."
+      },
+      {
+        "title": "Development",
+        "description": "Build in focused sprints, with code reviews and regular demos to track progress."
+      },
+      {
+        "title": "Testing",
+        "description": "Test features throughout delivery, with functional checks and regression testing before release."
+      },
+      {
+        "title": "Deployment",
+        "description": "Plan the release, monitor key workflows and agree on support as your product moves into use."
+      }
+    ],
+    "labelKey": "whatWeDo",
+    "headingKey": "delivery.mobileApp"
+  }
+}

@@ -7,10 +7,16 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "lint": "tsc --noEmit",
-    "preview": "vite preview"
+    "db:migrate": "node server/migrate.mjs",
+    "start": "node server/index.mjs",
+    "test:api": "node --test server/api.test.mjs",
+    "preview": "node server/index.mjs"
   },
   "dependencies": {
+    "dotenv": "^18.0.9",
+    "express": "^5.3.0",
     "lucide-react": "^1.16.0",
+    "pg": "^8.23.1",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
   },

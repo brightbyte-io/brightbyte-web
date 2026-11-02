@@ -1,0 +1,12 @@
+/* Shared section eyebrow typography. Edit here to update every page. */
+.section-label {
+  display: inline-block;
+  font-family: var(--font-body) !important;
+  font-size: 12px !important;
+  font-weight: 700 !important;
+  line-height: 18px !important;
+  letter-spacing: .6px !important;
+  text-transform: uppercase;
+  color: #18529b !important;
+}
+.section-label.section-label-light { color: #fff !important; }
